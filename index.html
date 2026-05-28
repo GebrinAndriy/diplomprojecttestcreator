@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTest Pro | Платформа тестування</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- TOAST NOTIFICATIONS CONTAINER -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- НАВІГАЦІЯ -->
+    <nav class="navbar" id="main-nav">
+        <div class="logo cursor-pointer" id="nav-logo">
+            <!-- Власний згенерований логотип -->
+            <img src="./logo.png" alt="EduTest Pro" class="logo-image" onerror="this.src='https://ui-avatars.com/api/?name=ET&background=2563eb&color=fff&rounded=true'">
+            <h1 class="hide-mobile">EduTest Pro</h1>
+        </div>
+        
+        <!-- Меню на 5 пунктів -->
+        <div class="nav-center-links" id="nav-center-links">
+            <a href="#" class="nav-link active" id="nav-home">Головна</a>
+            <a href="#" class="nav-link" id="nav-all-tests">Всі тести</a>
+            <a href="#" class="nav-link hidden" id="nav-history">Моя історія</a>
+            <a href="#" class="nav-link" id="nav-about">Про платформу</a>
+            <a href="#" class="nav-link" id="nav-support">Підтримка</a>
+        </div>
+
+        <div class="nav-links" id="nav-auth-section">
+            <!-- Гостьове меню -->
+            <div id="nav-guest-btns" class="hidden">
+                <button id="nav-btn-login" class="text-btn mr-2">Увійти</button>
+                <button id="nav-btn-register" class="primary-btn text-sm">Реєстрація</button>
+            </div>
+            
+            <!-- Меню авторизованого користувача -->
+            <div id="nav-user-btns" class="hidden" style="display: flex; align-items: center; gap: 1rem;">
+                <div class="user-profile-trigger" id="nav-profile-btn" title="Мій профіль">
+                    <img src="" alt="Avatar" id="nav-avatar" class="avatar-sm hidden">
+                    <div id="nav-avatar-placeholder" class="avatar-sm-placeholder"></div>
+                    <span id="user-info" class="user-name-text hide-mobile"></span>
+                </div>
+                <button id="btn-logout" class="icon-btn text-muted" title="Вийти">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ГОЛОВНА СТОРІНКА (Відкрита вітрина тестів) -->
+    <section id="public-dashboard" class="screen active">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container hero-content center-text">
+                <h2 class="hero-title">Перевір свої знання з <span class="text-primary">EduTest Pro</span></h2>
+                <p class="hero-subtitle">Найкраща платформа для створення та проходження інтерактивних тестів.</p>
+                
+                <div class="search-container mb-6">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-icon text-muted"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="search-input" class="search-input" placeholder="Пошук тестів за назвою...">
+                </div>
+
+                <!-- Поле введення приватного коду -->
+                <div class="join-code-banner">
+                    <span class="font-medium mr-4">Маєте приватний код доступу?</span>
+                    <div class="join-input-group">
+                        <input type="text" id="global-join-code" placeholder="X7B-9Q2" maxlength="6">
+                        <button id="btn-global-join" class="secondary-btn">Підключитись</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-6">
+            <div class="header-content flex-between">
+                <h3 class="font-bold text-lg" id="tests-section-title">Всі доступні тести</h3>
+            </div>
+            
+            <div class="tests-grid" id="public-tests-list">
+                <!-- Картки тестів генеруватимуться тут -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ІНФОРМАЦІЙНІ СТОРІНКИ -->
+    <section id="about-screen" class="screen hidden container mt-6">
+        <div class="panel">
+            <h2 class="mb-4">Про платформу EduTest Pro</h2>
+            <p class="text-muted mb-4">EduTest Pro — це інноваційна українська платформа для створення та проходження освітніх тестів. Створена спеціально для дипломного проєкту.</p>
+            <h3 class="mb-2">Наші переваги:</h3>
+            <ul style="list-style-position: inside; color: var(--text-muted); line-height: 1.8;">
+                <li>Створення тестів з кількома варіантами відповідей.</li>
+                <li>Відкриті питання (вільна текстова відповідь).</li>
+                <li>Гнучке налаштування часу (Таймер).</li>
+                <li>Кастомні обкладинки для кожного тесту.</li>
+                <li>Детальна статистика та історія результатів.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="support-screen" class="screen hidden">
+        <div class="panel support-container" style="max-width: 600px; margin: 2rem auto;">
+            <div class="center-text mb-6">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" class="mb-4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <h2 class="mb-2">Служба підтримки</h2>
+                <p class="text-muted">Заповніть форму нижче, і ми отримаємо ваш запит на email.</p>
+            </div>
+            <form id="support-form">
+                <div class="form-group">
+                    <label>Ваше ім'я</label>
+                    <input type="text" id="support-name" placeholder="Іван Іванов" required>
+                </div>
+                <div class="form-group">
+                    <label>Причина звернення</label>
+                    <select id="support-reason" required>
+                        <option value="Технічна помилка">Технічна помилка на сайті</option>
+                        <option value="Питання по співпраці">Питання по співпраці</option>
+                        <option value="Побажання/Ідея">Побажання / Ідея для розвитку</option>
+                        <option value="Інше">Інше</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Повідомлення</label>
+                    <textarea id="support-message" rows="5" placeholder="Опишіть вашу проблему або пропозицію..." required></textarea>
+                </div>
+                <button type="submit" class="primary-btn full-width mt-2">Відправити звернення</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ЕКРАН АВТОРИЗАЦІЇ -->
+    <section id="auth-screen" class="screen hidden auth-layout">
+        <div class="auth-image-side">
+            <div class="auth-image-overlay">
+                <h2>Навчайся та тестуй легко.</h2>
+                <p>Сучасна платформа для викладачів та студентів.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop" alt="Education">
+        </div>
+        
+        <div class="auth-form-side">
+            <div class="auth-container">
+                <!-- Форма Входу -->
+                <div id="login-container">
+                    <h2>З поверненням</h2>
+                    <p class="subtitle">Увійдіть до свого акаунту</p>
+                    
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="login-email" placeholder="mail@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Пароль</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="login-password" placeholder="••••••••" required>
+                                <button type="button" class="toggle-password" title="Показати пароль">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" class="primary-btn full-width mt-2">Увійти</button>
+                    </form>
+                    <p class="switch-auth">Немає акаунту? <button type="button" id="btn-show-register" class="text-btn">Зареєструватися</button></p>
+                </div>
+
+                <!-- Форма Реєстрації -->
+                <div id="register-container" class="hidden">
+                    <h2>Створити акаунт</h2>
+                    <p class="subtitle">Приєднуйтесь до нашої платформи</p>
+                    
+                    <form id="register-form" class="auth-form">
+                        <div class="form-group role-selector">
+                            <label>Оберіть вашу роль</label>
+                            <div class="role-cards">
+                                <label class="role-card">
+                                    <input type="radio" name="role" value="student" checked>
+                                    <div class="role-content">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="role-icon"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                                        <span>Студент</span>
+                                    </div>
+                                </label>
+                                <label class="role-card">
+                                    <input type="radio" name="role" value="teacher">
+                                    <div class="role-content">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="role-icon"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path><path d="M8 11h8"></path><path d="M8 7h6"></path></svg>
+                                        <span>Викладач</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ім'я та Прізвище</label>
+                            <input type="text" id="reg-name" placeholder="Іван Іванов" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="reg-email" placeholder="mail@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Пароль</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="reg-password" placeholder="Мінімум 6 символів" required minlength="6">
+                                <button type="button" class="toggle-password" title="Показати пароль">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" class="primary-btn full-width mt-2">Зареєструватися</button>
+                    </form>
+                    <p class="switch-auth">Вже є акаунт? <button type="button" id="btn-show-login" class="text-btn">Увійти</button></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- ЕКРАН ПРОФІЛЮ -->
+        <section id="profile-screen" class="screen hidden">
+            <div class="panel profile-container">
+                <div class="header-content border-bottom pb-4 mb-6">
+                    <h2>Особистий кабінет</h2>
+                    <p class="text-muted">Керування вашим профілем та налаштуваннями.</p>
+                </div>
+                
+                <div class="profile-content">
+                    <div class="avatar-section">
+                        <div class="avatar-large-wrapper">
+                            <img src="" alt="Profile" id="profile-avatar-preview" class="avatar-lg hidden">
+                            <div id="profile-avatar-placeholder" class="avatar-lg-placeholder"></div>
+                            <label for="avatar-upload" class="avatar-upload-btn" title="Змінити фото">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                            </label>
+                            <input type="file" id="avatar-upload" class="hidden" accept="image/*">
+                        </div>
+                        <div class="role-badge" id="profile-role-badge">Студент</div>
+                    </div>
+                    
+                    <form id="profile-form" class="profile-form">
+                        <div class="form-group">
+                            <label>Ваше Ім'я</label>
+                            <input type="text" id="profile-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ваш Email (Тільки для читання)</label>
+                            <input type="email" id="profile-email" disabled class="disabled-input">
+                        </div>
+                        <button type="submit" class="primary-btn mt-4 full-width">Зберегти зміни</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЕКРАН ІСТОРІЇ -->
+        <section id="history-screen" class="screen hidden">
+            <div class="header-content border-bottom pb-4 mb-6">
+                <h2>Історія тестувань</h2>
+                <p class="text-muted">Ваші минулі результати та досягнення.</p>
+            </div>
+            <div id="history-list" class="history-list">
+                <!-- Картки історії -->
+            </div>
+        </section>
+
+        <!-- Проходження тесту -->
+        <section id="test-taker" class="screen hidden">
+            <div class="panel test-container">
+                <div class="flex-between mb-4 pb-2 border-bottom">
+                    <button id="btn-cancel-test" class="text-btn flex-align-center text-error">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-1"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        Перервати
+                    </button>
+                    
+                    <div id="timer-display" class="timer-badge hidden">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-1"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span id="time-remaining">15:00</span>
+                    </div>
+                </div>
+                
+                <div class="test-header">
+                    <h2 id="current-test-title">Назва тесту</h2>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="test-progress"></div>
+                    </div>
+                    <span id="question-counter" class="text-muted text-sm font-medium">Питання 1 з 10</span>
+                </div>
+                
+                <div class="question-body mt-6">
+                    <div id="question-image-container" class="mb-4 center-text hidden">
+                        <img id="current-question-image" src="" alt="Question Image" style="max-height: 300px; max-width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                    </div>
+                    <h3 id="current-question-text">Текст питання</h3>
+                    <p class="text-sm text-muted mb-4" id="multiple-answers-hint">Оберіть одну або декілька правильних відповідей.</p>
+                    
+                    <div id="current-options-list" class="options-list hidden">
+                        <!-- Варіанти відповідей (чекбокси) -->
+                    </div>
+
+                    <div id="current-text-answer-container" class="hidden">
+                        <input type="text" id="student-text-answer" placeholder="Введіть вашу відповідь тут..." class="full-width" style="font-size: 1.1rem; padding: 1rem;">
+                    </div>
+                </div>
+
+                <div class="test-footer mt-6 pt-4 border-top flex-end">
+                    <button id="btn-next-question" class="primary-btn px-8" disabled>Наступне питання</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Результати -->
+        <section id="test-results" class="screen hidden">
+            <div class="panel results-container center-text">
+                <h2>Результати тесту</h2>
+                <div class="score-circle">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" id="score-circle-path" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentage" id="score-percentage">0%</text>
+                    </svg>
+                </div>
+                <p id="score-text" class="font-medium text-lg">Ви відповіли правильно на 0 з 0 питань.</p>
+                <p id="motivation-text" class="motivation"></p>
+                <div class="flex-align-center" style="gap:1rem; justify-content: center; margin-top: 1.5rem;">
+                    <button id="btn-back-to-dashboard-student" class="secondary-btn">На головну</button>
+                    <button id="btn-view-history" class="primary-btn">Моя історія</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- МОДУЛЬ ВИКЛАДАЧА: Дашборд -->
+        <section id="teacher-dashboard" class="screen hidden">
+            <div class="header-content flex-between">
+                <div>
+                    <h2>Всі тести</h2>
+                    <p class="text-muted">База тестів платформи. Створюйте та керуйте тестами.</p>
+                </div>
+                <button id="btn-create-test" class="primary-btn flex-align-center">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    Створити тест
+                </button>
+            </div>
+            
+            <div class="tests-grid" id="teacher-tests-list">
+                <!-- Картки тестів викладача -->
+            </div>
+        </section>
+
+        <!-- МОДУЛЬ ВИКЛАДАЧА: Деталі тесту -->
+        <section id="teacher-test-detail" class="screen hidden">
+            <button id="btn-back-to-teacher" class="text-btn mb-4 flex-align-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mr-1"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Назад до списку
+            </button>
+            
+            <div class="panel">
+                <div class="flex-between border-bottom pb-4 mb-4">
+                    <div>
+                        <h2 id="detail-test-title">Назва тесту</h2>
+                        <p id="detail-test-desc" class="text-muted mt-2">Опис...</p>
+                    </div>
+                    <div class="center-text">
+                        <span class="text-sm text-muted block mb-1">Код доступу:</span>
+                        <div id="detail-test-code" class="badge badge-primary text-lg" style="letter-spacing: 2px; font-family: monospace;">XXXXXX</div>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <span class="badge mr-2" id="detail-test-qcount">0 питань</span>
+                    <span class="badge badge-warning" id="detail-test-timer">Без таймера</span>
+                </div>
+
+                <h3 class="mb-4">Питання у тесті:</h3>
+                <div id="detail-questions-list" class="history-list mb-6">
+                    <!-- Питання детально -->
+                </div>
+
+                <h3 class="mb-4">Результати студентів:</h3>
+                <div id="detail-results-list" class="results-table-container">
+                    <!-- Статистика студентів -->
+                </div>
+
+                <div class="mt-6 pt-4 border-top flex-end">
+                    <button id="btn-detail-delete" class="secondary-btn text-error border-error">Видалити тест</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Створення тесту -->
+        <section id="test-creator" class="screen hidden">
+            <div class="panel creator-container">
+                <div class="header-content flex-between border-bottom pb-4 mb-4">
+                    <div>
+                        <h2 id="creator-title">Створення нового тесту</h2>
+                        <p class="text-muted">Заповніть інформацію та додайте питання.</p>
+                    </div>
+                    <button id="btn-cancel-create" class="secondary-btn">Скасувати</button>
+                </div>
+                
+                <form id="create-test-form">
+                    <div class="form-card mb-6">
+                        <h3 class="mb-4">Основна інформація</h3>
+                        <div class="form-group">
+                            <label for="test-title">Назва тесту</label>
+                            <input type="text" id="test-title" placeholder="Напр. Основи програмування" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="test-desc">Опис тесту</label>
+                            <textarea id="test-desc" placeholder="Короткий опис або інструкція..." rows="2"></textarea>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <div class="form-group" style="flex: 2; min-width: 250px;">
+                                <label>Обкладинка тесту (Зображення)</label>
+                                <div class="file-upload-wrapper">
+                                    <input type="file" id="test-image-file" accept="image/*" class="file-input">
+                                    <input type="url" id="test-image-url" placeholder="Або вставте URL посилання..." class="mt-2 text-sm hidden">
+                                </div>
+                                <div id="test-image-preview" class="mt-2 hidden">
+                                    <img src="" style="height: 100px; border-radius: 8px; object-fit: cover;">
+                                </div>
+                            </div>
+                            <div class="form-group" style="flex: 1; min-width: 150px;">
+                                <label for="test-time">Таймер (хвилин)</label>
+                                <input type="number" id="test-time" placeholder="Без ліміту" min="1" max="180">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="questions-builder">
+                        <div class="flex-between mb-4">
+                            <h3>Питання</h3>
+                            <span id="question-count-badge" class="badge">0 питань</span>
+                        </div>
+                        
+                        <div id="questions-list">
+                            <!-- Питання будуть додаватися сюди -->
+                        </div>
+                        
+                        <button type="button" id="btn-add-question" class="outline-btn dashed-btn mt-4">
+                            + Додати нове питання
+                        </button>
+                    </div>
+
+                    <div class="form-actions mt-6 flex-end border-top pt-4">
+                        <button type="submit" id="btn-save-test" class="primary-btn px-8 text-lg">Зберегти тест</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Templates -->
+    <template id="question-template">
+        <div class="question-card">
+            <div class="question-card-header">
+                <h4 class="font-medium">Питання <span class="q-num text-primary"></span></h4>
+                <button type="button" class="icon-btn btn-remove-question text-error" title="Видалити питання">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
+                </button>
+            </div>
+            
+            <div class="form-group mb-4">
+                <label>Тип питання:</label>
+                <select class="q-type-select" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                    <option value="multiple">Тест (Один або декілька варіантів)</option>
+                    <option value="text">Вільна відповідь (Введення тексту)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="q-text" placeholder="Напишіть ваше питання тут..." required>
+            </div>
+            
+            <div class="form-group mb-2">
+                <label class="text-sm text-muted">Зображення до питання (необов'язково):</label>
+                <input type="file" class="q-image-file" accept="image/*" style="padding: 0.4rem; font-size: 0.9rem;">
+                <div class="q-image-preview mt-2 hidden">
+                    <img src="" style="height: 80px; border-radius: 6px; object-fit: cover;">
+                </div>
+            </div>
+
+            <!-- Зона для варіантів (Чекбокси) -->
+            <div class="options-builder mt-4">
+                <label class="text-sm text-muted mb-2 block">Варіанти відповідей (відмітьте правильні):</label>
+                <div class="options-container">
+                    <!-- Options go here -->
+                </div>
+                <button type="button" class="text-btn btn-add-option text-sm mt-2">+ Додати варіант</button>
+            </div>
+
+            <!-- Зона для вільної відповіді -->
+            <div class="text-answer-builder mt-4 hidden">
+                <label class="text-sm text-muted mb-2 block">Правильна відповідь (без врахування регістру):</label>
+                <input type="text" class="q-correct-text" placeholder="Напр. Cascading Style Sheets">
+            </div>
+        </div>
+    </template>
+
+    <template id="option-template">
+        <div class="option-row">
+            <div class="checkbox-wrapper">
+                <input type="checkbox" class="q-correct-checkbox" title="Позначити як правильну">
+            </div>
+            <input type="text" class="o-text" placeholder="Варіант відповіді...">
+            <button type="button" class="icon-btn btn-remove-option text-error ml-2" title="Видалити">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
