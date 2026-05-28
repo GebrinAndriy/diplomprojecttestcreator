@@ -500,15 +500,32 @@ navLinks.history.addEventListener('click', async (e) => { e.preventDefault(); se
 navLinks.about.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('about'); showScreen('about'); });
 navLinks.support.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('support'); showScreen('support'); });
 
-// Support form → mailto
-document.getElementById('support-form').addEventListener('submit', (e) => {
+// Support form → Web3Forms
+document.getElementById('support-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const name    = document.getElementById('support-name').value.trim();
     const reason  = document.getElementById('support-reason').value;
     const message = document.getElementById('support-message').value.trim();
-    const subject = encodeURIComponent(`EduTest Pro — ${reason}`);
-    const body    = encodeURIComponent(`Ім'я: ${name}\nПричина: ${reason}\n\n${message}`);
-    window.location.href = `mailto:gebrinandriy@gmail.com?subject=${subject}&body=${body}`;
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = 'Надсилання...';
+    try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                access_key: 'fe292db7-7a80-4d55-bdfa-3eb1e19c12d9',
+                subject: `EduTest Pro — ${reason}`,
+                from_name: name,
+                message: `Причина: ${reason}\n\n${message}`
+            })
+        });
+        const data = await res.json();
+        if (data.success) {
+            showToast('Звернення надіслано! Очікуйте відповіді на пошту.');
+            e.target.reset();
+        } else { throw new Error(data.message); }
+    } catch { showToast('Помилка надсилання. Спробуйте ще раз.', 'error'); }
+    btn.disabled = false; btn.textContent = 'Відправити звернення';
 });
 document.getElementById('nav-logo').addEventListener('click', goHome);
 
