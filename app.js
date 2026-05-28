@@ -87,7 +87,8 @@ function userFromDb(r) {
 // --- DB OPERATIONS ---
 async function loadTests() {
     const { data, error } = await db.from('tests').select('*').order('created_at', { ascending: false });
-    if (error) { console.error('loadTests:', error); return; }
+    if (error) { console.error('loadTests error:', error.message, error.code); return; }
+    console.log('loadTests: got', data?.length, 'tests');
     testsCache = (data || []).map(testFromDb);
 }
 async function loadUsers() {
@@ -96,11 +97,13 @@ async function loadUsers() {
     usersCache = (data || []).map(userFromDb);
 }
 async function seedInitialData() {
-    const { data } = await db.from('tests').select('id').limit(1);
-    if (data && data.length > 0) return;
+    const { data, error: selErr } = await db.from('tests').select('id').limit(1);
+    if (selErr) { console.warn('seedInitialData: select failed, skipping', selErr.message); return; }
+    if (data && data.length > 0) { console.log('DB already has tests:', data.length); return; }
     const toInsert = initialTests.map(t => testToDb({ ...t, isPublic: true }));
     const { error } = await db.from('tests').insert(toInsert);
-    if (error) console.error('seed error:', error);
+    if (error) console.error('seed insert error:', error.message);
+    else console.log('Seeded', toInsert.length, 'tests successfully');
 }
 function getTests() { return testsCache; }
 async function saveTest(test) {
