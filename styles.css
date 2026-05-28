@@ -52,7 +52,7 @@ body {
     display: flex;
     flex-direction: column;
 }
-main { flex: 1; }
+main { flex: 1; width: 100%; }
 
 /* Utilities */
 .hidden { display: none !important; }
