@@ -450,6 +450,7 @@ function showScreen(screenKey) {
     Object.values(screens).forEach(screen => screen.classList.add('hidden'));
     screens[screenKey].classList.remove('hidden');
     window.scrollTo(0, 0);
+    closeMobileMenu();
 }
 
 // Navigation Events
@@ -472,15 +473,24 @@ function updateNavLinksState() {
             navLinks.home.textContent = 'Мої тести';
             navLinks.history.classList.add('hidden');
             navLinks.allTests.classList.remove('hidden');
+            mobileNavLinks.home.textContent = 'Мої тести';
+            mobileNavLinks.history.classList.add('hidden');
+            mobileNavLinks.allTests.classList.remove('hidden');
         } else {
             navLinks.home.textContent = 'Головна';
             navLinks.history.classList.remove('hidden');
             navLinks.allTests.classList.add('hidden');
+            mobileNavLinks.home.textContent = 'Головна';
+            mobileNavLinks.history.classList.remove('hidden');
+            mobileNavLinks.allTests.classList.add('hidden');
         }
     } else {
         navLinks.history.classList.add('hidden');
         navLinks.allTests.classList.add('hidden');
         navLinks.home.textContent = 'Головна';
+        mobileNavLinks.history.classList.add('hidden');
+        mobileNavLinks.allTests.classList.add('hidden');
+        mobileNavLinks.home.textContent = 'Головна';
     }
 }
 
@@ -490,6 +500,35 @@ navLinks.history.addEventListener('click', async (e) => { e.preventDefault(); se
 navLinks.about.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('about'); showScreen('about'); });
 navLinks.support.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('support'); showScreen('support'); });
 document.getElementById('nav-logo').addEventListener('click', goHome);
+
+// --- MOBILE MENU ---
+const mobileMenu = document.getElementById('mobile-menu');
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const mobileNavLinks = {
+    home: document.getElementById('m-home'),
+    allTests: document.getElementById('m-all-tests'),
+    history: document.getElementById('m-history'),
+    about: document.getElementById('m-about'),
+    support: document.getElementById('m-support'),
+};
+function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    hamburgerIcon.innerHTML = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+}
+hamburgerBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    if (isOpen) { closeMobileMenu(); }
+    else {
+        mobileMenu.classList.remove('hidden');
+        hamburgerIcon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>';
+    }
+});
+mobileNavLinks.home.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('home'); goHome(); });
+mobileNavLinks.allTests.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('allTests'); renderPublicTests(); showScreen('publicDashboard'); });
+mobileNavLinks.history.addEventListener('click', async (e) => { e.preventDefault(); setActiveNav('history'); await renderHistory(); showScreen('history'); });
+mobileNavLinks.about.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('about'); showScreen('about'); });
+mobileNavLinks.support.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('support'); showScreen('support'); });
 
 function updateNavProfile() {
     document.getElementById('user-info').textContent = currentUser.name || 'Користувач';
@@ -978,6 +1017,7 @@ async function openTeacherTestDetail(test, source = 'teacherDashboard') {
 
     const footer = newBtnDelete.parentNode;
     footer.style.display = 'flex'; footer.style.gap = '1rem'; footer.style.alignItems = 'center';
+    footer.style.flexWrap = 'wrap';
 
     let btnTake = document.getElementById('btn-detail-take-test');
     if (!btnTake) {

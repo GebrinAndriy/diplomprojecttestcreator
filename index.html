@@ -30,12 +30,16 @@
         </div>
 
         <div class="nav-links" id="nav-auth-section">
+            <!-- Hamburger (mobile only) -->
+            <button id="hamburger-btn" class="hamburger-btn icon-btn" aria-label="Меню">
+                <svg id="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
             <!-- Гостьове меню -->
             <div id="nav-guest-btns" class="hidden">
                 <button id="nav-btn-login" class="text-btn mr-2">Увійти</button>
                 <button id="nav-btn-register" class="primary-btn text-sm">Реєстрація</button>
             </div>
-            
+
             <!-- Меню авторизованого користувача -->
             <div id="nav-user-btns" class="hidden" style="display: flex; align-items: center; gap: 1rem;">
                 <div class="user-profile-trigger" id="nav-profile-btn" title="Мій профіль">
@@ -49,6 +53,15 @@
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+        <a href="#" class="mobile-nav-link" id="m-home">Головна</a>
+        <a href="#" class="mobile-nav-link hidden" id="m-all-tests">Всі тести</a>
+        <a href="#" class="mobile-nav-link hidden" id="m-history">Моя історія</a>
+        <a href="#" class="mobile-nav-link" id="m-about">Про платформу</a>
+        <a href="#" class="mobile-nav-link" id="m-support">Підтримка</a>
+    </div>
 
     <!-- ГОЛОВНА СТОРІНКА (Відкрита вітрина тестів) -->
     <section id="public-dashboard" class="screen active">
