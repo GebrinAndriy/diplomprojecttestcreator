@@ -331,7 +331,8 @@ input:focus, textarea:focus, select:focus {
 /* Auth Layout */
 .auth-layout {
     display: flex;
-    min-height: calc(100vh - var(--nav-height));
+    height: calc(100vh - var(--nav-height));
+    overflow: hidden;
     background: var(--bg-main);
 }
 .auth-image-side { flex: 1; position: relative; display: none; }

@@ -399,10 +399,18 @@ function setActiveNav(activeKey) {
 
 function updateNavLinksState() {
     if (currentUser) {
-        navLinks.history.classList.remove('hidden');
-        navLinks.home.textContent = currentUser.role === 'teacher' ? 'Мої тести' : 'Головна';
+        if (currentUser.role === 'teacher') {
+            navLinks.home.textContent = 'Мої тести';
+            navLinks.history.classList.add('hidden');
+            navLinks.allTests.classList.remove('hidden');
+        } else {
+            navLinks.home.textContent = 'Головна';
+            navLinks.history.classList.remove('hidden');
+            navLinks.allTests.classList.add('hidden');
+        }
     } else {
         navLinks.history.classList.add('hidden');
+        navLinks.allTests.classList.remove('hidden');
         navLinks.home.textContent = 'Головна';
     }
 }
