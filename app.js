@@ -499,6 +499,17 @@ navLinks.allTests.addEventListener('click', (e) => { e.preventDefault(); setActi
 navLinks.history.addEventListener('click', async (e) => { e.preventDefault(); setActiveNav('history'); await renderHistory(); showScreen('history'); });
 navLinks.about.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('about'); showScreen('about'); });
 navLinks.support.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('support'); showScreen('support'); });
+
+// Support form → mailto
+document.getElementById('support-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name    = document.getElementById('support-name').value.trim();
+    const reason  = document.getElementById('support-reason').value;
+    const message = document.getElementById('support-message').value.trim();
+    const subject = encodeURIComponent(`EduTest Pro — ${reason}`);
+    const body    = encodeURIComponent(`Ім'я: ${name}\nПричина: ${reason}\n\n${message}`);
+    window.location.href = `mailto:gebrinandriy@gmail.com?subject=${subject}&body=${body}`;
+});
 document.getElementById('nav-logo').addEventListener('click', goHome);
 
 // --- MOBILE MENU ---
