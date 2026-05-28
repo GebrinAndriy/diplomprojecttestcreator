@@ -346,8 +346,8 @@ input:focus, textarea:focus, select:focus {
 .auth-image-overlay h2 { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.1; letter-spacing: -1px; }
 .auth-image-overlay p { font-size: 1.25rem; font-weight: 300; opacity: 0.9; }
 
-.auth-form-side { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 2rem; overflow-y: auto; }
-.auth-container { width: 100%; max-width: 420px; margin: 0 auto; background: white; padding: 3rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); border: 1px solid rgba(0,0,0,0.02); }
+.auth-form-side { flex: 1; display: flex; flex-direction: column; padding: 2rem; overflow-y: auto; }
+.auth-container { width: 100%; max-width: 420px; margin: auto; background: white; padding: 3rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); border: 1px solid rgba(0,0,0,0.02); }
 .auth-container h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
 .subtitle { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1.05rem; }
 .switch-auth { margin-top: 2rem; text-align: center; color: var(--text-muted); font-size: 0.95rem; }
