@@ -332,8 +332,8 @@ input:focus, textarea:focus, select:focus {
 /* Auth Layout */
 .auth-layout {
     display: flex;
-    height: calc(100vh - var(--nav-height));
-    overflow: hidden;
+    min-height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
     background: var(--bg-main);
 }
 .auth-image-side { flex: 1; position: relative; display: none; }
@@ -610,12 +610,16 @@ main.container:has(.screen:not(.hidden)) { margin: 2.5rem auto; }
     .hero-section { padding: 3rem 1rem; }
     .nav-center-links { display: none; }
     .test-container { padding: 1.5rem; }
-    /* Auth: allow scroll on mobile */
-    .auth-layout { height: auto; min-height: calc(100vh - var(--nav-height)); overflow-y: auto; }
+    /* Auth */
     .auth-form-side { padding: 1.5rem 1rem; justify-content: flex-start; padding-top: 2rem; }
     .auth-container { padding: 2rem 1.5rem; }
     /* Show hamburger on mobile */
     .hamburger-btn { display: flex; }
-    /* Wrap buttons in footer (test detail) */
-    .detail-footer-btns { flex-wrap: wrap !important; justify-content: center !important; }
+    /* Join code banner: full width, centered */
+    .join-code-banner { display: flex; width: 100%; padding: 1.25rem 1rem; box-sizing: border-box; }
+    .join-input-group { width: 100%; justify-content: center; }
+    .join-input-group input { flex: 1; min-width: 0; }
+    /* Detail footer buttons: 2x2 grid */
+    .detail-footer { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0.75rem !important; }
+    .detail-footer button { width: 100% !important; justify-content: center !important; }
 }

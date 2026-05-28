@@ -1016,6 +1016,7 @@ async function openTeacherTestDetail(test, source = 'teacherDashboard') {
     } else { btnPublish.style.display = 'none'; }
 
     const footer = newBtnDelete.parentNode;
+    footer.className = (footer.className || '') + ' detail-footer';
     footer.style.display = 'flex'; footer.style.gap = '1rem'; footer.style.alignItems = 'center';
     footer.style.flexWrap = 'wrap';
 
