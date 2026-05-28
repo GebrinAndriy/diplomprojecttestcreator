@@ -720,6 +720,9 @@ function renderTeacherTests() {
                     <div class="test-card-meta mb-4">
                         <span class="badge badge-primary">${test.questions.length} питань</span>
                         ${test.timeLimit ? `<span class="badge badge-warning ml-2">⏳ ${test.timeLimit} хв</span>` : ''}
+                        <span class="badge ml-2" style="background:${test.isPublic ? 'var(--success-light,#d1fae5)' : 'var(--bg-main)'}; color:${test.isPublic ? 'var(--success)' : 'var(--text-muted)'}; border:1px solid ${test.isPublic ? 'var(--success)' : 'var(--border-light)'};">
+                            ${test.isPublic ? '🌐 Публічний' : '🔒 Приватний'}
+                        </span>
                     </div>
                 </div>
                 <div class="border-top pt-3 mt-auto text-center">
@@ -802,6 +805,34 @@ async function openTeacherTestDetail(test, source = 'teacherDashboard') {
         btnEdit.parentNode.replaceChild(newBtnEdit, btnEdit);
         newBtnEdit.addEventListener('click', () => openTestEditor(test.id));
     } else { btnEdit.style.display = 'none'; }
+
+    // Publish / Unpublish button
+    let btnPublish = document.getElementById('btn-detail-publish');
+    if (!btnPublish) {
+        btnPublish = document.createElement('button');
+        btnPublish.id = 'btn-detail-publish';
+        newBtnDelete.parentNode.insertBefore(btnPublish, newBtnDelete);
+    }
+    if (isOwner) {
+        const isPublished = test.isPublic === true;
+        btnPublish.style.display = 'inline-flex';
+        btnPublish.className = isPublished ? 'secondary-btn' : 'primary-btn';
+        btnPublish.style.background = isPublished ? '' : 'var(--success)';
+        btnPublish.style.borderColor = isPublished ? 'var(--error)' : '';
+        btnPublish.style.color = isPublished ? 'var(--error)' : '';
+        btnPublish.textContent = isPublished ? 'Зняти з публікації' : 'Опублікувати';
+        const newBtnPublish = btnPublish.cloneNode(true);
+        btnPublish.parentNode.replaceChild(newBtnPublish, btnPublish);
+        newBtnPublish.addEventListener('click', async () => {
+            const newState = !test.isPublic;
+            const { error } = await db.from('tests').update({ is_public: newState }).eq('id', test.id);
+            if (error) { showToast('Помилка оновлення', 'error'); return; }
+            await loadTests();
+            showToast(newState ? 'Тест опубліковано! Він тепер видний усім.' : 'Тест знято з публікації.');
+            const refreshed = testsCache.find(t => t.id === test.id);
+            if (refreshed) await openTeacherTestDetail(refreshed, source);
+        });
+    } else { btnPublish.style.display = 'none'; }
 
     const footer = newBtnDelete.parentNode;
     footer.style.display = 'flex'; footer.style.gap = '1rem'; footer.style.alignItems = 'center';
