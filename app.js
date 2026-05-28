@@ -359,6 +359,12 @@ const screens = {
 
 // --- ROUTING / INIT ---
 async function init() {
+    // Ensure a Supabase session exists (needed for DB access with publishable key)
+    const { data: { session } } = await db.auth.getSession();
+    if (!session) {
+        await db.auth.signInAnonymously();
+    }
+
     await seedInitialData();
     await loadTests();
     await loadUsers();
