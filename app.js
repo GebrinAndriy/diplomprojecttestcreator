@@ -131,9 +131,77 @@ async function saveResult(testId, testTitle, authorId, joinCode, score, total, p
         author_id: authorId,
         join_code: joinCode,
         score, total, percentage,
-        time_taken: timeTakenStr
+        time_taken: timeTakenStr,
+        group_id: currentGroupId || null,
+        group_name: currentGroupName || null
     });
     if (error) console.error('saveResult:', error);
+}
+
+async function renderGroupsSection(testId, isOwner) {
+    const section = document.getElementById('detail-groups-section');
+    if (!isOwner) { section.classList.add('hidden'); return; }
+    section.classList.remove('hidden');
+
+    const { data: groups } = await db.from('groups').select('*').eq('test_id', testId).order('created_at', { ascending: true });
+    const list = document.getElementById('detail-groups-list');
+    list.innerHTML = '';
+
+    if (!groups || groups.length === 0) {
+        list.innerHTML = '<p class="text-muted text-sm">Груп ще немає. Додайте групу — кожна отримає свій унікальний код.</p>';
+    } else {
+        groups.forEach(g => {
+            const card = document.createElement('div');
+            card.className = 'history-card flex-between mb-2';
+            card.innerHTML = `
+                <div>
+                    <div class="font-medium">${g.group_name}</div>
+                    <div class="text-sm text-muted mt-1" style="display:flex;align-items:center;gap:0.5rem;">
+                        Код групи:
+                        <span style="font-family:monospace;letter-spacing:2px;font-weight:700;color:var(--primary);font-size:1rem;">${g.join_code}</span>
+                        <button class="text-btn text-primary btn-copy-code" data-code="${g.join_code}" style="font-size:0.8rem;">📋 Копіювати</button>
+                    </div>
+                </div>
+                <button class="icon-btn text-error btn-delete-group" data-id="${g.id}" title="Видалити групу">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14H6L5 6"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                </button>`;
+            list.appendChild(card);
+        });
+        list.querySelectorAll('.btn-copy-code').forEach(btn => {
+            btn.addEventListener('click', () => { navigator.clipboard?.writeText(btn.dataset.code); showToast('Код скопійовано!'); });
+        });
+        list.querySelectorAll('.btn-delete-group').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                if (!confirm('Видалити групу?')) return;
+                await db.from('groups').delete().eq('id', btn.dataset.id);
+                await renderGroupsSection(testId, isOwner);
+                showToast('Групу видалено');
+            });
+        });
+    }
+
+    const btnAdd = document.getElementById('btn-add-group');
+    const newBtnAdd = btnAdd.cloneNode(true);
+    btnAdd.parentNode.replaceChild(newBtnAdd, btnAdd);
+    newBtnAdd.addEventListener('click', () => {
+        document.getElementById('group-add-form').classList.remove('hidden');
+        document.getElementById('group-name-input').focus();
+    });
+    document.getElementById('btn-cancel-add-group').onclick = () => {
+        document.getElementById('group-add-form').classList.add('hidden');
+        document.getElementById('group-name-input').value = '';
+    };
+    document.getElementById('btn-confirm-add-group').onclick = async () => {
+        const name = document.getElementById('group-name-input').value.trim();
+        if (!name) { showToast('Введіть назву групи', 'error'); return; }
+        const code = generateJoinCode();
+        const { error } = await db.from('groups').insert({ test_id: testId, teacher_id: currentUser.id, group_name: name, join_code: code });
+        if (error) { showToast('Помилка створення групи', 'error'); return; }
+        document.getElementById('group-add-form').classList.add('hidden');
+        document.getElementById('group-name-input').value = '';
+        await renderGroupsSection(testId, isOwner);
+        showToast(`Групу "${name}" створено! Код: ${code}`);
+    };
 }
 
 // --- INITIAL TEST DATA ---
@@ -449,10 +517,24 @@ document.getElementById('nav-btn-register').addEventListener('click', () => { sh
 // Join Code Logic
 const globalJoinCodeInput = document.getElementById('global-join-code');
 globalJoinCodeInput.addEventListener('input', function () { this.value = this.value.toUpperCase().replace(/[^A-Z0-9]/g, '').substring(0, 6); });
-document.getElementById('btn-global-join').addEventListener('click', () => {
+document.getElementById('btn-global-join').addEventListener('click', async () => {
     const code = globalJoinCodeInput.value;
     if (code.length < 6) { showToast('Код має складатись з 6 символів', 'error'); return; }
     if (!currentUser) { showToast('Для проходження тесту за кодом необхідно увійти.', 'error'); showScreen('auth'); return; }
+
+    // Check group codes first
+    const { data: groupData } = await db.from('groups').select('*').eq('join_code', code).limit(1);
+    if (groupData && groupData.length > 0) {
+        const group = groupData[0];
+        currentGroupId = group.id;
+        currentGroupName = group.group_name;
+        globalJoinCodeInput.value = '';
+        startTest(group.test_id);
+        return;
+    }
+
+    // Check regular test codes
+    currentGroupId = null; currentGroupName = null;
     const test = getTests().find(t => t.joinCode === code);
     if (test) { globalJoinCodeInput.value = ''; startTest(test.id); }
     else { showToast('Тест з таким кодом не знайдено', 'error'); }
@@ -761,28 +843,67 @@ async function openTeacherTestDetail(test, source = 'teacherDashboard') {
     });
 
     // Student Results
+    const resultsHeading = document.getElementById('detail-results-list').previousElementSibling;
+    const filterDiv = document.getElementById('detail-results-filter');
     if (!isOwner) {
-        document.getElementById('detail-results-list').previousElementSibling.style.display = 'none';
+        resultsHeading.style.display = 'none';
         document.getElementById('detail-results-list').style.display = 'none';
+        filterDiv.classList.add('hidden');
     } else {
-        document.getElementById('detail-results-list').previousElementSibling.style.display = 'block';
+        resultsHeading.style.display = 'block';
         document.getElementById('detail-results-list').style.display = 'block';
         const resultsList = document.getElementById('detail-results-list');
         resultsList.innerHTML = '<div class="center-text text-muted p-4">Завантаження...</div>';
+        filterDiv.innerHTML = '';
+
         const { data: testResults } = await db.from('history').select('*').eq('test_id', test.id).order('date', { ascending: false });
-        if (!testResults || testResults.length === 0) {
-            resultsList.innerHTML = '<div class="center-text text-muted p-4 border-light" style="border-radius: var(--radius-md); border: 1px dashed var(--border-light);">Ще ніхто не проходив цей тест.</div>';
-        } else {
-            let tableHtml = `<table class="results-table"><thead><tr><th>Студент</th><th>Результат</th><th>Час</th><th>Дата</th></tr></thead><tbody>`;
-            testResults.forEach(r => {
+
+        const renderTable = (rows) => {
+            if (!rows || rows.length === 0) {
+                resultsList.innerHTML = '<div class="center-text text-muted p-4 border-light" style="border-radius:var(--radius-md);border:1px dashed var(--border-light);">Результатів не знайдено.</div>';
+                return;
+            }
+            let html = `<table class="results-table"><thead><tr><th>Студент</th><th>Результат</th><th>Час</th><th>Дата</th></tr></thead><tbody>`;
+            rows.forEach(r => {
                 const date = new Date(r.date).toLocaleString('uk-UA');
-                let scoreClass = r.percentage >= 80 ? 'text-success font-bold' : (r.percentage >= 50 ? 'text-warning font-bold' : 'text-error font-bold');
-                tableHtml += `<tr><td>${r.user_name || 'Студент'}</td><td class="${scoreClass}">${r.percentage}% (${r.score}/${r.total})</td><td>${r.time_taken || 'Н/Д'}</td><td class="text-sm text-muted">${date}</td></tr>`;
+                let sc = r.percentage >= 80 ? 'text-success font-bold' : (r.percentage >= 50 ? 'text-warning font-bold' : 'text-error font-bold');
+                html += `<tr><td>${r.user_name || 'Студент'}</td><td class="${sc}">${r.percentage}% (${r.score}/${r.total})</td><td>${r.time_taken || 'Н/Д'}</td><td class="text-sm text-muted">${date}</td></tr>`;
             });
-            tableHtml += `</tbody></table>`;
-            resultsList.innerHTML = tableHtml;
+            html += '</tbody></table>';
+            resultsList.innerHTML = html;
+        };
+
+        if (!testResults || testResults.length === 0) {
+            filterDiv.classList.add('hidden');
+            resultsList.innerHTML = '<div class="center-text text-muted p-4 border-light" style="border-radius:var(--radius-md);border:1px dashed var(--border-light);">Ще ніхто не проходив цей тест.</div>';
+        } else {
+            const groupNames = [...new Set(testResults.filter(r => r.group_name).map(r => r.group_name))];
+            if (groupNames.length > 0) {
+                filterDiv.classList.remove('hidden');
+                const hasNoGroup = testResults.some(r => !r.group_name);
+                filterDiv.innerHTML = `<div class="group-filter-tabs">
+                    <button class="group-tab active" data-g="all">Всі (${testResults.length})</button>
+                    ${groupNames.map(g => `<button class="group-tab" data-g="${g}">${g} (${testResults.filter(r => r.group_name === g).length})</button>`).join('')}
+                    ${hasNoGroup ? `<button class="group-tab" data-g="__none__">Без групи (${testResults.filter(r => !r.group_name).length})</button>` : ''}
+                </div>`;
+                filterDiv.querySelectorAll('.group-tab').forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        filterDiv.querySelectorAll('.group-tab').forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+                        const g = tab.dataset.g;
+                        if (g === 'all') renderTable(testResults);
+                        else if (g === '__none__') renderTable(testResults.filter(r => !r.group_name));
+                        else renderTable(testResults.filter(r => r.group_name === g));
+                    });
+                });
+            } else {
+                filterDiv.classList.add('hidden');
+            }
+            renderTable(testResults);
         }
     }
+
+    await renderGroupsSection(test.id, isOwner);
 
     const btnDelete = document.getElementById('btn-detail-delete');
     const newBtnDelete = btnDelete.cloneNode(true);
@@ -1009,6 +1130,7 @@ async function cloneTest(testId) {
 
 // --- TEST TAKER MODULE ---
 let currentTakingTest = null; let currentQuestionIndex = 0; let userAnswers = []; let timerInterval = null; let timeLeftSeconds = 0; let testStartTime = null;
+let currentGroupId = null; let currentGroupName = null;
 
 function startTest(testId) {
     const tests = getTests(); currentTakingTest = tests.find(t => t.id === testId);

@@ -374,12 +374,29 @@
                     <span class="badge badge-warning" id="detail-test-timer">Без таймера</span>
                 </div>
 
+                <!-- Групи (тільки для власника) -->
+                <div id="detail-groups-section" class="mb-6 hidden">
+                    <div class="flex-between mb-3">
+                        <h3>Групи</h3>
+                        <button id="btn-add-group" class="secondary-btn text-sm">+ Додати групу</button>
+                    </div>
+                    <div id="detail-groups-list"></div>
+                    <div id="group-add-form" class="hidden mt-3 p-3" style="background:var(--bg-main);border-radius:var(--radius-md);">
+                        <div class="flex-align-center" style="gap:0.75rem;flex-wrap:wrap;">
+                            <input type="text" id="group-name-input" placeholder="Назва групи (напр. РПЗ-21, ІПЗ 3 курс)" class="form-input" style="flex:1;min-width:200px;">
+                            <button id="btn-confirm-add-group" class="primary-btn">Створити групу</button>
+                            <button id="btn-cancel-add-group" class="secondary-btn">Скасувати</button>
+                        </div>
+                    </div>
+                </div>
+
                 <h3 class="mb-4">Питання у тесті:</h3>
                 <div id="detail-questions-list" class="history-list mb-6">
                     <!-- Питання детально -->
                 </div>
 
                 <h3 class="mb-4">Результати студентів:</h3>
+                <div id="detail-results-filter" class="hidden"></div>
                 <div id="detail-results-list" class="results-table-container">
                     <!-- Статистика студентів -->
                 </div>
