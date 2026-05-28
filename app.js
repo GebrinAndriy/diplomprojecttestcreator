@@ -867,9 +867,15 @@ async function openTeacherTestDetail(test, source = 'teacherDashboard') {
     document.getElementById('detail-test-timer').textContent = test.timeLimit ? `${test.timeLimit} хвилин` : 'Без таймера';
     const list = document.getElementById('detail-questions-list');
     list.innerHTML = '';
+    const PREVIEW_COUNT = 5;
+    const totalQ = test.questions.length;
+
     test.questions.forEach((q, idx) => {
         const d = document.createElement('div'); d.className = 'history-card flex-between mb-2';
         d.style.alignItems = 'flex-start'; d.style.flexDirection = 'column';
+        if (totalQ > PREVIEW_COUNT && idx >= PREVIEW_COUNT) {
+            d.classList.add('q-extra'); d.style.display = 'none';
+        }
         let ansHtml = '';
         if (q.type === 'text') {
             ansHtml = `<span class="text-success font-medium">Відповідь: ${q.correctText}</span>`;
@@ -881,6 +887,19 @@ async function openTeacherTestDetail(test, source = 'teacherDashboard') {
         d.innerHTML = `<div class="font-medium mb-1">${idx + 1}. ${q.text}</div><div class="text-sm">${ansHtml}</div>${imgBadge}`;
         list.appendChild(d);
     });
+
+    if (totalQ > PREVIEW_COUNT) {
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'secondary-btn full-width mt-2';
+        toggleBtn.textContent = `↓ Показати всі ${totalQ} питань`;
+        let expanded = false;
+        toggleBtn.addEventListener('click', () => {
+            expanded = !expanded;
+            list.querySelectorAll('.q-extra').forEach(el => { el.style.display = expanded ? 'flex' : 'none'; });
+            toggleBtn.textContent = expanded ? `↑ Згорнути (перші ${PREVIEW_COUNT} з ${totalQ})` : `↓ Показати всі ${totalQ} питань`;
+        });
+        list.appendChild(toggleBtn);
+    }
 
     // Student Results
     const resultsHeading = document.getElementById('detail-results-list').previousElementSibling;
