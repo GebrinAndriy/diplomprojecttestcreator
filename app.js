@@ -869,7 +869,10 @@ async function openTeacherTestDetail(test, source = 'teacherDashboard') {
                 const date = new Date(r.date).toLocaleString('uk-UA');
                 let sc = r.percentage >= 80 ? 'text-success font-bold' : (r.percentage >= 50 ? 'text-warning font-bold' : 'text-error font-bold');
                 html += `<tr>
-                    <td>${r.user_name || 'Студент'}</td>
+                    <td>
+                        ${r.user_name || 'Студент'}
+                        ${r.group_name ? `<span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;background:var(--primary-light,#ede9fe);color:var(--primary);font-size:0.75rem;font-weight:600;">${r.group_name}</span>` : `<span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;background:var(--bg-main);color:var(--text-muted);font-size:0.75rem;border:1px solid var(--border-light);">Без групи</span>`}
+                    </td>
                     <td class="${sc}">${r.percentage}% (${r.score}/${r.total})</td>
                     <td>${r.time_taken || 'Н/Д'}</td>
                     <td class="text-sm text-muted">${date}</td>
