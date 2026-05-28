@@ -863,14 +863,31 @@ async function openTeacherTestDetail(test, source = 'teacherDashboard') {
                 resultsList.innerHTML = '<div class="center-text text-muted p-4 border-light" style="border-radius:var(--radius-md);border:1px dashed var(--border-light);">Результатів не знайдено.</div>';
                 return;
             }
-            let html = `<table class="results-table"><thead><tr><th>Студент</th><th>Результат</th><th>Час</th><th>Дата</th></tr></thead><tbody>`;
+            let html = `<table class="results-table"><thead><tr><th>Студент</th><th>Результат</th><th>Час</th><th>Дата</th><th></th></tr></thead><tbody>`;
             rows.forEach(r => {
                 const date = new Date(r.date).toLocaleString('uk-UA');
                 let sc = r.percentage >= 80 ? 'text-success font-bold' : (r.percentage >= 50 ? 'text-warning font-bold' : 'text-error font-bold');
-                html += `<tr><td>${r.user_name || 'Студент'}</td><td class="${sc}">${r.percentage}% (${r.score}/${r.total})</td><td>${r.time_taken || 'Н/Д'}</td><td class="text-sm text-muted">${date}</td></tr>`;
+                html += `<tr>
+                    <td>${r.user_name || 'Студент'}</td>
+                    <td class="${sc}">${r.percentage}% (${r.score}/${r.total})</td>
+                    <td>${r.time_taken || 'Н/Д'}</td>
+                    <td class="text-sm text-muted">${date}</td>
+                    <td><button class="icon-btn text-error btn-delete-result" data-id="${r.id}" title="Видалити результат (студент зможе пройти знову)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14H6L5 6"></path></svg>
+                    </button></td>
+                </tr>`;
             });
             html += '</tbody></table>';
             resultsList.innerHTML = html;
+            resultsList.querySelectorAll('.btn-delete-result').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    if (!confirm('Видалити результат студента? Він зможе пройти тест ще раз.')) return;
+                    const { error } = await db.from('history').delete().eq('id', btn.dataset.id);
+                    if (error) { showToast('Помилка видалення', 'error'); return; }
+                    showToast('Результат видалено. Студент може пройти тест знову.');
+                    await openTeacherTestDetail(test, source);
+                });
+            });
         };
 
         if (!testResults || testResults.length === 0) {
@@ -1132,7 +1149,14 @@ async function cloneTest(testId) {
 let currentTakingTest = null; let currentQuestionIndex = 0; let userAnswers = []; let timerInterval = null; let timeLeftSeconds = 0; let testStartTime = null;
 let currentGroupId = null; let currentGroupName = null;
 
-function startTest(testId) {
+async function startTest(testId) {
+    if (currentUser && currentUser.role === 'student') {
+        const { data: existing } = await db.from('history').select('id').eq('test_id', testId).eq('user_id', currentUser.id).limit(1);
+        if (existing && existing.length > 0) {
+            showToast('Ви вже проходили цей тест. Зверніться до викладача для видалення результату.', 'error');
+            return;
+        }
+    }
     const tests = getTests(); currentTakingTest = tests.find(t => t.id === testId);
     currentQuestionIndex = 0; userAnswers = currentTakingTest.questions.map(() => null);
     testStartTime = Date.now();
