@@ -49,7 +49,10 @@ body {
     min-height: 100vh;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
 }
+main { flex: 1; }
 
 /* Utilities */
 .hidden { display: none !important; }
