@@ -153,8 +153,9 @@ async function renderGroupsSection(testId, isOwner) {
         groups.forEach(g => {
             const card = document.createElement('div');
             card.className = 'history-card flex-between mb-2';
+            card.style.alignItems = 'flex-start';
             card.innerHTML = `
-                <div>
+                <div style="padding-bottom:0.25rem;">
                     <div class="font-medium">${g.group_name}</div>
                     <div class="text-sm text-muted mt-1" style="display:flex;align-items:center;gap:0.5rem;">
                         Код групи:
