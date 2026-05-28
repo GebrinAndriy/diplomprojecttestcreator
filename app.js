@@ -33,7 +33,7 @@ function fileToBase64(file) {
 const { createClient } = window.supabase;
 const db = createClient(
     'https://ofoqwqnrknlhjnzwpzac.supabase.co',
-    'sb_publishable_zfjFz0E4tXok3TzmPM-QSw_y3GdnDCi'
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9mb3F3cW5ya25saGpuendwemFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5MjEwMjgsImV4cCI6MjA5NTQ5NzAyOH0.OH2E92cPmmzlHpf0aB4ZLe2qMO5G0Lr_l5V1ZH0rh4k'
 );
 
 const SESSION_KEY = 'eduTestPro_currentUser';
@@ -359,12 +359,6 @@ const screens = {
 
 // --- ROUTING / INIT ---
 async function init() {
-    // Ensure a Supabase session exists (needed for DB access with publishable key)
-    const { data: { session } } = await db.auth.getSession();
-    if (!session) {
-        await db.auth.signInAnonymously();
-    }
-
     await seedInitialData();
     await loadTests();
     await loadUsers();
