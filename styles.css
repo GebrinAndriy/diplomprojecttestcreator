@@ -280,13 +280,14 @@ input:focus, textarea:focus, select:focus {
     border-bottom: 1px solid rgba(0,0,0,0.05);
     height: var(--nav-height);
     padding: 0 5%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
 }
+#nav-auth-section { justify-self: end; }
 
 .logo { display: flex; align-items: center; gap: 0.75rem; }
 .logo-image { height: 36px; border-radius: 6px; }
@@ -427,7 +428,7 @@ main.container:has(.screen:not(.hidden)) { margin: 2.5rem auto; }
     margin-top: 2rem;
     border: 1px solid rgba(0,0,0,0.02);
 }
-.join-input-group { display: flex; gap: 0.75rem; margin-top: 0.75rem; }
+.join-input-group { display: flex; gap: 0.75rem; margin-top: 0.75rem; margin-bottom: 0.5rem; }
 .join-input-group input { text-align: center; font-family: 'Inter', monospace; letter-spacing: 3px; text-transform: uppercase; width: 160px; font-weight: 600; font-size: 1.2rem; }
 
 /* Headers */

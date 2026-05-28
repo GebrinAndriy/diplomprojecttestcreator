@@ -478,7 +478,7 @@ function updateNavLinksState() {
         }
     } else {
         navLinks.history.classList.add('hidden');
-        navLinks.allTests.classList.remove('hidden');
+        navLinks.allTests.classList.add('hidden');
         navLinks.home.textContent = 'Головна';
     }
 }
