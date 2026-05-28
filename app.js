@@ -760,7 +760,7 @@ document.getElementById('btn-create-test').addEventListener('click', () => {
     addQuestionToBuilder(); updateQuestionCount(); showScreen('testCreator');
 });
 
-function openTestEditor(testId) {
+function openTestEditor(testId, focusQuestionIdx = -1) {
     const test = getTests().find(t => t.id === testId);
     if (!test) return;
     editingTestId = testId;
@@ -780,10 +780,13 @@ function openTestEditor(testId) {
         document.getElementById('test-image-preview').classList.add('hidden');
     }
     test.questions.forEach(q => {
-        addQuestionToBuilder();
+        addQuestionToBuilder(true); // collapsed by default when loading
         const qCards = document.getElementById('questions-list').querySelectorAll('.question-card');
         const qCard = qCards[qCards.length - 1];
         qCard.querySelector('.q-text').value = q.text;
+        // Update preview text
+        const preview = qCard.querySelector('.q-preview-text');
+        if (preview && q.text) preview.textContent = '— ' + q.text.substring(0, 40) + (q.text.length > 40 ? '…' : '');
         const typeSelect = qCard.querySelector('.q-type-select');
         typeSelect.value = q.type; typeSelect.dispatchEvent(new Event('change'));
         if (q.image) {
@@ -806,6 +809,16 @@ function openTestEditor(testId) {
         }
     });
     updateQuestionNumbers(); updateQuestionCount(); showScreen('testCreator');
+    // Expand and scroll to specific question if requested
+    if (focusQuestionIdx >= 0) {
+        setTimeout(() => {
+            const qCards = document.getElementById('questions-list').querySelectorAll('.question-card');
+            if (qCards[focusQuestionIdx]) {
+                toggleQuestionCard(qCards[focusQuestionIdx], true);
+                qCards[focusQuestionIdx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 150);
+    }
 }
 
 document.getElementById('test-image-file').addEventListener('change', async (e) => {
@@ -884,9 +897,20 @@ async function openTeacherTestDetail(test, source = 'teacherDashboard') {
             ansHtml = `<span class="text-success font-medium">Правильні: "${correctOpts}"</span>`;
         }
         let imgBadge = q.image ? `<span class="badge badge-primary mt-2">Має зображення</span>` : '';
-        d.innerHTML = `<div class="font-medium mb-1">${idx + 1}. ${q.text}</div><div class="text-sm">${ansHtml}</div>${imgBadge}`;
+        const editPencil = isOwner ? `<button class="icon-btn text-primary btn-edit-q" data-idx="${idx}" title="Редагувати це питання" style="align-self:flex-end;margin-top:0.25rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>` : '';
+        d.innerHTML = `<div style="width:100%;display:flex;justify-content:space-between;align-items:flex-start;"><div><div class="font-medium mb-1">${idx + 1}. ${q.text}</div><div class="text-sm">${ansHtml}</div>${imgBadge}</div>${editPencil}</div>`;
         list.appendChild(d);
     });
+
+    // Bind pencil edit buttons
+    if (isOwner) {
+        list.querySelectorAll('.btn-edit-q').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openTestEditor(test.id, parseInt(btn.dataset.idx));
+            });
+        });
+    }
 
     if (totalQ > PREVIEW_COUNT) {
         const toggleBtn = document.createElement('button');
@@ -1084,13 +1108,35 @@ async function openTeacherTestDetail(test, source = 'teacherDashboard') {
 
 function updateQuestionCount() { document.getElementById('question-count-badge').textContent = `${document.getElementById('questions-list').children.length} питань`; }
 
-function addQuestionToBuilder() {
+function toggleQuestionCard(qCard, forceExpand) {
+    const body = qCard.querySelector('.q-body');
+    const chevron = qCard.querySelector('.q-chevron');
+    const isExpanded = typeof forceExpand === 'boolean' ? !forceExpand : !body.classList.contains('hidden');
+    body.classList.toggle('hidden', isExpanded);
+    if (chevron) chevron.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
+}
+
+function addQuestionToBuilder(startCollapsed = false) {
     const qNode = document.getElementById('question-template').content.cloneNode(true);
     const qCard = qNode.querySelector('.question-card');
     const optionsContainer = qCard.querySelector('.options-container');
     const typeSelect = qCard.querySelector('.q-type-select');
     const optionsBuilder = qCard.querySelector('.options-builder');
     const textBuilder = qCard.querySelector('.text-answer-builder');
+
+    // Toggle collapse on header click
+    qCard.querySelector('.q-toggle-header').addEventListener('click', (e) => {
+        if (e.target.closest('.btn-remove-question')) return;
+        toggleQuestionCard(qCard);
+    });
+
+    // Update preview text when question text changes
+    const qTextInput = qCard.querySelector('.q-text');
+    qTextInput.addEventListener('input', () => {
+        const preview = qCard.querySelector('.q-preview-text');
+        if (preview) preview.textContent = qTextInput.value ? '— ' + qTextInput.value.substring(0, 40) + (qTextInput.value.length > 40 ? '…' : '') : '';
+    });
+
     typeSelect.addEventListener('change', (e) => {
         if (e.target.value === 'text') { optionsBuilder.classList.add('hidden'); textBuilder.classList.remove('hidden'); }
         else { optionsBuilder.classList.remove('hidden'); textBuilder.classList.add('hidden'); }
@@ -1113,6 +1159,18 @@ function addQuestionToBuilder() {
     qCard.querySelector('.btn-remove-question').addEventListener('click', () => { qCard.remove(); updateQuestionNumbers(); updateQuestionCount(); });
     qCard.querySelector('.btn-add-option').addEventListener('click', () => addOptionToQuestion(optionsContainer));
     document.getElementById('questions-list').appendChild(qCard);
+
+    // New questions start expanded; loaded questions start collapsed
+    if (startCollapsed) {
+        const body = qCard.querySelector('.q-body');
+        const chevron = qCard.querySelector('.q-chevron');
+        body.classList.add('hidden');
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
+    } else {
+        const chevron = qCard.querySelector('.q-chevron');
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+    }
+
     updateQuestionNumbers(); updateQuestionCount();
 }
 
