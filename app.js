@@ -786,7 +786,7 @@ function openTestEditor(testId, focusQuestionIdx = -1) {
         qCard.querySelector('.q-text').value = q.text;
         // Update preview text
         const preview = qCard.querySelector('.q-preview-text');
-        if (preview && q.text) preview.textContent = '— ' + q.text.substring(0, 40) + (q.text.length > 40 ? '…' : '');
+        if (preview) preview.textContent = q.text || 'Нове питання...';
         const typeSelect = qCard.querySelector('.q-type-select');
         typeSelect.value = q.type; typeSelect.dispatchEvent(new Event('change'));
         if (q.image) {
@@ -1134,7 +1134,7 @@ function addQuestionToBuilder(startCollapsed = false) {
     const qTextInput = qCard.querySelector('.q-text');
     qTextInput.addEventListener('input', () => {
         const preview = qCard.querySelector('.q-preview-text');
-        if (preview) preview.textContent = qTextInput.value ? '— ' + qTextInput.value.substring(0, 40) + (qTextInput.value.length > 40 ? '…' : '') : '';
+        if (preview) preview.textContent = qTextInput.value || 'Нове питання...';
     });
 
     typeSelect.addEventListener('change', (e) => {
