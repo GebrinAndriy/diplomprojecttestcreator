@@ -461,7 +461,7 @@ main.container:has(.screen:not(.hidden)) { margin: 2.5rem auto; }
 .results-table td { font-size: 0.95rem; }
 
 /* Grid Layout for Tests */
-.tests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+.tests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; padding-bottom: 2.5rem; }
 .test-card {
     background: white;
     border: 1px solid var(--border-light);
