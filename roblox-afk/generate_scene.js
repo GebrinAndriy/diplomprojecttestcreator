@@ -31,10 +31,10 @@ const SPAWN = C(60, 200, 255);
 
 // ЗОНИ (синхронно з GameConfig.lua)
 const ZONES = [
-  { name: "Старт",        pos: [0, 1, -40],   radius: 10, color: [70, 255, 160] },
-  { name: "Срібна зона",  pos: [48, 1, -40],  radius: 10, color: [150, 200, 255] },
-  { name: "Золота зона",  pos: [-48, 1, -40], radius: 10, color: [255, 205, 70] },
-  { name: "Алмазна зона", pos: [0, 1, -98],   radius: 12, color: [120, 255, 240] },
+  { name: "Старт",        pos: [0, 1, -48],   radius: 10, color: [120, 220, 255] },
+  { name: "Срібна зона",  pos: [72, 1, -52],  radius: 10, color: [150, 200, 255] },
+  { name: "Золота зона",  pos: [-72, 1, -52], radius: 10, color: [255, 205, 70] },
+  { name: "Алмазна зона", pos: [0, 1, -126],  radius: 12, color: [120, 255, 240] },
 ];
 
 function part(className, name, props, children) {
@@ -94,7 +94,7 @@ function buildZone(zone, index) {
 // ===== Підлога з неоновою рамкою =====
 function buildFloor() {
   const kids = [];
-  const cx = 0, cz = -52, W = 190, D = 175;
+  const cx = 0, cz = -58, W = 210, D = 185;
 
   kids.push(P("FloorBase", {
     Size: [W, 1, D], CFrame: cf(cx, 0, cz),
@@ -215,16 +215,16 @@ ZONES.forEach((z, i) => children.push(buildPath(z, i + 1)));
 
 // ліхтарі по периметру підлоги
 const lampSpots = [
-  [-82, 28], [82, 28], [-82, -132], [82, -132],
-  [-82, -52], [82, -52], [-30, 30], [30, 30],
+  [-95, 28], [95, 28], [-95, -148], [95, -148],
+  [-95, -60], [95, -60], [-35, 32], [35, 32],
 ];
 lampSpots.forEach((p, i) => children.push(buildLamp(p[0], p[1], i + 1)));
 
 // літаючі острови на фоні (для глибини й краси)
-children.push(buildIsland(130, 24, -30, [255, 120, 200], 1.3, 1));
-children.push(buildIsland(-130, 34, -90, [120, 255, 200], 1.1, 2));
-children.push(buildIsland(70, 46, -165, [255, 210, 90], 1.0, 3));
-children.push(buildIsland(-95, 20, 30, [120, 200, 255], 0.9, 4));
+children.push(buildIsland(145, 24, -40, [255, 120, 200], 1.3, 1));
+children.push(buildIsland(-145, 34, -95, [120, 255, 200], 1.1, 2));
+children.push(buildIsland(85, 46, -180, [255, 210, 90], 1.0, 3));
+children.push(buildIsland(-125, 20, 45, [120, 200, 255], 0.9, 4));
 
 children.push(buildSpawnDecor());
 

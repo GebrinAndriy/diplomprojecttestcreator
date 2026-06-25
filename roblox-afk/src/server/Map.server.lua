@@ -101,6 +101,7 @@ for i, zone in ipairs(GameConfig.ZONES) do
 		local billboard = Instance.new("BillboardGui")
 		billboard.Size = UDim2.new(0, 320, 0, 110)
 		billboard.AlwaysOnTop = true
+		billboard.MaxDistance = 75 -- показувати тільки зблизька (щоб не накладались)
 		billboard.Parent = sign
 
 		local title = Instance.new("TextLabel")
@@ -118,7 +119,7 @@ for i, zone in ipairs(GameConfig.ZONES) do
 		subtitle.Size = UDim2.new(1, 0, 0.45, 0)
 		subtitle.BackgroundTransparency = 1
 		subtitle.Font = Enum.Font.GothamMedium
-		subtitle.Text = "+" .. zone.bonus .. " монет/сек"
+		subtitle.Text = "+" .. zone.bonus .. " аури/сек"
 		subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 		subtitle.TextScaled = true
 		subtitle.TextStrokeTransparency = 0.4
