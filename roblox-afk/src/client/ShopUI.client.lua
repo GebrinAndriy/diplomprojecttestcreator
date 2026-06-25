@@ -17,6 +17,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 
 local GameConfig = require(ReplicatedStorage:WaitForChild("GameConfig"))
 local CUR = GameConfig.CURRENCY
+local CUR_ICON = "🔮" -- іконка валюти (емодзі, що точно рендериться)
 local remotes = ReplicatedStorage:WaitForChild("Remotes")
 local buyUpgrade = remotes:WaitForChild("BuyUpgrade")
 local achUnlocked = remotes:WaitForChild("AchievementUnlocked")
@@ -117,7 +118,7 @@ local iconText = Instance.new("TextLabel")
 iconText.Size = UDim2.new(1, 0, 1, 0)
 iconText.BackgroundTransparency = 1
 iconText.Font = Enum.Font.FredokaOne
-iconText.Text = "✦"
+iconText.Text = CUR_ICON
 iconText.TextColor3 = WHITE
 iconText.TextSize = 26
 iconText.Parent = icon
@@ -346,7 +347,7 @@ local function makePanel(titleText)
 	close.Size = UDim2.new(0, 38, 0, 38)
 	close.Position = UDim2.new(1, -48, 0, 12)
 	close.BackgroundColor3 = RED
-	close.Text = "✕"
+	close.Text = "X"
 	close.Font = Enum.Font.GothamBold
 	close.TextSize = 20
 	close.TextColor3 = WHITE
@@ -472,7 +473,7 @@ local function refreshShop()
 			btn.BackgroundColor3 = GREEN
 			btn.AutoButtonColor = false
 		elseif isNext then
-			btn.Text = "✦ " .. fmt(upg.cost)
+			btn.Text = CUR_ICON .. " " .. fmt(upg.cost)
 			local canAfford = aura >= upg.cost
 			btn.BackgroundColor3 = canAfford and THEME or Color3.fromRGB(70, 70, 90)
 			btn.TextColor3 = canAfford and WHITE or GREY
@@ -550,7 +551,7 @@ local function refreshAch()
 		reward.Size = UDim2.new(0, 96, 0, 40)
 		reward.BackgroundTransparency = 1
 		reward.Font = Enum.Font.GothamBold
-		reward.Text = "✦ " .. fmt(ach.reward)
+		reward.Text = CUR_ICON .. " " .. fmt(ach.reward)
 		reward.TextColor3 = unlocked and GREEN or GREY
 		reward.TextSize = 16
 		reward.TextXAlignment = Enum.TextXAlignment.Right

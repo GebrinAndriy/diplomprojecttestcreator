@@ -1,11 +1,9 @@
 --[[
 	Map — оформлення сцени (сервер).
-	Сама геометрія зон тепер лежить у Workspace.AFK_Scene як справжні
-	об'єкти (видно в едіторі, синхронізує Rojo з src/workspace).
-	Цей скрипт лише додає те, що зручніше робити кодом:
-	- освітлення сцени
-	- частинки й вивіски на кожній зоні
-	- анімацію кристалів
+	Геометрія лежить у Workspace.AFK_Scene (Rojo, src/workspace).
+	Цей скрипт: чисте освітлення, легкі частинки на кристалах,
+	анімація кристалів, заголовок над спавном.
+	Вивіски зон тепер на клієнті (Zones.client) — щоб не дублювались.
 --]]
 
 local Lighting = game:GetService("Lighting")
@@ -17,46 +15,41 @@ local GameConfig = require(ReplicatedStorage:WaitForChild("GameConfig"))
 
 local scene = Workspace:WaitForChild("AFK_Scene")
 
--- ===== Освітлення сцени (вечірня неонова атмосфера) =====
+-- ===== Освітлення (чисте денне, без неонового перебору) =====
 pcall(function()
-	Lighting.Technology = Enum.Technology.Future -- гарні тіні + світіння неону
+	Lighting.Technology = Enum.Technology.Future
 end)
-Lighting.ClockTime = 18.6
-Lighting.Brightness = 2
+Lighting.ClockTime = 15
+Lighting.Brightness = 2.5
 Lighting.GlobalShadows = true
-Lighting.OutdoorAmbient = Color3.fromRGB(60, 60, 85)
-Lighting.Ambient = Color3.fromRGB(30, 30, 45)
-Lighting.FogEnd = 700
-Lighting.FogColor = Color3.fromRGB(40, 45, 70)
-Lighting.EnvironmentDiffuseScale = 0.4
+Lighting.OutdoorAmbient = Color3.fromRGB(120, 122, 132)
+Lighting.Ambient = Color3.fromRGB(80, 82, 92)
+Lighting.FogEnd = 100000
+Lighting.EnvironmentDiffuseScale = 0.6
 Lighting.EnvironmentSpecularScale = 0.6
 
 local atmosphere = Lighting:FindFirstChildOfClass("Atmosphere") or Instance.new("Atmosphere")
-atmosphere.Density = 0.38
-atmosphere.Haze = 2
-atmosphere.Glare = 0.2
-atmosphere.Color = Color3.fromRGB(199, 210, 255)
-atmosphere.Decay = Color3.fromRGB(106, 112, 156)
+atmosphere.Density = 0.2
+atmosphere.Haze = 0.4
+atmosphere.Glare = 0
+atmosphere.Color = Color3.fromRGB(210, 220, 240)
+atmosphere.Decay = Color3.fromRGB(150, 165, 200)
 atmosphere.Parent = Lighting
 
+-- легкий bloom лише щоб кристали трохи світились
 local bloom = Lighting:FindFirstChildOfClass("BloomEffect") or Instance.new("BloomEffect")
-bloom.Intensity = 0.9
-bloom.Size = 28
-bloom.Threshold = 1.1
+bloom.Intensity = 0.25
+bloom.Size = 24
+bloom.Threshold = 1.8
 bloom.Parent = Lighting
 
 local cc = Lighting:FindFirstChildOfClass("ColorCorrectionEffect") or Instance.new("ColorCorrectionEffect")
-cc.Saturation = 0.18
-cc.Contrast = 0.12
-cc.TintColor = Color3.fromRGB(225, 225, 255)
+cc.Saturation = 0.05
+cc.Contrast = 0.05
+cc.TintColor = Color3.fromRGB(255, 255, 255)
 cc.Parent = Lighting
 
-local rays = Lighting:FindFirstChildOfClass("SunRaysEffect") or Instance.new("SunRaysEffect")
-rays.Intensity = 0.12
-rays.Spread = 0.8
-rays.Parent = Lighting
-
--- ===== Ефекти й вивіски на кожній зоні =====
+-- ===== Легкі частинки на кристалах зон =====
 local crystals = {}
 
 for i, zone in ipairs(GameConfig.ZONES) do
@@ -64,70 +57,29 @@ for i, zone in ipairs(GameConfig.ZONES) do
 	if not folder then
 		continue
 	end
-	local THEME = zone.color
 
-	-- кристал: частинки + у список на анімацію
 	local crystal = folder:FindFirstChild("Crystal")
 	if crystal then
 		table.insert(crystals, { part = crystal, base = zone.pos + Vector3.new(0, 8, 0) })
 
 		if not crystal:FindFirstChildOfClass("ParticleEmitter") then
 			local sparkles = Instance.new("ParticleEmitter")
-			sparkles.Color = ColorSequence.new(THEME)
-			sparkles.LightEmission = 1
-			sparkles.Lifetime = NumberRange.new(1, 2)
-			sparkles.Rate = 25
-			sparkles.Speed = NumberRange.new(1, 3)
-			sparkles.Size = NumberSequence.new(0.5)
+			sparkles.Color = ColorSequence.new(zone.color)
+			sparkles.LightEmission = 0.6
+			sparkles.Lifetime = NumberRange.new(1, 1.8)
+			sparkles.Rate = 10
+			sparkles.Speed = NumberRange.new(1, 2)
+			sparkles.Size = NumberSequence.new(0.35)
 			sparkles.Transparency = NumberSequence.new({
-				NumberSequenceKeypoint.new(0, 0),
+				NumberSequenceKeypoint.new(0, 0.3),
 				NumberSequenceKeypoint.new(1, 1),
 			})
 			sparkles.Parent = crystal
 		end
 	end
-
-	-- вивіска над зоною
-	if not folder:FindFirstChild("Sign") then
-		local sign = Instance.new("Part")
-		sign.Name = "Sign"
-		sign.Anchored = true
-		sign.CanCollide = false
-		sign.Transparency = 1
-		sign.Size = Vector3.new(0.2, 0.2, 0.2)
-		sign.CFrame = CFrame.new(zone.pos + Vector3.new(0, 13, 0))
-		sign.Parent = folder
-
-		local billboard = Instance.new("BillboardGui")
-		billboard.Size = UDim2.new(0, 320, 0, 110)
-		billboard.AlwaysOnTop = true
-		billboard.MaxDistance = 75 -- показувати тільки зблизька (щоб не накладались)
-		billboard.Parent = sign
-
-		local title = Instance.new("TextLabel")
-		title.Size = UDim2.new(1, 0, 0.55, 0)
-		title.BackgroundTransparency = 1
-		title.Font = Enum.Font.FredokaOne
-		title.Text = zone.name
-		title.TextColor3 = THEME
-		title.TextScaled = true
-		title.TextStrokeTransparency = 0
-		title.Parent = billboard
-
-		local subtitle = Instance.new("TextLabel")
-		subtitle.Position = UDim2.new(0, 0, 0.55, 0)
-		subtitle.Size = UDim2.new(1, 0, 0.45, 0)
-		subtitle.BackgroundTransparency = 1
-		subtitle.Font = Enum.Font.GothamMedium
-		subtitle.Text = "+" .. zone.bonus .. " аури/сек"
-		subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-		subtitle.TextScaled = true
-		subtitle.TextStrokeTransparency = 0.4
-		subtitle.Parent = billboard
-	end
 end
 
--- ===== Декоративні кристали (острови, спавн) теж анімуємо =====
+-- декоративні кристали (острови, спавн) теж анімуємо
 for _, d in ipairs(scene:GetDescendants()) do
 	if d:IsA("BasePart") and d.Name == "FloatCrystal" then
 		table.insert(crystals, { part = d, base = d.Position, slow = true })
@@ -154,8 +106,8 @@ do
 	label.Size = UDim2.new(1, 0, 1, 0)
 	label.BackgroundTransparency = 1
 	label.Font = Enum.Font.FredokaOne
-	label.Text = "⚡ AFK SIMULATOR ⚡"
-	label.TextColor3 = Color3.fromRGB(180, 120, 255)
+	label.Text = "AURA FARM"
+	label.TextColor3 = Color3.fromRGB(235, 235, 245)
 	label.TextScaled = true
 	label.TextStrokeTransparency = 0
 	label.Parent = bb

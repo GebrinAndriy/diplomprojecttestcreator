@@ -21,11 +21,11 @@ GameConfig.ZONES = {
 
 -- ===== ПОКРАЩЕННЯ (магазин) — множник аури =====
 GameConfig.UPGRADES = {
-	{ name = "Подвійна аура", desc = "Аура ×2",  icon = "✦", mult = 2,  cost = 50 },
-	{ name = "Потрійна аура", desc = "Аура ×3",  icon = "✧", mult = 3,  cost = 250 },
+	{ name = "Подвійна аура", desc = "Аура ×2",  icon = "⭐", mult = 2,  cost = 50 },
+	{ name = "Потрійна аура", desc = "Аура ×3",  icon = "🌟", mult = 3,  cost = 250 },
 	{ name = "Турбо ×5",      desc = "Аура ×5",  icon = "⚡", mult = 5,  cost = 1200 },
 	{ name = "Мега ×10",      desc = "Аура ×10", icon = "🔥", mult = 10, cost = 6000 },
-	{ name = "Космос ×25",    desc = "Аура ×25", icon = "🌌", mult = 25, cost = 30000 },
+	{ name = "Космос ×25",    desc = "Аура ×25", icon = "🌀", mult = 25, cost = 30000 },
 	{ name = "Легенда ×50",   desc = "Аура ×50", icon = "👑", mult = 50, cost = 150000 },
 }
 

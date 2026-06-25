@@ -32,11 +32,11 @@
               0,
               1
             ],
-            "Material": "Slate",
+            "Material": "Concrete",
             "Color": [
-              0.11,
-              0.122,
-              0.165
+              0.329,
+              0.345,
+              0.384
             ]
           }
         },
@@ -46,9 +46,9 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              196,
+              194,
               1.05,
-              171
+              169
             ],
             "CFrame": [
               0,
@@ -64,11 +64,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Marble",
             "Color": [
-              0.078,
-              0.086,
-              0.118
+              0.259,
+              0.275,
+              0.314
             ],
             "CanCollide": false
           }
@@ -80,12 +80,12 @@
             "Anchored": true,
             "Size": [
               214,
-              1.4,
+              2.2,
               4
             ],
             "CFrame": [
               0,
-              0.6,
+              1,
               34.5,
               1,
               0,
@@ -97,13 +97,12 @@
               0,
               1
             ],
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
-              0.667,
-              0.373,
-              1
-            ],
-            "CanCollide": false
+              0.471,
+              0.494,
+              0.557
+            ]
           }
         },
         {
@@ -113,12 +112,12 @@
             "Anchored": true,
             "Size": [
               214,
-              1.4,
+              2.2,
               4
             ],
             "CFrame": [
               0,
-              0.6,
+              1,
               -150.5,
               1,
               0,
@@ -130,13 +129,12 @@
               0,
               1
             ],
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
-              0.667,
-              0.373,
-              1
-            ],
-            "CanCollide": false
+              0.471,
+              0.494,
+              0.557
+            ]
           }
         },
         {
@@ -146,12 +144,12 @@
             "Anchored": true,
             "Size": [
               4,
-              1.4,
+              2.2,
               189
             ],
             "CFrame": [
               105,
-              0.6,
+              1,
               -58,
               1,
               0,
@@ -163,13 +161,12 @@
               0,
               1
             ],
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
-              0.667,
-              0.373,
-              1
-            ],
-            "CanCollide": false
+              0.471,
+              0.494,
+              0.557
+            ]
           }
         },
         {
@@ -179,12 +176,12 @@
             "Anchored": true,
             "Size": [
               4,
-              1.4,
+              2.2,
               189
             ],
             "CFrame": [
               -105,
-              0.6,
+              1,
               -58,
               1,
               0,
@@ -196,13 +193,12 @@
               0,
               1
             ],
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
-              0.667,
-              0.373,
-              1
-            ],
-            "CanCollide": false
+              0.471,
+              0.494,
+              0.557
+            ]
           }
         }
       ]
@@ -237,11 +233,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Marble",
             "Color": [
-              0.118,
-              0.137,
-              0.176
+              0.204,
+              0.22,
+              0.259
             ]
           }
         },
@@ -252,47 +248,13 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              0.6,
-              21.2,
-              21.2
+              0.8,
+              21,
+              21
             ],
             "CFrame": [
               0,
-              1,
-              -48,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Neon",
-            "Color": [
-              0.471,
-              0.863,
-              1
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Glow",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
               1.1,
-              14,
-              14
-            ],
-            "CFrame": [
-              0,
-              1.05,
               -48,
               0,
               -1,
@@ -305,13 +267,12 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
               0.471,
               0.863,
               1
-            ],
-            "Transparency": 0.6
+            ]
           }
         },
         {
@@ -320,13 +281,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               6.000000000000002,
-              5.5,
+              5,
               -37.607695154586736,
               1,
               0,
@@ -338,11 +299,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -353,13 +314,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               6.000000000000002,
-              10.5,
+              9.6,
               -37.607695154586736,
               1,
               0,
@@ -386,46 +347,46 @@
           "properties": {
             "Anchored": true,
             "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -5.999999999999997,
+              5,
+              -37.607695154586736,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.306,
+              0.325,
+              0.376
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
               1.5,
-              9,
+              1.5,
               1.5
             ],
             "CFrame": [
               -5.999999999999997,
-              5.5,
-              -37.607695154586736,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "SmoothPlastic",
-            "Color": [
-              0.157,
-              0.176,
-              0.227
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "PillarTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              -5.999999999999997,
-              10.5,
+              9.6,
               -37.607695154586736,
               1,
               0,
@@ -452,46 +413,46 @@
           "properties": {
             "Anchored": true,
             "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -12,
+              5,
+              -48,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.306,
+              0.325,
+              0.376
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
               1.5,
-              9,
+              1.5,
               1.5
             ],
             "CFrame": [
               -12,
-              5.5,
-              -48,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "SmoothPlastic",
-            "Color": [
-              0.157,
-              0.176,
-              0.227
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "PillarTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              -12,
-              10.5,
+              9.6,
               -48,
               1,
               0,
@@ -518,46 +479,46 @@
           "properties": {
             "Anchored": true,
             "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -6.000000000000005,
+              5,
+              -58.392304845413264,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.306,
+              0.325,
+              0.376
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
               1.5,
-              9,
+              1.5,
               1.5
             ],
             "CFrame": [
               -6.000000000000005,
-              5.5,
-              -58.392304845413264,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "SmoothPlastic",
-            "Color": [
-              0.157,
-              0.176,
-              0.227
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "PillarTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              -6.000000000000005,
-              10.5,
+              9.6,
               -58.392304845413264,
               1,
               0,
@@ -584,13 +545,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               6.000000000000002,
-              5.5,
+              5,
               -58.392304845413264,
               1,
               0,
@@ -602,11 +563,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -617,13 +578,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               6.000000000000002,
-              10.5,
+              9.6,
               -58.392304845413264,
               1,
               0,
@@ -650,13 +611,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               12,
-              5.5,
+              5,
               -48,
               1,
               0,
@@ -668,11 +629,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -683,13 +644,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               12,
-              10.5,
+              9.6,
               -48,
               1,
               0,
@@ -742,7 +703,7 @@
               0.863,
               1
             ],
-            "Transparency": 0.15
+            "Transparency": 0.1
           },
           "children": [
             {
@@ -754,8 +715,8 @@
                   0.863,
                   1
                 ],
-                "Brightness": 5,
-                "Range": 32
+                "Brightness": 3,
+                "Range": 20
               }
             }
           ]
@@ -792,11 +753,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Marble",
             "Color": [
-              0.118,
-              0.137,
-              0.176
+              0.204,
+              0.22,
+              0.259
             ]
           }
         },
@@ -807,47 +768,13 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              0.6,
-              21.2,
-              21.2
+              0.8,
+              21,
+              21
             ],
             "CFrame": [
               72,
-              1,
-              -52,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Neon",
-            "Color": [
-              0.588,
-              0.784,
-              1
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Glow",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
               1.1,
-              14,
-              14
-            ],
-            "CFrame": [
-              72,
-              1.05,
               -52,
               0,
               -1,
@@ -860,13 +787,12 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
               0.588,
               0.784,
               1
-            ],
-            "Transparency": 0.6
+            ]
           }
         },
         {
@@ -875,13 +801,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               78,
-              5.5,
+              5,
               -41.607695154586736,
               1,
               0,
@@ -893,11 +819,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -908,13 +834,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               78,
-              10.5,
+              9.6,
               -41.607695154586736,
               1,
               0,
@@ -941,13 +867,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               66,
-              5.5,
+              5,
               -41.607695154586736,
               1,
               0,
@@ -959,11 +885,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -974,13 +900,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               66,
-              10.5,
+              9.6,
               -41.607695154586736,
               1,
               0,
@@ -1007,46 +933,46 @@
           "properties": {
             "Anchored": true,
             "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              60,
+              5,
+              -52,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.306,
+              0.325,
+              0.376
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
               1.5,
-              9,
+              1.5,
               1.5
             ],
             "CFrame": [
               60,
-              5.5,
-              -52,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "SmoothPlastic",
-            "Color": [
-              0.157,
-              0.176,
-              0.227
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "PillarTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              60,
-              10.5,
+              9.6,
               -52,
               1,
               0,
@@ -1073,46 +999,46 @@
           "properties": {
             "Anchored": true,
             "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              66,
+              5,
+              -62.392304845413264,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.306,
+              0.325,
+              0.376
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
               1.5,
-              9,
+              1.5,
               1.5
             ],
             "CFrame": [
               66,
-              5.5,
-              -62.392304845413264,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "SmoothPlastic",
-            "Color": [
-              0.157,
-              0.176,
-              0.227
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "PillarTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              66,
-              10.5,
+              9.6,
               -62.392304845413264,
               1,
               0,
@@ -1139,13 +1065,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               78,
-              5.5,
+              5,
               -62.392304845413264,
               1,
               0,
@@ -1157,11 +1083,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -1172,13 +1098,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               78,
-              10.5,
+              9.6,
               -62.392304845413264,
               1,
               0,
@@ -1205,13 +1131,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               84,
-              5.5,
+              5,
               -52,
               1,
               0,
@@ -1223,11 +1149,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -1238,13 +1164,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               84,
-              10.5,
+              9.6,
               -52,
               1,
               0,
@@ -1297,7 +1223,7 @@
               0.784,
               1
             ],
-            "Transparency": 0.15
+            "Transparency": 0.1
           },
           "children": [
             {
@@ -1309,8 +1235,8 @@
                   0.784,
                   1
                 ],
-                "Brightness": 5,
-                "Range": 32
+                "Brightness": 3,
+                "Range": 20
               }
             }
           ]
@@ -1347,11 +1273,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Marble",
             "Color": [
-              0.118,
-              0.137,
-              0.176
+              0.204,
+              0.22,
+              0.259
             ]
           }
         },
@@ -1362,47 +1288,13 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              0.6,
-              21.2,
-              21.2
+              0.8,
+              21,
+              21
             ],
             "CFrame": [
               -72,
-              1,
-              -52,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Neon",
-            "Color": [
-              1,
-              0.804,
-              0.275
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Glow",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
               1.1,
-              14,
-              14
-            ],
-            "CFrame": [
-              -72,
-              1.05,
               -52,
               0,
               -1,
@@ -1415,13 +1307,12 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
               1,
               0.804,
               0.275
-            ],
-            "Transparency": 0.6
+            ]
           }
         },
         {
@@ -1430,13 +1321,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               -66,
-              5.5,
+              5,
               -41.607695154586736,
               1,
               0,
@@ -1448,11 +1339,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -1463,13 +1354,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               -66,
-              10.5,
+              9.6,
               -41.607695154586736,
               1,
               0,
@@ -1496,13 +1387,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               -78,
-              5.5,
+              5,
               -41.607695154586736,
               1,
               0,
@@ -1514,11 +1405,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -1529,13 +1420,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               -78,
-              10.5,
+              9.6,
               -41.607695154586736,
               1,
               0,
@@ -1562,46 +1453,46 @@
           "properties": {
             "Anchored": true,
             "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -84,
+              5,
+              -52,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.306,
+              0.325,
+              0.376
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
               1.5,
-              9,
+              1.5,
               1.5
             ],
             "CFrame": [
               -84,
-              5.5,
-              -52,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "SmoothPlastic",
-            "Color": [
-              0.157,
-              0.176,
-              0.227
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "PillarTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              -84,
-              10.5,
+              9.6,
               -52,
               1,
               0,
@@ -1628,46 +1519,46 @@
           "properties": {
             "Anchored": true,
             "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -78,
+              5,
+              -62.392304845413264,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.306,
+              0.325,
+              0.376
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
               1.5,
-              9,
+              1.5,
               1.5
             ],
             "CFrame": [
               -78,
-              5.5,
-              -62.392304845413264,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "SmoothPlastic",
-            "Color": [
-              0.157,
-              0.176,
-              0.227
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "PillarTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              -78,
-              10.5,
+              9.6,
               -62.392304845413264,
               1,
               0,
@@ -1694,13 +1585,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               -66,
-              5.5,
+              5,
               -62.392304845413264,
               1,
               0,
@@ -1712,11 +1603,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -1727,13 +1618,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               -66,
-              10.5,
+              9.6,
               -62.392304845413264,
               1,
               0,
@@ -1760,13 +1651,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               -60,
-              5.5,
+              5,
               -52,
               1,
               0,
@@ -1778,11 +1669,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -1793,13 +1684,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               -60,
-              10.5,
+              9.6,
               -52,
               1,
               0,
@@ -1852,7 +1743,7 @@
               0.804,
               0.275
             ],
-            "Transparency": 0.15
+            "Transparency": 0.1
           },
           "children": [
             {
@@ -1864,8 +1755,8 @@
                   0.804,
                   0.275
                 ],
-                "Brightness": 5,
-                "Range": 32
+                "Brightness": 3,
+                "Range": 20
               }
             }
           ]
@@ -1902,11 +1793,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Marble",
             "Color": [
-              0.118,
-              0.137,
-              0.176
+              0.204,
+              0.22,
+              0.259
             ]
           }
         },
@@ -1917,47 +1808,13 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              0.6,
-              25.2,
-              25.2
+              0.8,
+              25,
+              25
             ],
             "CFrame": [
               0,
-              1,
-              -126,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Neon",
-            "Color": [
-              0.471,
-              1,
-              0.941
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Glow",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
               1.1,
-              16.799999999999997,
-              16.799999999999997
-            ],
-            "CFrame": [
-              0,
-              1.05,
               -126,
               0,
               -1,
@@ -1970,13 +1827,12 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
               0.471,
               1,
               0.941
-            ],
-            "Transparency": 0.6
+            ]
           }
         },
         {
@@ -1985,13 +1841,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               7.000000000000002,
-              5.5,
+              5,
               -113.87564434701785,
               1,
               0,
@@ -2003,11 +1859,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -2018,13 +1874,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               7.000000000000002,
-              10.5,
+              9.6,
               -113.87564434701785,
               1,
               0,
@@ -2051,46 +1907,46 @@
           "properties": {
             "Anchored": true,
             "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -6.9999999999999964,
+              5,
+              -113.87564434701785,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.306,
+              0.325,
+              0.376
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
               1.5,
-              9,
+              1.5,
               1.5
             ],
             "CFrame": [
               -6.9999999999999964,
-              5.5,
-              -113.87564434701785,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "SmoothPlastic",
-            "Color": [
-              0.157,
-              0.176,
-              0.227
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "PillarTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              -6.9999999999999964,
-              10.5,
+              9.6,
               -113.87564434701785,
               1,
               0,
@@ -2117,46 +1973,46 @@
           "properties": {
             "Anchored": true,
             "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -14,
+              5,
+              -126,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.306,
+              0.325,
+              0.376
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
               1.5,
-              9,
+              1.5,
               1.5
             ],
             "CFrame": [
               -14,
-              5.5,
-              -126,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "SmoothPlastic",
-            "Color": [
-              0.157,
-              0.176,
-              0.227
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "PillarTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              -14,
-              10.5,
+              9.6,
               -126,
               1,
               0,
@@ -2183,46 +2039,46 @@
           "properties": {
             "Anchored": true,
             "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -7.000000000000006,
+              5,
+              -138.12435565298213,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.306,
+              0.325,
+              0.376
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
               1.5,
-              9,
+              1.5,
               1.5
             ],
             "CFrame": [
               -7.000000000000006,
-              5.5,
-              -138.12435565298213,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "SmoothPlastic",
-            "Color": [
-              0.157,
-              0.176,
-              0.227
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "PillarTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              -7.000000000000006,
-              10.5,
+              9.6,
               -138.12435565298213,
               1,
               0,
@@ -2249,13 +2105,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               7.000000000000002,
-              5.5,
+              5,
               -138.12435565298213,
               1,
               0,
@@ -2267,11 +2123,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -2282,13 +2138,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               7.000000000000002,
-              10.5,
+              9.6,
               -138.12435565298213,
               1,
               0,
@@ -2315,13 +2171,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.5,
-              9,
-              1.5
+              1.4,
+              8,
+              1.4
             ],
             "CFrame": [
               14,
-              5.5,
+              5,
               -126,
               1,
               0,
@@ -2333,11 +2189,11 @@
               0,
               1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -2348,13 +2204,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2,
-              2,
-              2
+              1.5,
+              1.5,
+              1.5
             ],
             "CFrame": [
               14,
-              10.5,
+              9.6,
               -126,
               1,
               0,
@@ -2407,7 +2263,7 @@
               1,
               0.941
             ],
-            "Transparency": 0.15
+            "Transparency": 0.1
           },
           "children": [
             {
@@ -2419,8 +2275,8 @@
                   1,
                   0.941
                 ],
-                "Brightness": 5,
-                "Range": 32
+                "Brightness": 3,
+                "Range": 20
               }
             }
           ]
@@ -2456,11 +2312,11 @@
               0,
               -1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Slate",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.259,
+              0.275,
+              0.314
             ],
             "CanCollide": false
           }
@@ -2471,7 +2327,7 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.4,
+              1.2,
               0.45,
               48
             ],
@@ -2489,11 +2345,11 @@
               0,
               -1
             ],
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
-              0.667,
-              0.373,
-              1
+              0.471,
+              0.494,
+              0.557
             ],
             "CanCollide": false
           }
@@ -2529,11 +2385,11 @@
               0,
               -0.5854905538443584
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Slate",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.259,
+              0.275,
+              0.314
             ],
             "CanCollide": false
           }
@@ -2544,7 +2400,7 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.4,
+              1.2,
               0.45,
               88.81441324469807
             ],
@@ -2562,11 +2418,11 @@
               0,
               -0.5854905538443584
             ],
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
-              0.667,
-              0.373,
-              1
+              0.471,
+              0.494,
+              0.557
             ],
             "CanCollide": false
           }
@@ -2602,11 +2458,11 @@
               0,
               -0.5854905538443584
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Slate",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.259,
+              0.275,
+              0.314
             ],
             "CanCollide": false
           }
@@ -2617,7 +2473,7 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.4,
+              1.2,
               0.45,
               88.81441324469807
             ],
@@ -2635,11 +2491,11 @@
               0,
               -0.5854905538443584
             ],
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
-              0.667,
-              0.373,
-              1
+              0.471,
+              0.494,
+              0.557
             ],
             "CanCollide": false
           }
@@ -2675,11 +2531,11 @@
               0,
               -1
             ],
-            "Material": "SmoothPlastic",
+            "Material": "Slate",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.259,
+              0.275,
+              0.314
             ],
             "CanCollide": false
           }
@@ -2690,7 +2546,7 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.4,
+              1.2,
               0.45,
               126
             ],
@@ -2708,11 +2564,11 @@
               0,
               -1
             ],
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
-              0.667,
-              0.373,
-              1
+              0.471,
+              0.494,
+              0.557
             ],
             "CanCollide": false
           }
@@ -2732,8 +2588,8 @@
             "Shape": "Cylinder",
             "Size": [
               13,
-              1.1,
-              1.1
+              0.9,
+              0.9
             ],
             "CFrame": [
               -95,
@@ -2751,9 +2607,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -2764,13 +2620,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.6,
-              2.6,
-              2.6
+              2,
+              2,
+              2
             ],
             "CFrame": [
               -95,
-              13.4,
+              13.2,
               28,
               1,
               0,
@@ -2785,9 +2641,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -2796,12 +2652,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 4,
-                "Range": 26
+                "Brightness": 2.5,
+                "Range": 22
               }
             }
           ]
@@ -2821,8 +2677,8 @@
             "Shape": "Cylinder",
             "Size": [
               13,
-              1.1,
-              1.1
+              0.9,
+              0.9
             ],
             "CFrame": [
               95,
@@ -2840,9 +2696,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -2853,13 +2709,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.6,
-              2.6,
-              2.6
+              2,
+              2,
+              2
             ],
             "CFrame": [
               95,
-              13.4,
+              13.2,
               28,
               1,
               0,
@@ -2874,9 +2730,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -2885,12 +2741,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 4,
-                "Range": 26
+                "Brightness": 2.5,
+                "Range": 22
               }
             }
           ]
@@ -2910,8 +2766,8 @@
             "Shape": "Cylinder",
             "Size": [
               13,
-              1.1,
-              1.1
+              0.9,
+              0.9
             ],
             "CFrame": [
               -95,
@@ -2929,9 +2785,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -2942,13 +2798,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.6,
-              2.6,
-              2.6
+              2,
+              2,
+              2
             ],
             "CFrame": [
               -95,
-              13.4,
+              13.2,
               -148,
               1,
               0,
@@ -2963,9 +2819,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -2974,12 +2830,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 4,
-                "Range": 26
+                "Brightness": 2.5,
+                "Range": 22
               }
             }
           ]
@@ -2999,8 +2855,8 @@
             "Shape": "Cylinder",
             "Size": [
               13,
-              1.1,
-              1.1
+              0.9,
+              0.9
             ],
             "CFrame": [
               95,
@@ -3018,9 +2874,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -3031,13 +2887,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.6,
-              2.6,
-              2.6
+              2,
+              2,
+              2
             ],
             "CFrame": [
               95,
-              13.4,
+              13.2,
               -148,
               1,
               0,
@@ -3052,9 +2908,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -3063,12 +2919,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 4,
-                "Range": 26
+                "Brightness": 2.5,
+                "Range": 22
               }
             }
           ]
@@ -3088,8 +2944,8 @@
             "Shape": "Cylinder",
             "Size": [
               13,
-              1.1,
-              1.1
+              0.9,
+              0.9
             ],
             "CFrame": [
               -95,
@@ -3107,9 +2963,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -3120,13 +2976,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.6,
-              2.6,
-              2.6
+              2,
+              2,
+              2
             ],
             "CFrame": [
               -95,
-              13.4,
+              13.2,
               -60,
               1,
               0,
@@ -3141,9 +2997,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -3152,12 +3008,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 4,
-                "Range": 26
+                "Brightness": 2.5,
+                "Range": 22
               }
             }
           ]
@@ -3177,8 +3033,8 @@
             "Shape": "Cylinder",
             "Size": [
               13,
-              1.1,
-              1.1
+              0.9,
+              0.9
             ],
             "CFrame": [
               95,
@@ -3196,9 +3052,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -3209,13 +3065,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.6,
-              2.6,
-              2.6
+              2,
+              2,
+              2
             ],
             "CFrame": [
               95,
-              13.4,
+              13.2,
               -60,
               1,
               0,
@@ -3230,9 +3086,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -3241,12 +3097,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 4,
-                "Range": 26
+                "Brightness": 2.5,
+                "Range": 22
               }
             }
           ]
@@ -3266,8 +3122,8 @@
             "Shape": "Cylinder",
             "Size": [
               13,
-              1.1,
-              1.1
+              0.9,
+              0.9
             ],
             "CFrame": [
               -35,
@@ -3285,9 +3141,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -3298,13 +3154,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.6,
-              2.6,
-              2.6
+              2,
+              2,
+              2
             ],
             "CFrame": [
               -35,
-              13.4,
+              13.2,
               32,
               1,
               0,
@@ -3319,9 +3175,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -3330,12 +3186,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 4,
-                "Range": 26
+                "Brightness": 2.5,
+                "Range": 22
               }
             }
           ]
@@ -3355,8 +3211,8 @@
             "Shape": "Cylinder",
             "Size": [
               13,
-              1.1,
-              1.1
+              0.9,
+              0.9
             ],
             "CFrame": [
               35,
@@ -3374,9 +3230,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -3387,13 +3243,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.6,
-              2.6,
-              2.6
+              2,
+              2,
+              2
             ],
             "CFrame": [
               35,
-              13.4,
+              13.2,
               32,
               1,
               0,
@@ -3408,9 +3264,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -3419,12 +3275,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 4,
-                "Range": 26
+                "Brightness": 2.5,
+                "Range": 22
               }
             }
           ]
@@ -3463,9 +3319,9 @@
             ],
             "Material": "Slate",
             "Color": [
-              0.11,
-              0.122,
-              0.165
+              0.259,
+              0.275,
+              0.314
             ]
           }
         },
@@ -3476,7 +3332,7 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              1.2,
+              1.4,
               19.5,
               19.5
             ],
@@ -3495,11 +3351,11 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
               1,
-              0.471,
-              0.784
+              0.588,
+              0.824
             ]
           }
         },
@@ -3529,11 +3385,11 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Slate",
+            "Material": "Rock",
             "Color": [
-              0.078,
-              0.086,
-              0.118
+              0.259,
+              0.275,
+              0.314
             ]
           }
         },
@@ -3544,9 +3400,9 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              5.2,
-              5.2,
-              5.2
+              4.55,
+              4.55,
+              4.55
             ],
             "CFrame": [
               145,
@@ -3566,8 +3422,8 @@
             "Material": "Neon",
             "Color": [
               1,
-              0.471,
-              0.784
+              0.588,
+              0.824
             ],
             "Transparency": 0.1
           },
@@ -3578,11 +3434,11 @@
               "properties": {
                 "Color": [
                   1,
-                  0.471,
-                  0.784
+                  0.588,
+                  0.824
                 ],
-                "Brightness": 4,
-                "Range": 28
+                "Brightness": 2.5,
+                "Range": 20
               }
             }
           ]
@@ -3621,9 +3477,9 @@
             ],
             "Material": "Slate",
             "Color": [
-              0.11,
-              0.122,
-              0.165
+              0.259,
+              0.275,
+              0.314
             ]
           }
         },
@@ -3634,7 +3490,7 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              1.2,
+              1.4,
               16.5,
               16.5
             ],
@@ -3653,11 +3509,11 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
-              0.471,
+              0.588,
               1,
-              0.784
+              0.824
             ]
           }
         },
@@ -3687,11 +3543,11 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Slate",
+            "Material": "Rock",
             "Color": [
-              0.078,
-              0.086,
-              0.118
+              0.259,
+              0.275,
+              0.314
             ]
           }
         },
@@ -3702,9 +3558,9 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              4.4,
-              4.4,
-              4.4
+              3.8500000000000005,
+              3.8500000000000005,
+              3.8500000000000005
             ],
             "CFrame": [
               -145,
@@ -3723,9 +3579,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.471,
+              0.588,
               1,
-              0.784
+              0.824
             ],
             "Transparency": 0.1
           },
@@ -3735,12 +3591,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.471,
+                  0.588,
                   1,
-                  0.784
+                  0.824
                 ],
-                "Brightness": 4,
-                "Range": 28
+                "Brightness": 2.5,
+                "Range": 20
               }
             }
           ]
@@ -3779,9 +3635,9 @@
             ],
             "Material": "Slate",
             "Color": [
-              0.11,
-              0.122,
-              0.165
+              0.259,
+              0.275,
+              0.314
             ]
           }
         },
@@ -3792,7 +3648,7 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              1.2,
+              1.4,
               15,
               15
             ],
@@ -3811,11 +3667,11 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
               1,
-              0.824,
-              0.353
+              0.863,
+              0.51
             ]
           }
         },
@@ -3845,11 +3701,11 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Slate",
+            "Material": "Rock",
             "Color": [
-              0.078,
-              0.086,
-              0.118
+              0.259,
+              0.275,
+              0.314
             ]
           }
         },
@@ -3860,9 +3716,9 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              4,
-              4,
-              4
+              3.5,
+              3.5,
+              3.5
             ],
             "CFrame": [
               85,
@@ -3882,8 +3738,8 @@
             "Material": "Neon",
             "Color": [
               1,
-              0.824,
-              0.353
+              0.863,
+              0.51
             ],
             "Transparency": 0.1
           },
@@ -3894,11 +3750,11 @@
               "properties": {
                 "Color": [
                   1,
-                  0.824,
-                  0.353
+                  0.863,
+                  0.51
                 ],
-                "Brightness": 4,
-                "Range": 28
+                "Brightness": 2.5,
+                "Range": 20
               }
             }
           ]
@@ -3937,9 +3793,9 @@
             ],
             "Material": "Slate",
             "Color": [
-              0.11,
-              0.122,
-              0.165
+              0.259,
+              0.275,
+              0.314
             ]
           }
         },
@@ -3950,7 +3806,7 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              1.2,
+              1.4,
               13.5,
               13.5
             ],
@@ -3969,10 +3825,10 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Neon",
+            "Material": "Metal",
             "Color": [
-              0.471,
-              0.784,
+              0.588,
+              0.824,
               1
             ]
           }
@@ -4003,11 +3859,11 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Slate",
+            "Material": "Rock",
             "Color": [
-              0.078,
-              0.086,
-              0.118
+              0.259,
+              0.275,
+              0.314
             ]
           }
         },
@@ -4018,9 +3874,9 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              3.6,
-              3.6,
-              3.6
+              3.15,
+              3.15,
+              3.15
             ],
             "CFrame": [
               -125,
@@ -4039,8 +3895,8 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.471,
-              0.784,
+              0.588,
+              0.824,
               1
             ],
             "Transparency": 0.1
@@ -4051,12 +3907,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.471,
-                  0.784,
+                  0.588,
+                  0.824,
                   1
                 ],
-                "Brightness": 4,
-                "Range": 28
+                "Brightness": 2.5,
+                "Range": 20
               }
             }
           ]
@@ -4074,13 +3930,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.6,
-              16,
-              1.6
+              1.4,
+              15,
+              1.4
             ],
             "CFrame": [
               -6.363961030678928,
-              8.5,
+              8,
               6.3639610306789285,
               1,
               0,
@@ -4094,9 +3950,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -4107,13 +3963,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.4,
-              2.4,
-              2.4
+              2,
+              2,
+              2
             ],
             "CFrame": [
               -6.363961030678928,
-              17,
+              16,
               6.3639610306789285,
               1,
               0,
@@ -4128,9 +3984,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -4139,12 +3995,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 3,
-                "Range": 18
+                "Brightness": 2,
+                "Range": 16
               }
             }
           ]
@@ -4155,13 +4011,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.6,
-              16,
-              1.6
+              1.4,
+              15,
+              1.4
             ],
             "CFrame": [
               -6.363961030678929,
-              8.5,
+              8,
               -6.363961030678928,
               1,
               0,
@@ -4175,9 +4031,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -4188,13 +4044,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.4,
-              2.4,
-              2.4
+              2,
+              2,
+              2
             ],
             "CFrame": [
               -6.363961030678929,
-              17,
+              16,
               -6.363961030678928,
               1,
               0,
@@ -4209,9 +4065,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -4220,12 +4076,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 3,
-                "Range": 18
+                "Brightness": 2,
+                "Range": 16
               }
             }
           ]
@@ -4236,13 +4092,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.6,
-              16,
-              1.6
+              1.4,
+              15,
+              1.4
             ],
             "CFrame": [
               6.363961030678926,
-              8.5,
+              8,
               -6.363961030678929,
               1,
               0,
@@ -4256,9 +4112,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -4269,13 +4125,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.4,
-              2.4,
-              2.4
+              2,
+              2,
+              2
             ],
             "CFrame": [
               6.363961030678926,
-              17,
+              16,
               -6.363961030678929,
               1,
               0,
@@ -4290,9 +4146,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -4301,12 +4157,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 3,
-                "Range": 18
+                "Brightness": 2,
+                "Range": 16
               }
             }
           ]
@@ -4317,13 +4173,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              1.6,
-              16,
-              1.6
+              1.4,
+              15,
+              1.4
             ],
             "CFrame": [
               6.363961030678929,
-              8.5,
+              8,
               6.363961030678926,
               1,
               0,
@@ -4337,9 +4193,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.157,
-              0.176,
-              0.227
+              0.306,
+              0.325,
+              0.376
             ]
           }
         },
@@ -4350,13 +4206,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              2.4,
-              2.4,
-              2.4
+              2,
+              2,
+              2
             ],
             "CFrame": [
               6.363961030678929,
-              17,
+              16,
               6.363961030678926,
               1,
               0,
@@ -4371,9 +4227,9 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.667,
-              0.373,
-              1
+              1,
+              0.941,
+              0.824
             ]
           },
           "children": [
@@ -4382,12 +4238,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.667,
-                  0.373,
-                  1
+                  1,
+                  0.941,
+                  0.824
                 ],
-                "Brightness": 3,
-                "Range": 18
+                "Brightness": 2,
+                "Range": 16
               }
             }
           ]
@@ -4399,13 +4255,13 @@
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              5,
-              5,
-              5
+              4.5,
+              4.5,
+              4.5
             ],
             "CFrame": [
               0,
-              16,
+              15,
               0,
               1,
               0,
@@ -4420,8 +4276,8 @@
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
-              0.235,
-              0.784,
+              0.471,
+              0.824,
               1
             ],
             "Transparency": 0.1
@@ -4432,12 +4288,12 @@
               "name": "Light",
               "properties": {
                 "Color": [
-                  0.235,
-                  0.784,
+                  0.471,
+                  0.824,
                   1
                 ],
-                "Brightness": 6,
-                "Range": 30
+                "Brightness": 4,
+                "Range": 26
               }
             }
           ]
@@ -4470,9 +4326,9 @@
         "Anchored": true,
         "Material": "Metal",
         "Color": [
-          0.275,
-          0.294,
-          0.373
+          0.314,
+          0.333,
+          0.392
         ]
       }
     }
