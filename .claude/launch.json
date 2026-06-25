@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "arbium",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5050", "--directory", "C:/Users/GameOn/Desktop/arbium"],
+      "port": 5050
+    }
+  ]
+}
