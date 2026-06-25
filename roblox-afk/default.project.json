@@ -2,6 +2,10 @@
   "name": "roblox-afk",
   "tree": {
     "$className": "DataModel",
+    "Workspace": {
+      "$className": "Workspace",
+      "$path": "src/workspace"
+    },
     "ServerScriptService": {
       "$className": "ServerScriptService",
       "$path": "src/server"
