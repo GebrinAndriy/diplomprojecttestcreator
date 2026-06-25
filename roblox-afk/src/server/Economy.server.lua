@@ -45,6 +45,14 @@ local dev = Instance.new("RemoteEvent")
 dev.Name = "Dev"
 dev.Parent = remotes
 
+local rebirthRF = Instance.new("RemoteFunction")
+rebirthRF.Name = "Rebirth"
+rebirthRF.Parent = remotes
+
+local offlineRemote = Instance.new("RemoteEvent")
+offlineRemote.Name = "Offline"
+offlineRemote.Parent = remotes
+
 -- ===== Хелпери =====
 local function getCur(player)
 	local ls = player:FindFirstChild("leaderstats")
@@ -99,6 +107,8 @@ local function saveData(player)
 		upgradeLevel = player:GetAttribute("UpgradeLevel") or 0,
 		totalEarned = player:GetAttribute("TotalEarned") or 0,
 		afkTime = player:GetAttribute("AfkTime") or 0,
+		rebirths = player:GetAttribute("Rebirths") or 0,
+		lastSeen = os.time(),
 		ach = ach,
 	}
 	local ok, err = pcall(function()
@@ -142,6 +152,8 @@ local function onPlayerAdded(player)
 	player:SetAttribute("ZoneBonus", 0)
 	player:SetAttribute("ZoneName", "")
 	player:SetAttribute("AuraTier", 1)
+	player:SetAttribute("Rebirths", 0)
+	player:SetAttribute("RebirthMult", 1)
 
 	-- завантажуємо збереження
 	local data = loadData(player)
@@ -157,6 +169,30 @@ local function onPlayerAdded(player)
 			player:SetAttribute("Ach_" .. id, true)
 		end
 		player:SetAttribute("AuraTier", tierFor(data.totalEarned or 0))
+
+		-- переродження
+		local rb = data.rebirths or 0
+		player:SetAttribute("Rebirths", rb)
+		player:SetAttribute("RebirthMult", 1 + rb * GameConfig.REBIRTH.bonusPerRebirth)
+
+		-- офлайн-дохід
+		if data.lastSeen then
+			local elapsed = math.max(0, os.time() - data.lastSeen)
+			elapsed = math.min(elapsed, GameConfig.REBIRTH.offlineCapHours * 3600)
+			local rate = GameConfig.BASE_INCOME
+				* (player:GetAttribute("Multiplier") or 1)
+				* (player:GetAttribute("RebirthMult") or 1)
+			local gain = math.floor(elapsed * rate)
+			if gain > 0 then
+				aura.Value += gain
+				player:SetAttribute("TotalEarned", (player:GetAttribute("TotalEarned") or 0) + gain)
+				task.delay(3, function()
+					if player.Parent then
+						offlineRemote:FireClient(player, gain, elapsed)
+					end
+				end)
+			end
+		end
 	end
 
 	player:SetAttribute("DataLoaded", true)
@@ -268,6 +304,30 @@ dev.OnServerEvent:Connect(function(player, cmd)
 	end
 end)
 
+-- ===== ПЕРЕРОДЖЕННЯ =====
+local function rebirthCost(r)
+	return math.floor(GameConfig.REBIRTH.baseCost * (GameConfig.REBIRTH.growth ^ r))
+end
+
+rebirthRF.OnServerInvoke = function(player)
+	local r = player:GetAttribute("Rebirths") or 0
+	local total = player:GetAttribute("TotalEarned") or 0
+	local cost = rebirthCost(r)
+	if total < cost then
+		return false, "Ще рано для переродження"
+	end
+	r += 1
+	local cur = getCur(player)
+	if cur then cur.Value = 0 end
+	player:SetAttribute("Rebirths", r)
+	player:SetAttribute("RebirthMult", 1 + r * GameConfig.REBIRTH.bonusPerRebirth)
+	player:SetAttribute("TotalEarned", 0)
+	player:SetAttribute("UpgradeLevel", 0)
+	player:SetAttribute("Multiplier", 1)
+	player:SetAttribute("AuraTier", 1)
+	return true, "Переродження #" .. r .. " • дохід ×" .. (1 + r * GameConfig.REBIRTH.bonusPerRebirth)
+end
+
 -- ===== Головний цикл =====
 task.spawn(function()
 	while true do
@@ -275,12 +335,13 @@ task.spawn(function()
 		for _, player in ipairs(Players:GetPlayers()) do
 			local cur = getCur(player)
 			if cur then
-				local mult = player:GetAttribute("Multiplier") or 1
+				local mult = (player:GetAttribute("Multiplier") or 1) * (player:GetAttribute("RebirthMult") or 1)
 				local gain = GameConfig.BASE_INCOME * mult
 
 				local zone = getZoneFor(player)
 				local total = player:GetAttribute("TotalEarned") or 0
-				if zone and total >= zone.unlock then
+				local rebirths = player:GetAttribute("Rebirths") or 0
+				if zone and total >= zone.unlock and rebirths >= (zone.rebirth or 0) then
 					gain += zone.bonus * mult
 					player:SetAttribute("AfkTime", (player:GetAttribute("AfkTime") or 0) + 1)
 					player:SetAttribute("AfkBoosting", true)

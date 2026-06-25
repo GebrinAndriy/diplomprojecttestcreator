@@ -13,11 +13,28 @@ GameConfig.BASE_INCOME = 1                         -- базова аура/се
 
 -- ===== AFK-ЗОНИ =====
 -- bonus — додаткова аура/сек у зоні; unlock — скільки ВСЬОГО заробити, щоб відкрити
+-- rebirth — скільки перероджень треба, щоб зона відкрилась (0 = не треба)
 GameConfig.ZONES = {
-	{ name = "Старт",        pos = Vector3.new(0, 1, -48),    radius = 10, bonus = 4,   unlock = 0,      color = Color3.fromRGB(120, 220, 255) },
-	{ name = "Срібна зона",  pos = Vector3.new(72, 1, -52),   radius = 10, bonus = 20,  unlock = 1000,   color = Color3.fromRGB(150, 200, 255) },
-	{ name = "Золота зона",  pos = Vector3.new(-72, 1, -52),  radius = 10, bonus = 80,  unlock = 15000,  color = Color3.fromRGB(255, 205, 70) },
-	{ name = "Алмазна зона", pos = Vector3.new(0, 1, -126),   radius = 12, bonus = 400, unlock = 200000, color = Color3.fromRGB(120, 255, 240) },
+	{ name = "Старт",        pos = Vector3.new(0, 1, -48),    radius = 10, bonus = 4,    unlock = 0,      color = Color3.fromRGB(120, 220, 255) },
+	{ name = "Срібна зона",  pos = Vector3.new(72, 1, -52),   radius = 10, bonus = 20,   unlock = 1000,   color = Color3.fromRGB(150, 200, 255) },
+	{ name = "Золота зона",  pos = Vector3.new(-72, 1, -52),  radius = 10, bonus = 80,   unlock = 15000,  color = Color3.fromRGB(255, 205, 70) },
+	{ name = "Алмазна зона", pos = Vector3.new(0, 1, -126),   radius = 12, bonus = 400,  unlock = 200000, color = Color3.fromRGB(120, 255, 240) },
+	{ name = "VIP зона",     pos = Vector3.new(0, 1, 22),     radius = 12, bonus = 3000, unlock = 0, rebirth = 1, color = Color3.fromRGB(255, 120, 255) },
+}
+
+-- ===== ПЕРЕРОДЖЕННЯ (prestige) =====
+GameConfig.REBIRTH = {
+	baseCost = 3000000,    -- перше = досягти максимального тіру аури
+	growth = 3,            -- кожне наступне ×3 дорожче
+	bonusPerRebirth = 1,   -- RebirthMult = 1 + Rebirths (тобто +100% доходу за кожне)
+	offlineCapHours = 8,   -- максимум офлайн-доходу
+}
+
+GameConfig.REBIRTH_PERKS = {
+	{ at = 1, name = "Сяйво переродженого", desc = "Райдужна аура + VIP-зона + дохід ×2" },
+	{ at = 2, name = "Друге дихання",       desc = "Дохід ×3 назавжди" },
+	{ at = 3, name = "Майстер аури",        desc = "Дохід ×4 + більші ефекти" },
+	{ at = 5, name = "Легенда",             desc = "Дохід ×6 + максимальне сяйво" },
 }
 
 -- ===== ПОКРАЩЕННЯ (магазин) — множник аури =====

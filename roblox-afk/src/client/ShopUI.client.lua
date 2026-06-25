@@ -22,6 +22,8 @@ local remotes = ReplicatedStorage:WaitForChild("Remotes")
 local buyUpgrade = remotes:WaitForChild("BuyUpgrade")
 local achUnlocked = remotes:WaitForChild("AchievementUnlocked")
 local dev = remotes:WaitForChild("Dev")
+local rebirthRF = remotes:WaitForChild("Rebirth")
+local offlineRemote = remotes:WaitForChild("Offline")
 
 local leaderstats = player:WaitForChild("leaderstats")
 local auraValue = leaderstats:WaitForChild(CUR)
@@ -172,7 +174,7 @@ RunService.Heartbeat:Connect(function(dt)
 end)
 
 local function updateRate()
-	local mult = player:GetAttribute("Multiplier") or 1
+	local mult = (player:GetAttribute("Multiplier") or 1) * (player:GetAttribute("RebirthMult") or 1)
 	local zoneBonus = player:GetAttribute("ZoneBonus") or 0
 	local boosting = player:GetAttribute("AfkBoosting") == true
 	local rps = (GameConfig.BASE_INCOME + zoneBonus) * mult
@@ -184,6 +186,7 @@ end
 player:GetAttributeChangedSignal("Multiplier"):Connect(updateRate)
 player:GetAttributeChangedSignal("AfkBoosting"):Connect(updateRate)
 player:GetAttributeChangedSignal("ZoneBonus"):Connect(updateRate)
+player:GetAttributeChangedSignal("RebirthMult"):Connect(updateRate)
 updateRate()
 
 -- ============================================================
@@ -317,6 +320,7 @@ end
 
 local shopBtn = makeMenuButton("🛒", 1)
 local achBtn = makeMenuButton("🏆", 2)
+local rebirthBtn = makeMenuButton("🔁", 3)
 
 -- ============================================================
 --  ПАНЕЛІ
@@ -380,6 +384,7 @@ end
 
 local shopPanel, shopContent = makePanel("🛒 Магазин аури")
 local achPanel, achContent = makePanel("🏆 Досягнення")
+local rebirthPanel, rebirthContent = makePanel("🔁 Переродження")
 
 local function clearRows(scroll)
 	for _, ch in ipairs(scroll:GetChildren()) do
@@ -561,6 +566,116 @@ local function refreshAch()
 end
 
 -- ============================================================
+--  ПЕРЕРОДЖЕННЯ
+-- ============================================================
+local function refreshRebirth()
+	clearRows(rebirthContent)
+	local r = player:GetAttribute("Rebirths") or 0
+	local rmult = player:GetAttribute("RebirthMult") or 1
+	local total = player:GetAttribute("TotalEarned") or 0
+	local cost = GameConfig.REBIRTH.baseCost * (GameConfig.REBIRTH.growth ^ r)
+	local can = total >= cost
+
+	local head = Instance.new("TextLabel")
+	head.Size = UDim2.new(1, 0, 0, 46)
+	head.BackgroundColor3 = DARK2
+	head.Font = Enum.Font.GothamBlack
+	head.Text = "Перероджень: " .. r .. "      Бонус: ×" .. rmult .. " назавжди"
+	head.TextColor3 = THEME
+	head.TextSize = 16
+	head.LayoutOrder = 0
+	corner(head, 10)
+	head.Parent = rebirthContent
+
+	-- прогрес
+	local prog = Instance.new("Frame")
+	prog.Size = UDim2.new(1, 0, 0, 56)
+	prog.BackgroundColor3 = DARK2
+	prog.LayoutOrder = 1
+	corner(prog, 12)
+	prog.Parent = rebirthContent
+
+	local pl = Instance.new("TextLabel")
+	pl.Size = UDim2.new(1, -20, 0, 22)
+	pl.Position = UDim2.new(0, 10, 0, 6)
+	pl.BackgroundTransparency = 1
+	pl.Font = Enum.Font.GothamBlack
+	pl.Text = "До переродження: " .. fmt(math.min(total, cost)) .. " / " .. fmt(cost)
+	pl.TextColor3 = WHITE
+	pl.TextSize = 14
+	pl.TextXAlignment = Enum.TextXAlignment.Left
+	pl.Parent = prog
+
+	local bg = Instance.new("Frame")
+	bg.Position = UDim2.new(0, 10, 0, 32)
+	bg.Size = UDim2.new(1, -20, 0, 14)
+	bg.BackgroundColor3 = Color3.fromRGB(55, 58, 72)
+	corner(bg, 7)
+	bg.Parent = prog
+	local fill = Instance.new("Frame")
+	fill.Size = UDim2.new(math.clamp(total / cost, 0, 1), 0, 1, 0)
+	fill.BackgroundColor3 = THEME
+	corner(fill, 7)
+	fill.Parent = bg
+
+	-- кнопка
+	local btn = Instance.new("TextButton")
+	btn.Size = UDim2.new(1, 0, 0, 54)
+	btn.Font = Enum.Font.GothamBlack
+	btn.TextSize = 18
+	btn.TextColor3 = WHITE
+	btn.LayoutOrder = 2
+	corner(btn, 12)
+	btn.Text = can and "🔁 ПЕРЕРОДИТИСЬ" or ("🔒 Назбирай " .. fmt(cost) .. " аури")
+	btn.BackgroundColor3 = can and THEME or Color3.fromRGB(70, 70, 90)
+	if can then
+		gradient(btn, Color3.fromRGB(200, 140, 255), Color3.fromRGB(140, 70, 230), 90)
+	end
+	btn.Parent = rebirthContent
+	if can then
+		btn.MouseButton1Click:Connect(function()
+			local ok, msg = rebirthRF:InvokeServer()
+			notify(ok and "🔁 " .. msg or "❌ " .. msg, ok and GREEN or RED)
+			refreshRebirth()
+		end)
+	end
+
+	-- перки
+	for i, perk in ipairs(GameConfig.REBIRTH_PERKS) do
+		local unlocked = r >= perk.at
+		local row = Instance.new("Frame")
+		row.Size = UDim2.new(1, 0, 0, 56)
+		row.BackgroundColor3 = DARK2
+		row.LayoutOrder = 2 + i
+		corner(row, 12)
+		if unlocked then stroke(row, THEME, 1.5) end
+		row.Parent = rebirthContent
+
+		local name = Instance.new("TextLabel")
+		name.BackgroundTransparency = 1
+		name.Position = UDim2.new(0, 14, 0, 8)
+		name.Size = UDim2.new(1, -28, 0, 22)
+		name.Font = Enum.Font.GothamBlack
+		name.Text = (unlocked and "✅ " or "🔒 ") .. "#" .. perk.at .. "  " .. perk.name
+		name.TextColor3 = unlocked and THEME or WHITE
+		name.TextSize = 16
+		name.TextXAlignment = Enum.TextXAlignment.Left
+		name.Parent = row
+
+		local desc = Instance.new("TextLabel")
+		desc.BackgroundTransparency = 1
+		desc.Position = UDim2.new(0, 14, 0, 30)
+		desc.Size = UDim2.new(1, -28, 0, 18)
+		desc.Font = Enum.Font.GothamMedium
+		desc.Text = perk.desc
+		desc.TextColor3 = GREY
+		desc.TextSize = 13
+		desc.TextXAlignment = Enum.TextXAlignment.Left
+		desc.Parent = row
+	end
+end
+
+-- ============================================================
 --  СПОВІЩЕННЯ
 -- ============================================================
 function notify(text, color)
@@ -599,17 +714,39 @@ end
 -- ============================================================
 --  ПЕРЕМИКАННЯ
 -- ============================================================
-local function toggle(panel, other, refresh)
-	other.Visible = false
-	panel.Visible = not panel.Visible
-	if panel.Visible then refresh() end
+local panels = { shopPanel, achPanel, rebirthPanel }
+local function openPanel(panel, refresh)
+	local wasVisible = panel.Visible
+	for _, p in ipairs(panels) do
+		p.Visible = false
+	end
+	if not wasVisible then
+		panel.Visible = true
+		refresh()
+	end
 end
 
 shopBtn.MouseButton1Click:Connect(function()
-	toggle(shopPanel, achPanel, refreshShop)
+	openPanel(shopPanel, refreshShop)
 end)
 achBtn.MouseButton1Click:Connect(function()
-	toggle(achPanel, shopPanel, refreshAch)
+	openPanel(achPanel, refreshAch)
+end)
+rebirthBtn.MouseButton1Click:Connect(function()
+	openPanel(rebirthPanel, refreshRebirth)
+end)
+
+-- оновлення панелі переродження при змінах
+player:GetAttributeChangedSignal("TotalEarned"):Connect(function()
+	if rebirthPanel.Visible then refreshRebirth() end
+end)
+player:GetAttributeChangedSignal("Rebirths"):Connect(function()
+	if rebirthPanel.Visible then refreshRebirth() end
+end)
+
+-- офлайн-дохід
+offlineRemote.OnClientEvent:Connect(function(gain, elapsed)
+	notify("💤 Поки тебе не було: +" .. fmt(gain) .. " аури", THEME)
 end)
 
 auraValue.Changed:Connect(function()

@@ -2085,6 +2085,526 @@
     },
     {
       "className": "Folder",
+      "name": "Zone_5",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "Pad",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              1,
+              24,
+              24
+            ],
+            "CFrame": [
+              0,
+              1,
+              22,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "SmoothPlastic",
+            "Color": [
+              0.337,
+              0.337,
+              0.369
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Ring",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              1.2,
+              25,
+              25
+            ],
+            "CFrame": [
+              0,
+              1.1,
+              22,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "SmoothPlastic",
+            "Color": [
+              1,
+              0.471,
+              1
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Pillar",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              7.000000000000002,
+              5,
+              34.12435565298214,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Concrete",
+            "Color": [
+              0.588,
+              0.588,
+              0.62
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              1.5,
+              1.5,
+              1.5
+            ],
+            "CFrame": [
+              7.000000000000002,
+              9.6,
+              34.12435565298214,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.471,
+              1
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Pillar",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -6.9999999999999964,
+              5,
+              34.124355652982146,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Concrete",
+            "Color": [
+              0.588,
+              0.588,
+              0.62
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              1.5,
+              1.5,
+              1.5
+            ],
+            "CFrame": [
+              -6.9999999999999964,
+              9.6,
+              34.124355652982146,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.471,
+              1
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Pillar",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -14,
+              5,
+              22,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Concrete",
+            "Color": [
+              0.588,
+              0.588,
+              0.62
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              1.5,
+              1.5,
+              1.5
+            ],
+            "CFrame": [
+              -14,
+              9.6,
+              22,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.471,
+              1
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Pillar",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              -7.000000000000006,
+              5,
+              9.875644347017861,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Concrete",
+            "Color": [
+              0.588,
+              0.588,
+              0.62
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              1.5,
+              1.5,
+              1.5
+            ],
+            "CFrame": [
+              -7.000000000000006,
+              9.6,
+              9.875644347017861,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.471,
+              1
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Pillar",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              7.000000000000002,
+              5,
+              9.87564434701786,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Concrete",
+            "Color": [
+              0.588,
+              0.588,
+              0.62
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              1.5,
+              1.5,
+              1.5
+            ],
+            "CFrame": [
+              7.000000000000002,
+              9.6,
+              9.87564434701786,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.471,
+              1
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Pillar",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.4,
+              8,
+              1.4
+            ],
+            "CFrame": [
+              14,
+              5,
+              21.999999999999996,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Concrete",
+            "Color": [
+              0.588,
+              0.588,
+              0.62
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PillarTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              1.5,
+              1.5,
+              1.5
+            ],
+            "CFrame": [
+              14,
+              9.6,
+              21.999999999999996,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.471,
+              1
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Crystal",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              4,
+              4,
+              4
+            ],
+            "CFrame": [
+              0,
+              9,
+              22,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.471,
+              1
+            ],
+            "Transparency": 0.1
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  1,
+                  0.471,
+                  1
+                ],
+                "Brightness": 3,
+                "Range": 20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
       "name": "Path_1",
       "properties": {},
       "children": [
@@ -2363,6 +2883,79 @@
               -1.2246467991473532e-16,
               0,
               -1
+            ],
+            "Material": "Concrete",
+            "Color": [
+              0.471,
+              0.471,
+              0.502
+            ],
+            "CanCollide": false
+          }
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Path_5",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "PathBase",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              7,
+              0.6,
+              22
+            ],
+            "CFrame": [
+              0,
+              1.2,
+              11,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Slate",
+            "Color": [
+              0.337,
+              0.337,
+              0.369
+            ],
+            "CanCollide": false
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PathLine",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.2,
+              0.65,
+              22
+            ],
+            "CFrame": [
+              0,
+              1.25,
+              11,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
             ],
             "Material": "Concrete",
             "Color": [
@@ -2986,6 +3579,127 @@
                 ],
                 "Brightness": 4,
                 "Range": 20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Structure_5",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "S_Post",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              10,
+              1,
+              1
+            ],
+            "CFrame": [
+              0,
+              5,
+              45,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Wood",
+            "Color": [
+              0.471,
+              0.329,
+              0.204
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Board",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              8,
+              3,
+              0.6
+            ],
+            "CFrame": [
+              0,
+              9,
+              45,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Wood",
+            "Color": [
+              0.471,
+              0.329,
+              0.204
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Gem",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              1.6,
+              1.6,
+              1.6
+            ],
+            "CFrame": [
+              0,
+              11.5,
+              45,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.471,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  1,
+                  0.471,
+                  1
+                ],
+                "Brightness": 2,
+                "Range": 12
               }
             }
           ]

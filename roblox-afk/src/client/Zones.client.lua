@@ -109,7 +109,7 @@ local function makeSign(zone)
 	return l1, l2
 end
 
-local function updateSign(z, zone, unlocked)
+local function updateSign(z, zone, unlocked, total, rebirths)
 	if unlocked then
 		z.l1.Text = zone.name
 		z.l1.TextColor3 = zone.color
@@ -118,9 +118,18 @@ local function updateSign(z, zone, unlocked)
 	else
 		z.l1.Text = "🔒 " .. zone.name
 		z.l1.TextColor3 = WHITE
-		z.l2.Text = "Заробити " .. fmt(zone.unlock)
+		local needR = zone.rebirth or 0
+		if rebirths < needR then
+			z.l2.Text = "🔁 Потрібно перероджень: " .. needR
+		else
+			z.l2.Text = "Заробити " .. fmt(zone.unlock)
+		end
 		z.l2.TextColor3 = zone.color
 	end
+end
+
+local function isUnlocked(zone, total, rebirths)
+	return total >= (zone.unlock or 0) and rebirths >= (zone.rebirth or 0)
 end
 
 local function makeBarrier(zone)
@@ -161,25 +170,37 @@ end
 for _, zone in ipairs(GameConfig.ZONES) do
 	local l1, l2 = makeSign(zone)
 	local z = { l1 = l1, l2 = l2, opened = false }
-	local startUnlocked = zone.unlock <= 0
+	local startUnlocked = isUnlocked(zone, 0, 0)
 	if not startUnlocked then
 		z.wall = makeBarrier(zone)
 	end
-	updateSign(z, zone, startUnlocked)
+	updateSign(z, zone, startUnlocked, 0, 0)
 	z.opened = startUnlocked
 	zones[zone] = z
 end
 
 local function refresh()
 	local total = player:GetAttribute("TotalEarned") or 0
+	local rebirths = player:GetAttribute("Rebirths") or 0
 	for _, zone in ipairs(GameConfig.ZONES) do
-		if zone.unlock > 0 and total >= zone.unlock then
-			openZone(zones[zone], zone)
+		local z = zones[zone]
+		if isUnlocked(zone, total, rebirths) then
+			openZone(z, zone)
+		elseif z.opened then
+			-- після переродження зона знову закривається
+			z.opened = false
+			if not z.wall then
+				z.wall = makeBarrier(zone)
+			end
+			updateSign(z, zone, false, total, rebirths)
+		else
+			updateSign(z, zone, false, total, rebirths)
 		end
 	end
 end
 
 refresh()
 player:GetAttributeChangedSignal("TotalEarned"):Connect(refresh)
+player:GetAttributeChangedSignal("Rebirths"):Connect(refresh)
 
 print("[Zones] Вивіски й бар'єри готові ✅")

@@ -71,7 +71,8 @@ local function buildRig(player, char, tier)
 
 	local data = TIERS[tier] or TIERS[1]
 	local color = data.color
-	local s = tier -- 1..6
+	local rebirths = player:GetAttribute("Rebirths") or 0
+	local s = math.clamp(tier + math.min(rebirths, 3), 1, 9) -- масштаб росте з переродженнями
 
 	local folder = Instance.new("Folder")
 	folder.Name = "Rig_" .. player.Name
@@ -102,7 +103,7 @@ local function buildRig(player, char, tier)
 	})
 
 	-- обгортка-хмара
-	if tier >= 2 then
+	if s >=2 then
 		addEmitter(att, {
 			Texture = FIRE,
 			Color = ColorSequence.new(color),
@@ -117,7 +118,7 @@ local function buildRig(player, char, tier)
 	end
 
 	-- іскри
-	if tier >= 3 then
+	if s >=3 then
 		addEmitter(att, {
 			Texture = SPARK,
 			Color = ColorSequence.new(Color3.new(1, 1, 1), color),
@@ -175,8 +176,8 @@ local function buildRig(player, char, tier)
 	end
 
 	-- ударна хвиля від ніг (тір 3+)
-	if tier >= 3 then
-		local waves = (tier >= 6) and 2 or 1
+	if s >=3 then
+		local waves = (s >= 6) and 2 or 1
 		for w = 1, waves do
 			local disc = makePart(folder, {
 				Shape = Enum.PartType.Cylinder, Size = Vector3.new(0.5, 2, 2),
@@ -190,7 +191,7 @@ local function buildRig(player, char, tier)
 	end
 
 	-- каміння що злітає (тір 3+)
-	if tier >= 3 then
+	if s >=3 then
 		local rocks = 3 + s
 		for i = 1, rocks do
 			local rock = makePart(folder, {
@@ -207,7 +208,7 @@ local function buildRig(player, char, tier)
 	end
 
 	-- енергетичний стовп (тір 4+)
-	if tier >= 4 then
+	if s >=4 then
 		local pillar = makePart(folder, {
 			Shape = Enum.PartType.Cylinder, Size = Vector3.new(20 + s * 4, 6 + s, 6 + s),
 			Material = Enum.Material.Neon, Color = color, Transparency = 0.7,
@@ -216,12 +217,27 @@ local function buildRig(player, char, tier)
 	end
 
 	-- сяюча сфера-аура (тір 5+)
-	if tier >= 5 then
+	if s >=5 then
 		local shell = makePart(folder, {
 			Shape = Enum.PartType.Ball, Size = Vector3.new(10, 10, 10),
 			Material = Enum.Material.ForceField, Color = color, Transparency = 0.4,
 		})
 		table.insert(rig.elems, { kind = "shell", part = shell, size = 9 + s * 1.5, amp = 1.5 })
+	end
+
+	-- РАЙДУЖНА аура для перероджених
+	if rebirths >= 1 then
+		rig.rainbow = true
+		rig.tint = {}
+		for _, d in ipairs(folder:GetDescendants()) do
+			if d:IsA("BasePart") and (d.Material == Enum.Material.Neon or d.Material == Enum.Material.ForceField) then
+				table.insert(rig.tint, { i = d, k = "p" })
+			elseif d:IsA("PointLight") then
+				table.insert(rig.tint, { i = d, k = "l" })
+			elseif d:IsA("Trail") then
+				table.insert(rig.tint, { i = d, k = "t" })
+			end
+		end
 	end
 end
 
@@ -233,6 +249,19 @@ RunService.RenderStepped:Connect(function()
 		local hrp = char and char:FindFirstChild("HumanoidRootPart")
 		if hrp then
 			local base = hrp.Position
+
+			-- райдужний перелив (перероджені)
+			if rig.rainbow and rig.tint then
+				local c = Color3.fromHSV((t * 0.12) % 1, 1, 1)
+				for _, e in ipairs(rig.tint) do
+					if e.k == "t" then
+						e.i.Color = ColorSequence.new(c)
+					else
+						e.i.Color = c
+					end
+				end
+			end
+
 			for _, e in ipairs(rig.elems) do
 				if e.kind == "follow" then
 					e.part.CFrame = CFrame.new(base + Vector3.new(0, e.h, 0))
@@ -280,6 +309,7 @@ local function bind(player)
 		refresh()
 	end)
 	player:GetAttributeChangedSignal("AuraTier"):Connect(refresh)
+	player:GetAttributeChangedSignal("Rebirths"):Connect(refresh)
 	if player.Character then refresh() end
 end
 

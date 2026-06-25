@@ -32,6 +32,7 @@ const ZONES = [
   { name: "Срібна зона",  pos: [72, 1, -52],  radius: 10, color: [150, 200, 255] },
   { name: "Золота зона",  pos: [-72, 1, -52], radius: 10, color: [255, 205, 70] },
   { name: "Алмазна зона", pos: [0, 1, -126],  radius: 12, color: [120, 255, 240] },
+  { name: "VIP зона",     pos: [0, 1, 22],    radius: 12, color: [255, 120, 255] },
 ];
 
 function part(className, name, props, children) {
