@@ -10,6 +10,7 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
 
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
@@ -53,6 +54,12 @@ local function fmt(n) -- 1500 -> "1.5K"
 	return tostring(math.floor(n))
 end
 
+local function comma(n) -- 12345 -> "12 345"
+	local s = tostring(math.floor(n))
+	local out = s:reverse():gsub("(%d%d%d)", "%1 "):reverse()
+	return (out:gsub("^%s+", ""))
+end
+
 -- ===== корінь =====
 local gui = Instance.new("ScreenGui")
 gui.Name = "GameUI"
@@ -60,6 +67,115 @@ gui.ResetOnSpawn = false
 gui.IgnoreGuiInset = true
 gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 gui.Parent = playerGui
+
+-- ============================================================
+--  ЛІЧИЛЬНИК МОНЕТ (зверху по центру)
+-- ============================================================
+local hud = Instance.new("Frame")
+hud.Name = "CoinsHUD"
+hud.AnchorPoint = Vector2.new(0.5, 0)
+hud.Position = UDim2.new(0.5, 0, 0, 16)
+hud.AutomaticSize = Enum.AutomaticSize.X
+hud.Size = UDim2.new(0, 0, 0, 64)
+hud.BackgroundColor3 = DARK
+corner(hud, 20)
+local hudStroke = stroke(hud, THEME, 2.5)
+hud.Parent = gui
+
+local hudPad = Instance.new("UIPadding")
+hudPad.PaddingLeft = UDim.new(0, 10)
+hudPad.PaddingRight = UDim.new(0, 20)
+hudPad.Parent = hud
+
+local hudLayout = Instance.new("UIListLayout")
+hudLayout.FillDirection = Enum.FillDirection.Horizontal
+hudLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+hudLayout.Padding = UDim.new(0, 12)
+hudLayout.SortOrder = Enum.SortOrder.LayoutOrder
+hudLayout.Parent = hud
+
+-- золота монетка-іконка
+local icon = Instance.new("Frame")
+icon.Size = UDim2.new(0, 44, 0, 44)
+icon.BackgroundColor3 = Color3.fromRGB(255, 200, 60)
+icon.LayoutOrder = 1
+corner(icon, 22)
+stroke(icon, Color3.fromRGB(230, 160, 20), 2.5)
+icon.Parent = hud
+
+local dollar = Instance.new("TextLabel")
+dollar.Size = UDim2.new(1, 0, 1, 0)
+dollar.BackgroundTransparency = 1
+dollar.Font = Enum.Font.FredokaOne
+dollar.Text = "$"
+dollar.TextColor3 = Color3.fromRGB(120, 80, 0)
+dollar.TextSize = 28
+dollar.Parent = icon
+
+-- колонка з числом і доходом/сек
+local info = Instance.new("Frame")
+info.AutomaticSize = Enum.AutomaticSize.XY
+info.BackgroundTransparency = 1
+info.LayoutOrder = 2
+info.Parent = hud
+
+local infoLayout = Instance.new("UIListLayout")
+infoLayout.FillDirection = Enum.FillDirection.Vertical
+infoLayout.SortOrder = Enum.SortOrder.LayoutOrder
+infoLayout.Parent = info
+
+local amountLabel = Instance.new("TextLabel")
+amountLabel.AutomaticSize = Enum.AutomaticSize.X
+amountLabel.Size = UDim2.new(0, 0, 0, 30)
+amountLabel.BackgroundTransparency = 1
+amountLabel.Font = Enum.Font.FredokaOne
+amountLabel.Text = "0"
+amountLabel.TextColor3 = WHITE
+amountLabel.TextSize = 28
+amountLabel.TextXAlignment = Enum.TextXAlignment.Left
+amountLabel.LayoutOrder = 1
+amountLabel.Parent = info
+
+local rateLabel = Instance.new("TextLabel")
+rateLabel.AutomaticSize = Enum.AutomaticSize.X
+rateLabel.Size = UDim2.new(0, 0, 0, 16)
+rateLabel.BackgroundTransparency = 1
+rateLabel.Font = Enum.Font.GothamBold
+rateLabel.Text = "+1/сек"
+rateLabel.TextColor3 = THEME
+rateLabel.TextSize = 14
+rateLabel.TextXAlignment = Enum.TextXAlignment.Left
+rateLabel.LayoutOrder = 2
+rateLabel.Parent = info
+
+-- плавна анімація лічильника (рахує вгору, а не стрибає)
+local displayed = coinsValue.Value
+RunService.Heartbeat:Connect(function(dt)
+	local target = coinsValue.Value
+	if math.abs(displayed - target) < 1 then
+		displayed = target
+	else
+		displayed = displayed + (target - displayed) * math.min(dt * 8, 1)
+	end
+	amountLabel.Text = comma(displayed)
+end)
+
+-- оновлення доходу/сек + підсвітка під час бусту
+local function updateRate()
+	local mult = player:GetAttribute("Multiplier") or 1
+	local rps = GameConfig.BASE_INCOME * mult
+	local boosting = player:GetAttribute("AfkBoosting") == true
+	if boosting then
+		rps += GameConfig.BOOST_BONUS * mult
+	end
+	local multText = mult > 1 and ("  ×" .. mult) or ""
+	rateLabel.Text = (boosting and "⚡ +" or "+") .. comma(rps) .. "/сек" .. multText
+	rateLabel.TextColor3 = boosting and Color3.fromRGB(255, 200, 60) or THEME
+	hudStroke.Color = boosting and Color3.fromRGB(255, 200, 60) or THEME
+end
+player:GetAttributeChangedSignal("Multiplier"):Connect(updateRate)
+player:GetAttributeChangedSignal("AfkBoosting"):Connect(updateRate)
+updateRate()
 
 -- ============================================================
 --  МЕНЮ ЗЛІВА (вертикальне, по центру висоти)
