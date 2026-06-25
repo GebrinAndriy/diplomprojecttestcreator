@@ -7,12 +7,14 @@
 local Lighting = game:GetService("Lighting")
 local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
--- ===== НАЛАШТУВАННЯ =====
-local PAD_POSITION = Vector3.new(0, 1, -40) -- де стоїть AFK-зона
-local PAD_RADIUS = 10                        -- радіус платформи
-local THEME = Color3.fromRGB(70, 255, 160)   -- основний колір підсвітки (зелено-неон)
--- ========================
+local GameConfig = require(ReplicatedStorage:WaitForChild("GameConfig"))
+
+-- беремо з єдиного конфіга
+local PAD_POSITION = GameConfig.PAD_POSITION
+local PAD_RADIUS = GameConfig.PAD_RADIUS
+local THEME = GameConfig.THEME
 
 -- прибираємо стару сцену, якщо Rojo пересинхронив (щоб не дублювалось)
 local old = Workspace:FindFirstChild("AFK_Scene")
