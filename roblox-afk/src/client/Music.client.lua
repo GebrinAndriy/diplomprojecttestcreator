@@ -45,7 +45,7 @@ btn.Size = UDim2.new(0, 48, 0, 48)
 btn.BackgroundColor3 = Color3.fromRGB(24, 27, 36)
 btn.Text = "🔊"
 btn.TextSize = 24
-btn.Font = Enum.Font.GothamBold
+btn.Font = Enum.Font.GothamBlack
 btn.TextColor3 = Color3.fromRGB(245, 245, 245)
 btn.Parent = gui
 

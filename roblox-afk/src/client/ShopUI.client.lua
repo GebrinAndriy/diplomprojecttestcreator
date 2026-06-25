@@ -150,7 +150,7 @@ local rateLabel = Instance.new("TextLabel")
 rateLabel.AutomaticSize = Enum.AutomaticSize.X
 rateLabel.Size = UDim2.new(0, 0, 0, 16)
 rateLabel.BackgroundTransparency = 1
-rateLabel.Font = Enum.Font.GothamBold
+rateLabel.Font = Enum.Font.GothamBlack
 rateLabel.Text = "+1/сек"
 rateLabel.TextColor3 = THEME
 rateLabel.TextSize = 14
@@ -208,7 +208,7 @@ tbPad.Parent = tierBar
 local tierNow = Instance.new("TextLabel")
 tierNow.Size = UDim2.new(0.5, 0, 0, 18)
 tierNow.BackgroundTransparency = 1
-tierNow.Font = Enum.Font.GothamBold
+tierNow.Font = Enum.Font.GothamBlack
 tierNow.Text = "Аура: Тьмяна"
 tierNow.TextColor3 = WHITE
 tierNow.TextSize = 14
@@ -220,7 +220,7 @@ tierNext.AnchorPoint = Vector2.new(1, 0)
 tierNext.Position = UDim2.new(1, 0, 0, 0)
 tierNext.Size = UDim2.new(0.5, 0, 0, 18)
 tierNext.BackgroundTransparency = 1
-tierNext.Font = Enum.Font.GothamBold
+tierNext.Font = Enum.Font.GothamBlack
 tierNext.Text = "Далі: Іскриста"
 tierNext.TextColor3 = GREY
 tierNext.TextSize = 14
@@ -245,7 +245,7 @@ barFill.Parent = barBg
 local barText = Instance.new("TextLabel")
 barText.Size = UDim2.new(1, 0, 1, 0)
 barText.BackgroundTransparency = 1
-barText.Font = Enum.Font.GothamBold
+barText.Font = Enum.Font.GothamBlack
 barText.Text = "0 / 300"
 barText.TextColor3 = WHITE
 barText.TextSize = 13
@@ -305,7 +305,7 @@ local function makeMenuButton(iconTxt, order)
 	btn.BackgroundColor3 = DARK
 	btn.Text = iconTxt
 	btn.TextSize = 32
-	btn.Font = Enum.Font.GothamBold
+	btn.Font = Enum.Font.GothamBlack
 	btn.TextColor3 = WHITE
 	btn.LayoutOrder = order
 	corner(btn, 16)
@@ -348,7 +348,7 @@ local function makePanel(titleText)
 	close.Position = UDim2.new(1, -48, 0, 12)
 	close.BackgroundColor3 = RED
 	close.Text = "X"
-	close.Font = Enum.Font.GothamBold
+	close.Font = Enum.Font.GothamBlack
 	close.TextSize = 20
 	close.TextColor3 = WHITE
 	corner(close, 12)
@@ -401,7 +401,7 @@ local function refreshShop()
 	local header = Instance.new("TextLabel")
 	header.Size = UDim2.new(1, 0, 0, 30)
 	header.BackgroundColor3 = DARK2
-	header.Font = Enum.Font.GothamBold
+	header.Font = Enum.Font.GothamBlack
 	header.Text = "Поточний множник аури:  ×" .. mult
 	header.TextColor3 = THEME
 	header.TextSize = 16
@@ -428,7 +428,7 @@ local function refreshShop()
 		ic.AnchorPoint = Vector2.new(0, 0.5)
 		ic.Size = UDim2.new(0, 50, 0, 50)
 		ic.BackgroundColor3 = DARK
-		ic.Font = Enum.Font.GothamBold
+		ic.Font = Enum.Font.GothamBlack
 		ic.Text = upg.icon or "✦"
 		ic.TextSize = 26
 		ic.TextColor3 = WHITE
@@ -440,7 +440,7 @@ local function refreshShop()
 		name.BackgroundTransparency = 1
 		name.Position = UDim2.new(0, 72, 0, 12)
 		name.Size = UDim2.new(0.5, 0, 0, 24)
-		name.Font = Enum.Font.GothamBold
+		name.Font = Enum.Font.GothamBlack
 		name.Text = upg.name
 		name.TextColor3 = WHITE
 		name.TextSize = 18
@@ -451,7 +451,7 @@ local function refreshShop()
 		desc.BackgroundTransparency = 1
 		desc.Position = UDim2.new(0, 72, 0, 38)
 		desc.Size = UDim2.new(0.5, 0, 0, 22)
-		desc.Font = Enum.Font.Gotham
+		desc.Font = Enum.Font.GothamMedium
 		desc.Text = upg.desc
 		desc.TextColor3 = GREY
 		desc.TextSize = 14
@@ -462,7 +462,7 @@ local function refreshShop()
 		btn.AnchorPoint = Vector2.new(1, 0.5)
 		btn.Position = UDim2.new(1, -12, 0.5, 0)
 		btn.Size = UDim2.new(0, 140, 0, 46)
-		btn.Font = Enum.Font.GothamBold
+		btn.Font = Enum.Font.GothamBlack
 		btn.TextSize = 16
 		btn.TextColor3 = WHITE
 		corner(btn, 12)
@@ -514,7 +514,7 @@ local function refreshAch()
 		name.BackgroundTransparency = 1
 		name.Position = UDim2.new(0, 14, 0, 8)
 		name.Size = UDim2.new(1, -120, 0, 22)
-		name.Font = Enum.Font.GothamBold
+		name.Font = Enum.Font.GothamBlack
 		name.Text = (unlocked and "✅ " or "🔒 ") .. ach.name
 		name.TextColor3 = unlocked and THEME or WHITE
 		name.TextSize = 17
@@ -525,7 +525,7 @@ local function refreshAch()
 		desc.BackgroundTransparency = 1
 		desc.Position = UDim2.new(0, 14, 0, 30)
 		desc.Size = UDim2.new(1, -120, 0, 18)
-		desc.Font = Enum.Font.Gotham
+		desc.Font = Enum.Font.GothamMedium
 		desc.Text = ach.desc
 		desc.TextColor3 = GREY
 		desc.TextSize = 13
@@ -550,7 +550,7 @@ local function refreshAch()
 		reward.Position = UDim2.new(1, -14, 0.5, 0)
 		reward.Size = UDim2.new(0, 96, 0, 40)
 		reward.BackgroundTransparency = 1
-		reward.Font = Enum.Font.GothamBold
+		reward.Font = Enum.Font.GothamBlack
 		reward.Text = CUR_ICON .. " " .. fmt(ach.reward)
 		reward.TextColor3 = unlocked and GREEN or GREY
 		reward.TextSize = 16
@@ -576,7 +576,7 @@ function notify(text, color)
 	label.Size = UDim2.new(1, -20, 1, 0)
 	label.Position = UDim2.new(0, 10, 0, 0)
 	label.BackgroundTransparency = 1
-	label.Font = Enum.Font.GothamBold
+	label.Font = Enum.Font.GothamBlack
 	label.Text = text
 	label.TextColor3 = WHITE
 	label.TextSize = 16

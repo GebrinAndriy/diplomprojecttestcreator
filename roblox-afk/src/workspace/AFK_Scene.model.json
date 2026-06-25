@@ -5,206 +5,6 @@
   "children": [
     {
       "className": "Folder",
-      "name": "Floor",
-      "properties": {},
-      "children": [
-        {
-          "className": "Part",
-          "name": "FloorBase",
-          "properties": {
-            "Anchored": true,
-            "Size": [
-              210,
-              1,
-              185
-            ],
-            "CFrame": [
-              0,
-              0,
-              -58,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Concrete",
-            "Color": [
-              0.329,
-              0.345,
-              0.384
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "FloorInlay",
-          "properties": {
-            "Anchored": true,
-            "Size": [
-              194,
-              1.05,
-              169
-            ],
-            "CFrame": [
-              0,
-              0,
-              -58,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Marble",
-            "Color": [
-              0.259,
-              0.275,
-              0.314
-            ],
-            "CanCollide": false
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Trim",
-          "properties": {
-            "Anchored": true,
-            "Size": [
-              214,
-              2.2,
-              4
-            ],
-            "CFrame": [
-              0,
-              1,
-              34.5,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Metal",
-            "Color": [
-              0.471,
-              0.494,
-              0.557
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Trim",
-          "properties": {
-            "Anchored": true,
-            "Size": [
-              214,
-              2.2,
-              4
-            ],
-            "CFrame": [
-              0,
-              1,
-              -150.5,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Metal",
-            "Color": [
-              0.471,
-              0.494,
-              0.557
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Trim",
-          "properties": {
-            "Anchored": true,
-            "Size": [
-              4,
-              2.2,
-              189
-            ],
-            "CFrame": [
-              105,
-              1,
-              -58,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Metal",
-            "Color": [
-              0.471,
-              0.494,
-              0.557
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Trim",
-          "properties": {
-            "Anchored": true,
-            "Size": [
-              4,
-              2.2,
-              189
-            ],
-            "CFrame": [
-              -105,
-              1,
-              -58,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Metal",
-            "Color": [
-              0.471,
-              0.494,
-              0.557
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "className": "Folder",
       "name": "Zone_1",
       "properties": {},
       "children": [
@@ -233,11 +33,11 @@
               0,
               1
             ],
-            "Material": "Marble",
+            "Material": "SmoothPlastic",
             "Color": [
-              0.204,
-              0.22,
-              0.259
+              0.337,
+              0.337,
+              0.369
             ]
           }
         },
@@ -248,7 +48,7 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              0.8,
+              1.2,
               21,
               21
             ],
@@ -267,7 +67,7 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Metal",
+            "Material": "SmoothPlastic",
             "Color": [
               0.471,
               0.863,
@@ -299,11 +99,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -365,11 +165,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -431,11 +231,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -497,11 +297,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -563,11 +363,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -629,11 +429,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -753,11 +553,11 @@
               0,
               1
             ],
-            "Material": "Marble",
+            "Material": "SmoothPlastic",
             "Color": [
-              0.204,
-              0.22,
-              0.259
+              0.337,
+              0.337,
+              0.369
             ]
           }
         },
@@ -768,7 +568,7 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              0.8,
+              1.2,
               21,
               21
             ],
@@ -787,7 +587,7 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Metal",
+            "Material": "SmoothPlastic",
             "Color": [
               0.588,
               0.784,
@@ -819,11 +619,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -885,11 +685,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -951,11 +751,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1017,11 +817,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1083,11 +883,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1149,11 +949,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1273,11 +1073,11 @@
               0,
               1
             ],
-            "Material": "Marble",
+            "Material": "SmoothPlastic",
             "Color": [
-              0.204,
-              0.22,
-              0.259
+              0.337,
+              0.337,
+              0.369
             ]
           }
         },
@@ -1288,7 +1088,7 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              0.8,
+              1.2,
               21,
               21
             ],
@@ -1307,7 +1107,7 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Metal",
+            "Material": "SmoothPlastic",
             "Color": [
               1,
               0.804,
@@ -1339,11 +1139,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1405,11 +1205,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1471,11 +1271,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1537,11 +1337,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1603,11 +1403,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1669,11 +1469,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1793,11 +1593,11 @@
               0,
               1
             ],
-            "Material": "Marble",
+            "Material": "SmoothPlastic",
             "Color": [
-              0.204,
-              0.22,
-              0.259
+              0.337,
+              0.337,
+              0.369
             ]
           }
         },
@@ -1808,7 +1608,7 @@
             "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
-              0.8,
+              1.2,
               25,
               25
             ],
@@ -1827,7 +1627,7 @@
               1
             ],
             "CanCollide": false,
-            "Material": "Metal",
+            "Material": "SmoothPlastic",
             "Color": [
               0.471,
               1,
@@ -1859,11 +1659,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1925,11 +1725,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -1991,11 +1791,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -2057,11 +1857,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -2123,11 +1923,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -2189,11 +1989,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -2294,13 +2094,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              8,
-              0.4,
+              7,
+              0.6,
               48
             ],
             "CFrame": [
               0,
-              0.7,
+              1.2,
               -24,
               -1,
               0,
@@ -2314,9 +2114,9 @@
             ],
             "Material": "Slate",
             "Color": [
-              0.259,
-              0.275,
-              0.314
+              0.337,
+              0.337,
+              0.369
             ],
             "CanCollide": false
           }
@@ -2328,12 +2128,12 @@
             "Anchored": true,
             "Size": [
               1.2,
-              0.45,
+              0.65,
               48
             ],
             "CFrame": [
               0,
-              0.72,
+              1.25,
               -24,
               -1,
               0,
@@ -2345,11 +2145,11 @@
               0,
               -1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
               0.471,
-              0.494,
-              0.557
+              0.471,
+              0.502
             ],
             "CanCollide": false
           }
@@ -2367,13 +2167,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              8,
-              0.4,
+              7,
+              0.6,
               88.81441324469807
             ],
             "CFrame": [
               36,
-              0.7,
+              1.2,
               -26,
               -0.5854905538443584,
               0,
@@ -2387,9 +2187,9 @@
             ],
             "Material": "Slate",
             "Color": [
-              0.259,
-              0.275,
-              0.314
+              0.337,
+              0.337,
+              0.369
             ],
             "CanCollide": false
           }
@@ -2401,12 +2201,12 @@
             "Anchored": true,
             "Size": [
               1.2,
-              0.45,
+              0.65,
               88.81441324469807
             ],
             "CFrame": [
               36,
-              0.72,
+              1.25,
               -26,
               -0.5854905538443584,
               0,
@@ -2418,11 +2218,11 @@
               0,
               -0.5854905538443584
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
               0.471,
-              0.494,
-              0.557
+              0.471,
+              0.502
             ],
             "CanCollide": false
           }
@@ -2440,13 +2240,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              8,
-              0.4,
+              7,
+              0.6,
               88.81441324469807
             ],
             "CFrame": [
               -36,
-              0.7,
+              1.2,
               -26,
               -0.5854905538443584,
               0,
@@ -2460,9 +2260,9 @@
             ],
             "Material": "Slate",
             "Color": [
-              0.259,
-              0.275,
-              0.314
+              0.337,
+              0.337,
+              0.369
             ],
             "CanCollide": false
           }
@@ -2474,12 +2274,12 @@
             "Anchored": true,
             "Size": [
               1.2,
-              0.45,
+              0.65,
               88.81441324469807
             ],
             "CFrame": [
               -36,
-              0.72,
+              1.25,
               -26,
               -0.5854905538443584,
               0,
@@ -2491,11 +2291,11 @@
               0,
               -0.5854905538443584
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
               0.471,
-              0.494,
-              0.557
+              0.471,
+              0.502
             ],
             "CanCollide": false
           }
@@ -2513,13 +2313,13 @@
           "properties": {
             "Anchored": true,
             "Size": [
-              8,
-              0.4,
+              7,
+              0.6,
               126
             ],
             "CFrame": [
               0,
-              0.7,
+              1.2,
               -63,
               -1,
               0,
@@ -2533,9 +2333,9 @@
             ],
             "Material": "Slate",
             "Color": [
-              0.259,
-              0.275,
-              0.314
+              0.337,
+              0.337,
+              0.369
             ],
             "CanCollide": false
           }
@@ -2547,12 +2347,12 @@
             "Anchored": true,
             "Size": [
               1.2,
-              0.45,
+              0.65,
               126
             ],
             "CFrame": [
               0,
-              0.72,
+              1.25,
               -63,
               -1,
               0,
@@ -2564,14 +2364,631 @@
               0,
               -1
             ],
-            "Material": "Metal",
+            "Material": "Concrete",
             "Color": [
               0.471,
-              0.494,
-              0.557
+              0.471,
+              0.502
             ],
             "CanCollide": false
           }
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Structure_1",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "S_Post",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              10,
+              1,
+              1
+            ],
+            "CFrame": [
+              0,
+              5,
+              -69,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Wood",
+            "Color": [
+              0.471,
+              0.329,
+              0.204
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Board",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              8,
+              3,
+              0.6
+            ],
+            "CFrame": [
+              0,
+              9,
+              -69,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Wood",
+            "Color": [
+              0.471,
+              0.329,
+              0.204
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Gem",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              1.6,
+              1.6,
+              1.6
+            ],
+            "CFrame": [
+              0,
+              11.5,
+              -69,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.471,
+              0.863,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.471,
+                  0.863,
+                  1
+                ],
+                "Brightness": 2,
+                "Range": 12
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Structure_2",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "S_Base",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              8,
+              6,
+              8
+            ],
+            "CFrame": [
+              89.0242637963975,
+              4,
+              -64.29530163073153,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Brick",
+            "Color": [
+              0.471,
+              0.471,
+              0.502
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Mid",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              6,
+              6,
+              6
+            ],
+            "CFrame": [
+              89.0242637963975,
+              10,
+              -64.29530163073153,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Brick",
+            "Color": [
+              0.337,
+              0.337,
+              0.369
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Top",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              4,
+              5,
+              4
+            ],
+            "CFrame": [
+              89.0242637963975,
+              15,
+              -64.29530163073153,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Brick",
+            "Color": [
+              0.471,
+              0.471,
+              0.502
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Gem",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.5,
+              2.5,
+              2.5
+            ],
+            "CFrame": [
+              89.0242637963975,
+              19,
+              -64.29530163073153,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.588,
+              0.784,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.588,
+                  0.784,
+                  1
+                ],
+                "Brightness": 3,
+                "Range": 16
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Structure_3",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "S_Col0",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              10,
+              1.4,
+              1.4
+            ],
+            "CFrame": [
+              -93.0242637963975,
+              5,
+              -68.29530163073153,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Marble",
+            "Color": [
+              0.588,
+              0.588,
+              0.62
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Col1",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              10,
+              1.4,
+              1.4
+            ],
+            "CFrame": [
+              -85.0242637963975,
+              5,
+              -68.29530163073153,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Marble",
+            "Color": [
+              0.588,
+              0.588,
+              0.62
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Col2",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              10,
+              1.4,
+              1.4
+            ],
+            "CFrame": [
+              -93.0242637963975,
+              5,
+              -60.29530163073153,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Marble",
+            "Color": [
+              0.588,
+              0.588,
+              0.62
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Col3",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              10,
+              1.4,
+              1.4
+            ],
+            "CFrame": [
+              -85.0242637963975,
+              5,
+              -60.29530163073153,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Marble",
+            "Color": [
+              0.588,
+              0.588,
+              0.62
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Roof",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              12,
+              1.5,
+              12
+            ],
+            "CFrame": [
+              -89.0242637963975,
+              10.5,
+              -64.29530163073153,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Marble",
+            "Color": [
+              0.471,
+              0.471,
+              0.502
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Gem",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.5,
+              2.5,
+              2.5
+            ],
+            "CFrame": [
+              -89.0242637963975,
+              13,
+              -64.29530163073153,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.804,
+              0.275
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  1,
+                  0.804,
+                  0.275
+                ],
+                "Brightness": 3,
+                "Range": 16
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Structure_4",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "S_Base",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              3,
+              12,
+              12
+            ],
+            "CFrame": [
+              0,
+              2.5,
+              -149,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Marble",
+            "Color": [
+              0.471,
+              0.471,
+              0.502
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Ring",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              1,
+              9,
+              9
+            ],
+            "CFrame": [
+              0,
+              9,
+              -149,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.471,
+              1,
+              0.941
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "S_Gem",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              3.5,
+              3.5,
+              3.5
+            ],
+            "CFrame": [
+              0,
+              9,
+              -149,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.471,
+              1,
+              0.941
+            ],
+            "Transparency": 0.1
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.471,
+                  1,
+                  0.941
+                ],
+                "Brightness": 4,
+                "Range": 20
+              }
+            }
+          ]
         }
       ]
     },
@@ -2592,9 +3009,9 @@
               0.9
             ],
             "CFrame": [
-              -95,
+              -30,
               6.5,
-              28,
+              30,
               0,
               -1,
               0,
@@ -2607,9 +3024,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.471,
+              0.471,
+              0.502
             ]
           }
         },
@@ -2625,9 +3042,9 @@
               2
             ],
             "CFrame": [
-              -95,
+              -30,
               13.2,
-              28,
+              30,
               1,
               0,
               0,
@@ -2681,9 +3098,9 @@
               0.9
             ],
             "CFrame": [
-              95,
+              30,
               6.5,
-              28,
+              30,
               0,
               -1,
               0,
@@ -2696,9 +3113,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.471,
+              0.471,
+              0.502
             ]
           }
         },
@@ -2714,9 +3131,9 @@
               2
             ],
             "CFrame": [
-              95,
+              30,
               13.2,
-              28,
+              30,
               1,
               0,
               0,
@@ -2770,9 +3187,9 @@
               0.9
             ],
             "CFrame": [
-              -95,
+              -50,
               6.5,
-              -148,
+              -90,
               0,
               -1,
               0,
@@ -2785,9 +3202,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.471,
+              0.471,
+              0.502
             ]
           }
         },
@@ -2803,9 +3220,9 @@
               2
             ],
             "CFrame": [
-              -95,
+              -50,
               13.2,
-              -148,
+              -90,
               1,
               0,
               0,
@@ -2859,9 +3276,9 @@
               0.9
             ],
             "CFrame": [
-              95,
+              50,
               6.5,
-              -148,
+              -90,
               0,
               -1,
               0,
@@ -2874,9 +3291,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.471,
+              0.471,
+              0.502
             ]
           }
         },
@@ -2892,9 +3309,9 @@
               2
             ],
             "CFrame": [
-              95,
+              50,
               13.2,
-              -148,
+              -90,
               1,
               0,
               0,
@@ -2948,9 +3365,9 @@
               0.9
             ],
             "CFrame": [
-              -95,
+              -40,
               6.5,
-              -60,
+              -150,
               0,
               -1,
               0,
@@ -2963,9 +3380,9 @@
             ],
             "Material": "Metal",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.471,
+              0.471,
+              0.502
             ]
           }
         },
@@ -2981,9 +3398,9 @@
               2
             ],
             "CFrame": [
-              -95,
+              -40,
               13.2,
-              -60,
+              -150,
               1,
               0,
               0,
@@ -3037,693 +3454,42 @@
               0.9
             ],
             "CFrame": [
-              95,
-              6.5,
-              -60,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Metal",
-            "Color": [
-              0.306,
-              0.325,
-              0.376
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Bulb",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              95,
-              13.2,
-              -60,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Neon",
-            "Color": [
-              1,
-              0.941,
-              0.824
-            ]
-          },
-          "children": [
-            {
-              "className": "PointLight",
-              "name": "Light",
-              "properties": {
-                "Color": [
-                  1,
-                  0.941,
-                  0.824
-                ],
-                "Brightness": 2.5,
-                "Range": 22
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "className": "Folder",
-      "name": "Lamp_7",
-      "properties": {},
-      "children": [
-        {
-          "className": "Part",
-          "name": "Post",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
-              13,
-              0.9,
-              0.9
-            ],
-            "CFrame": [
-              -35,
-              6.5,
-              32,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Metal",
-            "Color": [
-              0.306,
-              0.325,
-              0.376
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Bulb",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              -35,
-              13.2,
-              32,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Neon",
-            "Color": [
-              1,
-              0.941,
-              0.824
-            ]
-          },
-          "children": [
-            {
-              "className": "PointLight",
-              "name": "Light",
-              "properties": {
-                "Color": [
-                  1,
-                  0.941,
-                  0.824
-                ],
-                "Brightness": 2.5,
-                "Range": 22
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "className": "Folder",
-      "name": "Lamp_8",
-      "properties": {},
-      "children": [
-        {
-          "className": "Part",
-          "name": "Post",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
-              13,
-              0.9,
-              0.9
-            ],
-            "CFrame": [
-              35,
-              6.5,
-              32,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Metal",
-            "Color": [
-              0.306,
-              0.325,
-              0.376
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "Bulb",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              2,
-              2,
-              2
-            ],
-            "CFrame": [
-              35,
-              13.2,
-              32,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Neon",
-            "Color": [
-              1,
-              0.941,
-              0.824
-            ]
-          },
-          "children": [
-            {
-              "className": "PointLight",
-              "name": "Light",
-              "properties": {
-                "Color": [
-                  1,
-                  0.941,
-                  0.824
-                ],
-                "Brightness": 2.5,
-                "Range": 22
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "className": "Folder",
-      "name": "Island_1",
-      "properties": {},
-      "children": [
-        {
-          "className": "Part",
-          "name": "IslandTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
-              2,
-              18.2,
-              18.2
-            ],
-            "CFrame": [
-              145,
-              24,
-              -40,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Slate",
-            "Color": [
-              0.259,
-              0.275,
-              0.314
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "IslandRing",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
-              1.4,
-              19.5,
-              19.5
-            ],
-            "CFrame": [
-              145,
-              24.4,
-              -40,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Metal",
-            "Color": [
-              1,
-              0.588,
-              0.824
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "IslandBottom",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              13,
-              15.600000000000001,
-              13
-            ],
-            "CFrame": [
-              145,
-              16.2,
-              -40,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Rock",
-            "Color": [
-              0.259,
-              0.275,
-              0.314
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "FloatCrystal",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              4.55,
-              4.55,
-              4.55
-            ],
-            "CFrame": [
-              145,
-              33.1,
-              -40,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Neon",
-            "Color": [
-              1,
-              0.588,
-              0.824
-            ],
-            "Transparency": 0.1
-          },
-          "children": [
-            {
-              "className": "PointLight",
-              "name": "Light",
-              "properties": {
-                "Color": [
-                  1,
-                  0.588,
-                  0.824
-                ],
-                "Brightness": 2.5,
-                "Range": 20
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "className": "Folder",
-      "name": "Island_2",
-      "properties": {},
-      "children": [
-        {
-          "className": "Part",
-          "name": "IslandTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
-              2,
-              15.400000000000002,
-              15.400000000000002
-            ],
-            "CFrame": [
-              -145,
-              34,
-              -95,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Slate",
-            "Color": [
-              0.259,
-              0.275,
-              0.314
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "IslandRing",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
-              1.4,
-              16.5,
-              16.5
-            ],
-            "CFrame": [
-              -145,
-              34.4,
-              -95,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Metal",
-            "Color": [
-              0.588,
-              1,
-              0.824
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "IslandBottom",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              11,
-              13.200000000000001,
-              11
-            ],
-            "CFrame": [
-              -145,
-              27.4,
-              -95,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Rock",
-            "Color": [
-              0.259,
-              0.275,
-              0.314
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "FloatCrystal",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              3.8500000000000005,
-              3.8500000000000005,
-              3.8500000000000005
-            ],
-            "CFrame": [
-              -145,
-              41.7,
-              -95,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Neon",
-            "Color": [
-              0.588,
-              1,
-              0.824
-            ],
-            "Transparency": 0.1
-          },
-          "children": [
-            {
-              "className": "PointLight",
-              "name": "Light",
-              "properties": {
-                "Color": [
-                  0.588,
-                  1,
-                  0.824
-                ],
-                "Brightness": 2.5,
-                "Range": 20
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "className": "Folder",
-      "name": "Island_3",
-      "properties": {},
-      "children": [
-        {
-          "className": "Part",
-          "name": "IslandTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
-              2,
-              14,
-              14
-            ],
-            "CFrame": [
-              85,
-              46,
-              -180,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Slate",
-            "Color": [
-              0.259,
-              0.275,
-              0.314
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "IslandRing",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
-              1.4,
-              15,
-              15
-            ],
-            "CFrame": [
-              85,
-              46.4,
-              -180,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Metal",
-            "Color": [
-              1,
-              0.863,
-              0.51
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "IslandBottom",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              10,
-              12,
-              10
-            ],
-            "CFrame": [
-              85,
               40,
-              -180,
+              6.5,
+              -150,
+              0,
+              -1,
+              0,
               1,
               0,
-              0,
-              0,
-              1,
               0,
               0,
               0,
               1
             ],
-            "CanCollide": false,
-            "Material": "Rock",
+            "Material": "Metal",
             "Color": [
-              0.259,
-              0.275,
-              0.314
+              0.471,
+              0.471,
+              0.502
             ]
           }
         },
         {
           "className": "Part",
-          "name": "FloatCrystal",
+          "name": "Bulb",
           "properties": {
             "Anchored": true,
             "Shape": "Ball",
             "Size": [
-              3.5,
-              3.5,
-              3.5
+              2,
+              2,
+              2
             ],
             "CFrame": [
-              85,
-              53,
-              -180,
+              40,
+              13.2,
+              -150,
               1,
               0,
               0,
@@ -3738,10 +3504,9 @@
             "Material": "Neon",
             "Color": [
               1,
-              0.863,
-              0.51
-            ],
-            "Transparency": 0.1
+              0.941,
+              0.824
+            ]
           },
           "children": [
             {
@@ -3750,169 +3515,11 @@
               "properties": {
                 "Color": [
                   1,
-                  0.863,
-                  0.51
+                  0.941,
+                  0.824
                 ],
                 "Brightness": 2.5,
-                "Range": 20
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "className": "Folder",
-      "name": "Island_4",
-      "properties": {},
-      "children": [
-        {
-          "className": "Part",
-          "name": "IslandTop",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
-              2,
-              12.6,
-              12.6
-            ],
-            "CFrame": [
-              -125,
-              20,
-              45,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "Material": "Slate",
-            "Color": [
-              0.259,
-              0.275,
-              0.314
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "IslandRing",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Cylinder",
-            "Size": [
-              1.4,
-              13.5,
-              13.5
-            ],
-            "CFrame": [
-              -125,
-              20.4,
-              45,
-              0,
-              -1,
-              0,
-              1,
-              0,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Metal",
-            "Color": [
-              0.588,
-              0.824,
-              1
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "IslandBottom",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              9,
-              10.8,
-              9
-            ],
-            "CFrame": [
-              -125,
-              14.6,
-              45,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Rock",
-            "Color": [
-              0.259,
-              0.275,
-              0.314
-            ]
-          }
-        },
-        {
-          "className": "Part",
-          "name": "FloatCrystal",
-          "properties": {
-            "Anchored": true,
-            "Shape": "Ball",
-            "Size": [
-              3.15,
-              3.15,
-              3.15
-            ],
-            "CFrame": [
-              -125,
-              26.3,
-              45,
-              1,
-              0,
-              0,
-              0,
-              1,
-              0,
-              0,
-              0,
-              1
-            ],
-            "CanCollide": false,
-            "Material": "Neon",
-            "Color": [
-              0.588,
-              0.824,
-              1
-            ],
-            "Transparency": 0.1
-          },
-          "children": [
-            {
-              "className": "PointLight",
-              "name": "Light",
-              "properties": {
-                "Color": [
-                  0.588,
-                  0.824,
-                  1
-                ],
-                "Brightness": 2.5,
-                "Range": 20
+                "Range": 22
               }
             }
           ]
@@ -3948,11 +3555,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Marble",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -4029,11 +3636,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Marble",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -4110,11 +3717,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Marble",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -4191,11 +3798,11 @@
               0,
               1
             ],
-            "Material": "Metal",
+            "Material": "Marble",
             "Color": [
-              0.306,
-              0.325,
-              0.376
+              0.588,
+              0.588,
+              0.62
             ]
           }
         },
@@ -4324,11 +3931,11 @@
           1
         ],
         "Anchored": true,
-        "Material": "Metal",
+        "Material": "Slate",
         "Color": [
-          0.314,
-          0.333,
-          0.392
+          0.471,
+          0.471,
+          0.502
         ]
       }
     }

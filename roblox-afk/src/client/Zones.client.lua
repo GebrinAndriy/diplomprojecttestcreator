@@ -52,7 +52,7 @@ local function toast(text, color)
 	lbl.Size = UDim2.new(1, -20, 1, 0)
 	lbl.Position = UDim2.new(0, 10, 0, 0)
 	lbl.BackgroundTransparency = 1
-	lbl.Font = Enum.Font.GothamBold
+	lbl.Font = Enum.Font.GothamBlack
 	lbl.Text = text
 	lbl.TextColor3 = WHITE
 	lbl.TextSize = 18
@@ -101,7 +101,7 @@ local function makeSign(zone)
 	l2.Position = UDim2.new(0, 0, 0.55, 0)
 	l2.Size = UDim2.new(1, 0, 0.45, 0)
 	l2.BackgroundTransparency = 1
-	l2.Font = Enum.Font.GothamBold
+	l2.Font = Enum.Font.GothamBlack
 	l2.TextScaled = true
 	l2.TextStrokeTransparency = 0.3
 	l2.Parent = bb
