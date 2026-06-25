@@ -14,7 +14,19 @@ local DataStoreService = game:GetService("DataStoreService")
 local GameConfig = require(ReplicatedStorage:WaitForChild("GameConfig"))
 local CUR = GameConfig.CURRENCY
 
-local store = DataStoreService:GetDataStore("AuraSave_v1")
+-- DataStore може бути недоступний (гра не опублікована / API вимкнено) —
+-- беремо його безпечно, щоб НЕ вбити весь скрипт
+local store
+do
+	local ok, result = pcall(function()
+		return DataStoreService:GetDataStore("AuraSave_v1")
+	end)
+	if ok then
+		store = result
+	else
+		warn("[Economy] DataStore недоступний, збереження вимкнено: " .. tostring(result))
+	end
+end
 
 -- ===== Канали клієнт <-> сервер =====
 local remotes = Instance.new("Folder")
@@ -69,6 +81,7 @@ local function key(player)
 end
 
 local function saveData(player)
+	if not store then return end
 	local cur = getCur(player)
 	if not cur then return end
 	local ach = {}
@@ -93,6 +106,7 @@ local function saveData(player)
 end
 
 local function loadData(player)
+	if not store then return nil end
 	local ok, data = pcall(function()
 		return store:GetAsync(key(player))
 	end)
@@ -146,6 +160,13 @@ end
 
 Players.PlayerAdded:Connect(onPlayerAdded)
 Players.PlayerRemoving:Connect(saveData)
+
+-- хто вже встиг зайти до підключення (Play Solo)
+for _, p in ipairs(Players:GetPlayers()) do
+	if not p:FindFirstChild("leaderstats") then
+		task.spawn(onPlayerAdded, p)
+	end
+end
 
 -- збереження при закритті сервера
 game:BindToClose(function()
