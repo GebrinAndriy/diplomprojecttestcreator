@@ -21,6 +21,7 @@ local CUR_ICON = "🔮" -- іконка валюти (емодзі, що точ�
 local remotes = ReplicatedStorage:WaitForChild("Remotes")
 local buyUpgrade = remotes:WaitForChild("BuyUpgrade")
 local achUnlocked = remotes:WaitForChild("AchievementUnlocked")
+local dev = remotes:WaitForChild("Dev")
 
 local leaderstats = player:WaitForChild("leaderstats")
 local auraValue = leaderstats:WaitForChild(CUR)
@@ -674,5 +675,46 @@ auraValue.Changed:Connect(function(newVal)
 		}):Play()
 	end
 end)
+
+-- ============================================================
+--  ЧІТ-КНОПКИ (DEV) — праворуч під кнопкою музики
+-- ============================================================
+if GameConfig.DEV_MODE then
+	local devPanel = Instance.new("Frame")
+	devPanel.AnchorPoint = Vector2.new(1, 0)
+	devPanel.Position = UDim2.new(1, -14, 0, 72)
+	devPanel.Size = UDim2.new(0, 120, 0, 0)
+	devPanel.AutomaticSize = Enum.AutomaticSize.Y
+	devPanel.BackgroundTransparency = 1
+	devPanel.Parent = gui
+
+	local devLayout = Instance.new("UIListLayout")
+	devLayout.Padding = UDim.new(0, 6)
+	devLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+	devLayout.Parent = devPanel
+
+	local function devBtn(text, cmd, col, order)
+		local b = Instance.new("TextButton")
+		b.Size = UDim2.new(0, 120, 0, 34)
+		b.BackgroundColor3 = col
+		b.Text = text
+		b.Font = Enum.Font.GothamBlack
+		b.TextSize = 15
+		b.TextColor3 = WHITE
+		b.LayoutOrder = order
+		corner(b, 10)
+		stroke(b, Color3.fromRGB(0, 0, 0), 1)
+		b.Parent = devPanel
+		b.MouseButton1Click:Connect(function()
+			dev:FireServer(cmd)
+		end)
+	end
+
+	devBtn("💰 +1K", "add1k", Color3.fromRGB(60, 130, 90), 1)
+	devBtn("💰 +1M", "add1m", Color3.fromRGB(60, 130, 90), 2)
+	devBtn("💰 +1B", "add1b", Color3.fromRGB(60, 130, 90), 3)
+	devBtn("⭐ МАКС ТІР", "max", Color3.fromRGB(150, 110, 40), 4)
+	devBtn("🔄 СКИНУТИ", "reset", Color3.fromRGB(150, 60, 60), 5)
+end
 
 print("[ShopUI] Інтерфейс аури готовий ✅")

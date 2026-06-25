@@ -6,6 +6,7 @@
 local GameConfig = {}
 
 -- ===== ЗАГАЛЬНЕ =====
+GameConfig.DEV_MODE = true                         -- ⚠️ чіт-кнопки накрутки аури (вимкни перед релізом!)
 GameConfig.CURRENCY = "Aura"                       -- назва валюти в leaderstats
 GameConfig.THEME = Color3.fromRGB(170, 95, 255)   -- фіолетова аура
 GameConfig.BASE_INCOME = 1                         -- базова аура/сек

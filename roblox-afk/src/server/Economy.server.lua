@@ -41,6 +41,10 @@ local achUnlocked = Instance.new("RemoteEvent")
 achUnlocked.Name = "AchievementUnlocked"
 achUnlocked.Parent = remotes
 
+local dev = Instance.new("RemoteEvent")
+dev.Name = "Dev"
+dev.Parent = remotes
+
 -- ===== Хелпери =====
 local function getCur(player)
 	local ls = player:FindFirstChild("leaderstats")
@@ -224,6 +228,45 @@ buyUpgrade.OnServerInvoke = function(player)
 	player:SetAttribute("Multiplier", nextUpg.mult)
 	return true, "Куплено: " .. nextUpg.name
 end
+
+-- ===== ЧІТИ (DEV) =====
+local function setTier(player)
+	local nt = tierFor(player:GetAttribute("TotalEarned") or 0)
+	if nt ~= (player:GetAttribute("AuraTier") or 1) then
+		player:SetAttribute("AuraTier", nt)
+	end
+end
+
+local function giveAura(player, cur, amount)
+	award(player, cur, amount)
+	checkAchievements(player, cur)
+	setTier(player)
+end
+
+dev.OnServerEvent:Connect(function(player, cmd)
+	if not GameConfig.DEV_MODE then return end
+	local cur = getCur(player)
+	if not cur then return end
+	if cmd == "add1k" then
+		giveAura(player, cur, 1000)
+	elseif cmd == "add1m" then
+		giveAura(player, cur, 1000000)
+	elseif cmd == "add1b" then
+		giveAura(player, cur, 1000000000)
+	elseif cmd == "max" then
+		local top = GameConfig.AURA_TIERS[#GameConfig.AURA_TIERS].goal
+		local need = top - (player:GetAttribute("TotalEarned") or 0)
+		if need > 0 then
+			giveAura(player, cur, need)
+		end
+	elseif cmd == "reset" then
+		cur.Value = 0
+		player:SetAttribute("TotalEarned", 0)
+		player:SetAttribute("UpgradeLevel", 0)
+		player:SetAttribute("Multiplier", 1)
+		player:SetAttribute("AuraTier", 1)
+	end
+end)
 
 -- ===== Головний цикл =====
 task.spawn(function()
