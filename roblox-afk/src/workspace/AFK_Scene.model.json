@@ -5,6 +5,210 @@
   "children": [
     {
       "className": "Folder",
+      "name": "Floor",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "FloorBase",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              190,
+              1,
+              175
+            ],
+            "CFrame": [
+              0,
+              0,
+              -52,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Slate",
+            "Color": [
+              0.11,
+              0.122,
+              0.165
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "FloorInlay",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              176,
+              1.05,
+              161
+            ],
+            "CFrame": [
+              0,
+              0,
+              -52,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "SmoothPlastic",
+            "Color": [
+              0.078,
+              0.086,
+              0.118
+            ],
+            "CanCollide": false
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Trim",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              194,
+              1.4,
+              4
+            ],
+            "CFrame": [
+              0,
+              0.6,
+              35.5,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ],
+            "CanCollide": false
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Trim",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              194,
+              1.4,
+              4
+            ],
+            "CFrame": [
+              0,
+              0.6,
+              -139.5,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ],
+            "CanCollide": false
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Trim",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              4,
+              1.4,
+              179
+            ],
+            "CFrame": [
+              95,
+              0.6,
+              -52,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ],
+            "CanCollide": false
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Trim",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              4,
+              1.4,
+              179
+            ],
+            "CFrame": [
+              -95,
+              0.6,
+              -52,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ],
+            "CanCollide": false
+          }
+        }
+      ]
+    },
+    {
+      "className": "Folder",
       "name": "Zone_1",
       "properties": {},
       "children": [
@@ -12,6 +216,7 @@
           "className": "Part",
           "name": "Pad",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               1,
@@ -32,7 +237,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.118,
@@ -45,6 +249,7 @@
           "className": "Part",
           "name": "Ring",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               0.6,
@@ -65,7 +270,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -79,6 +283,7 @@
           "className": "Part",
           "name": "Glow",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               1.1,
@@ -99,7 +304,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -114,6 +318,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -133,7 +338,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -146,6 +350,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -166,7 +371,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -180,6 +384,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -199,7 +404,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -212,6 +416,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -232,7 +437,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -246,6 +450,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -265,7 +470,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -278,6 +482,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -298,7 +503,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -312,6 +516,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -331,7 +536,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -344,6 +548,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -364,7 +569,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -378,6 +582,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -397,7 +602,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -410,6 +614,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -430,7 +635,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -444,6 +648,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -463,7 +668,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -476,6 +680,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -496,7 +701,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -510,6 +714,7 @@
           "className": "Part",
           "name": "Crystal",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               4,
@@ -530,7 +735,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -567,6 +771,7 @@
           "className": "Part",
           "name": "Pad",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               1,
@@ -587,7 +792,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.118,
@@ -600,6 +804,7 @@
           "className": "Part",
           "name": "Ring",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               0.6,
@@ -620,7 +825,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -634,6 +838,7 @@
           "className": "Part",
           "name": "Glow",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               1.1,
@@ -654,7 +859,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -669,6 +873,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -688,7 +893,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -701,6 +905,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -721,7 +926,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -735,6 +939,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -754,7 +959,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -767,6 +971,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -787,7 +992,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -801,6 +1005,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -820,7 +1025,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -833,6 +1037,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -853,7 +1058,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -867,6 +1071,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -886,7 +1091,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -899,6 +1103,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -919,7 +1124,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -933,6 +1137,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -952,7 +1157,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -965,6 +1169,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -985,7 +1190,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -999,6 +1203,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1018,7 +1223,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -1031,6 +1235,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -1051,7 +1256,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1065,6 +1269,7 @@
           "className": "Part",
           "name": "Crystal",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               4,
@@ -1085,7 +1290,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1122,6 +1326,7 @@
           "className": "Part",
           "name": "Pad",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               1,
@@ -1142,7 +1347,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.118,
@@ -1155,6 +1359,7 @@
           "className": "Part",
           "name": "Ring",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               0.6,
@@ -1175,7 +1380,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1189,6 +1393,7 @@
           "className": "Part",
           "name": "Glow",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               1.1,
@@ -1209,7 +1414,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1224,6 +1428,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1243,7 +1448,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -1256,6 +1460,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -1276,7 +1481,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1290,6 +1494,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1309,7 +1514,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -1322,6 +1526,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -1342,7 +1547,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1356,6 +1560,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1375,7 +1580,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -1388,6 +1592,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -1408,7 +1613,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1422,6 +1626,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1441,7 +1646,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -1454,6 +1658,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -1474,7 +1679,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1488,6 +1692,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1507,7 +1712,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -1520,6 +1724,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -1540,7 +1745,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1554,6 +1758,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1573,7 +1778,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -1586,6 +1790,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -1606,7 +1811,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1620,6 +1824,7 @@
           "className": "Part",
           "name": "Crystal",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               4,
@@ -1640,7 +1845,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1677,6 +1881,7 @@
           "className": "Part",
           "name": "Pad",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               1,
@@ -1697,7 +1902,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.118,
@@ -1710,6 +1914,7 @@
           "className": "Part",
           "name": "Ring",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               0.6,
@@ -1730,7 +1935,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1744,6 +1948,7 @@
           "className": "Part",
           "name": "Glow",
           "properties": {
+            "Anchored": true,
             "Shape": "Cylinder",
             "Size": [
               1.1,
@@ -1764,7 +1969,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1779,6 +1983,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1798,7 +2003,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -1811,6 +2015,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -1831,7 +2036,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1845,6 +2049,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1864,7 +2069,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -1877,6 +2081,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -1897,7 +2102,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1911,6 +2115,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1930,7 +2135,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -1943,6 +2147,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -1963,7 +2168,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -1977,6 +2181,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -1996,7 +2201,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -2009,6 +2213,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -2029,7 +2234,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -2043,6 +2247,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -2062,7 +2267,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -2075,6 +2279,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -2095,7 +2300,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -2109,6 +2313,7 @@
           "className": "Part",
           "name": "Pillar",
           "properties": {
+            "Anchored": true,
             "Size": [
               1.5,
               9,
@@ -2128,7 +2333,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "Material": "SmoothPlastic",
             "Color": [
               0.157,
@@ -2141,6 +2345,7 @@
           "className": "Part",
           "name": "PillarTop",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               2,
@@ -2161,7 +2366,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -2175,6 +2379,7 @@
           "className": "Part",
           "name": "Crystal",
           "properties": {
+            "Anchored": true,
             "Shape": "Ball",
             "Size": [
               4,
@@ -2195,7 +2400,6 @@
               0,
               1
             ],
-            "Anchored": true,
             "CanCollide": false,
             "Material": "Neon",
             "Color": [
@@ -2224,13 +2428,2030 @@
       ]
     },
     {
+      "className": "Folder",
+      "name": "Path_1",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "PathBase",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              8,
+              0.4,
+              40
+            ],
+            "CFrame": [
+              0,
+              0.7,
+              -20,
+              -1,
+              0,
+              1.2246467991473532e-16,
+              0,
+              1,
+              0,
+              -1.2246467991473532e-16,
+              0,
+              -1
+            ],
+            "Material": "SmoothPlastic",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ],
+            "CanCollide": false
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PathLine",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.4,
+              0.45,
+              40
+            ],
+            "CFrame": [
+              0,
+              0.72,
+              -20,
+              -1,
+              0,
+              1.2246467991473532e-16,
+              0,
+              1,
+              0,
+              -1.2246467991473532e-16,
+              0,
+              -1
+            ],
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ],
+            "CanCollide": false
+          }
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Path_2",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "PathBase",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              8,
+              0.4,
+              62.48199740725323
+            ],
+            "CFrame": [
+              24,
+              0.7,
+              -20,
+              -0.6401843996644799,
+              0,
+              0.7682212795973757,
+              0,
+              1,
+              0,
+              -0.7682212795973757,
+              0,
+              -0.6401843996644799
+            ],
+            "Material": "SmoothPlastic",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ],
+            "CanCollide": false
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PathLine",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.4,
+              0.45,
+              62.48199740725323
+            ],
+            "CFrame": [
+              24,
+              0.72,
+              -20,
+              -0.6401843996644799,
+              0,
+              0.7682212795973757,
+              0,
+              1,
+              0,
+              -0.7682212795973757,
+              0,
+              -0.6401843996644799
+            ],
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ],
+            "CanCollide": false
+          }
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Path_3",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "PathBase",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              8,
+              0.4,
+              62.48199740725323
+            ],
+            "CFrame": [
+              -24,
+              0.7,
+              -20,
+              -0.6401843996644799,
+              0,
+              -0.7682212795973757,
+              0,
+              1,
+              0,
+              0.7682212795973757,
+              0,
+              -0.6401843996644799
+            ],
+            "Material": "SmoothPlastic",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ],
+            "CanCollide": false
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PathLine",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.4,
+              0.45,
+              62.48199740725323
+            ],
+            "CFrame": [
+              -24,
+              0.72,
+              -20,
+              -0.6401843996644799,
+              0,
+              -0.7682212795973757,
+              0,
+              1,
+              0,
+              0.7682212795973757,
+              0,
+              -0.6401843996644799
+            ],
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ],
+            "CanCollide": false
+          }
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Path_4",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "PathBase",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              8,
+              0.4,
+              98
+            ],
+            "CFrame": [
+              0,
+              0.7,
+              -49,
+              -1,
+              0,
+              1.2246467991473532e-16,
+              0,
+              1,
+              0,
+              -1.2246467991473532e-16,
+              0,
+              -1
+            ],
+            "Material": "SmoothPlastic",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ],
+            "CanCollide": false
+          }
+        },
+        {
+          "className": "Part",
+          "name": "PathLine",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.4,
+              0.45,
+              98
+            ],
+            "CFrame": [
+              0,
+              0.72,
+              -49,
+              -1,
+              0,
+              1.2246467991473532e-16,
+              0,
+              1,
+              0,
+              -1.2246467991473532e-16,
+              0,
+              -1
+            ],
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ],
+            "CanCollide": false
+          }
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Lamp_1",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "Post",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              13,
+              1.1,
+              1.1
+            ],
+            "CFrame": [
+              -82,
+              6.5,
+              28,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Bulb",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.6,
+              2.6,
+              2.6
+            ],
+            "CFrame": [
+              -82,
+              13.4,
+              28,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 4,
+                "Range": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Lamp_2",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "Post",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              13,
+              1.1,
+              1.1
+            ],
+            "CFrame": [
+              82,
+              6.5,
+              28,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Bulb",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.6,
+              2.6,
+              2.6
+            ],
+            "CFrame": [
+              82,
+              13.4,
+              28,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 4,
+                "Range": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Lamp_3",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "Post",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              13,
+              1.1,
+              1.1
+            ],
+            "CFrame": [
+              -82,
+              6.5,
+              -132,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Bulb",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.6,
+              2.6,
+              2.6
+            ],
+            "CFrame": [
+              -82,
+              13.4,
+              -132,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 4,
+                "Range": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Lamp_4",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "Post",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              13,
+              1.1,
+              1.1
+            ],
+            "CFrame": [
+              82,
+              6.5,
+              -132,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Bulb",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.6,
+              2.6,
+              2.6
+            ],
+            "CFrame": [
+              82,
+              13.4,
+              -132,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 4,
+                "Range": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Lamp_5",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "Post",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              13,
+              1.1,
+              1.1
+            ],
+            "CFrame": [
+              -82,
+              6.5,
+              -52,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Bulb",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.6,
+              2.6,
+              2.6
+            ],
+            "CFrame": [
+              -82,
+              13.4,
+              -52,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 4,
+                "Range": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Lamp_6",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "Post",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              13,
+              1.1,
+              1.1
+            ],
+            "CFrame": [
+              82,
+              6.5,
+              -52,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Bulb",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.6,
+              2.6,
+              2.6
+            ],
+            "CFrame": [
+              82,
+              13.4,
+              -52,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 4,
+                "Range": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Lamp_7",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "Post",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              13,
+              1.1,
+              1.1
+            ],
+            "CFrame": [
+              -30,
+              6.5,
+              30,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Bulb",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.6,
+              2.6,
+              2.6
+            ],
+            "CFrame": [
+              -30,
+              13.4,
+              30,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 4,
+                "Range": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Lamp_8",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "Post",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              13,
+              1.1,
+              1.1
+            ],
+            "CFrame": [
+              30,
+              6.5,
+              30,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "Bulb",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.6,
+              2.6,
+              2.6
+            ],
+            "CFrame": [
+              30,
+              13.4,
+              30,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 4,
+                "Range": 26
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Island_1",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "IslandTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              2,
+              18.2,
+              18.2
+            ],
+            "CFrame": [
+              130,
+              24,
+              -30,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Slate",
+            "Color": [
+              0.11,
+              0.122,
+              0.165
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "IslandRing",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              1.2,
+              19.5,
+              19.5
+            ],
+            "CFrame": [
+              130,
+              24.4,
+              -30,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.471,
+              0.784
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "IslandBottom",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              13,
+              15.600000000000001,
+              13
+            ],
+            "CFrame": [
+              130,
+              16.2,
+              -30,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Slate",
+            "Color": [
+              0.078,
+              0.086,
+              0.118
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "FloatCrystal",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              5.2,
+              5.2,
+              5.2
+            ],
+            "CFrame": [
+              130,
+              33.1,
+              -30,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.471,
+              0.784
+            ],
+            "Transparency": 0.1
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  1,
+                  0.471,
+                  0.784
+                ],
+                "Brightness": 4,
+                "Range": 28
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Island_2",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "IslandTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              2,
+              15.400000000000002,
+              15.400000000000002
+            ],
+            "CFrame": [
+              -130,
+              34,
+              -90,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Slate",
+            "Color": [
+              0.11,
+              0.122,
+              0.165
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "IslandRing",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              1.2,
+              16.5,
+              16.5
+            ],
+            "CFrame": [
+              -130,
+              34.4,
+              -90,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.471,
+              1,
+              0.784
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "IslandBottom",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              11,
+              13.200000000000001,
+              11
+            ],
+            "CFrame": [
+              -130,
+              27.4,
+              -90,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Slate",
+            "Color": [
+              0.078,
+              0.086,
+              0.118
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "FloatCrystal",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              4.4,
+              4.4,
+              4.4
+            ],
+            "CFrame": [
+              -130,
+              41.7,
+              -90,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.471,
+              1,
+              0.784
+            ],
+            "Transparency": 0.1
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.471,
+                  1,
+                  0.784
+                ],
+                "Brightness": 4,
+                "Range": 28
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Island_3",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "IslandTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              2,
+              14,
+              14
+            ],
+            "CFrame": [
+              70,
+              46,
+              -165,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Slate",
+            "Color": [
+              0.11,
+              0.122,
+              0.165
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "IslandRing",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              1.2,
+              15,
+              15
+            ],
+            "CFrame": [
+              70,
+              46.4,
+              -165,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.824,
+              0.353
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "IslandBottom",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              10,
+              12,
+              10
+            ],
+            "CFrame": [
+              70,
+              40,
+              -165,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Slate",
+            "Color": [
+              0.078,
+              0.086,
+              0.118
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "FloatCrystal",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              4,
+              4,
+              4
+            ],
+            "CFrame": [
+              70,
+              53,
+              -165,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              1,
+              0.824,
+              0.353
+            ],
+            "Transparency": 0.1
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  1,
+                  0.824,
+                  0.353
+                ],
+                "Brightness": 4,
+                "Range": 28
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "Island_4",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "IslandTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              2,
+              12.6,
+              12.6
+            ],
+            "CFrame": [
+              -95,
+              20,
+              30,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Slate",
+            "Color": [
+              0.11,
+              0.122,
+              0.165
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "IslandRing",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Cylinder",
+            "Size": [
+              1.2,
+              13.5,
+              13.5
+            ],
+            "CFrame": [
+              -95,
+              20.4,
+              30,
+              0,
+              -1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.471,
+              0.784,
+              1
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "IslandBottom",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              9,
+              10.8,
+              9
+            ],
+            "CFrame": [
+              -95,
+              14.6,
+              30,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Slate",
+            "Color": [
+              0.078,
+              0.086,
+              0.118
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "FloatCrystal",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              3.6,
+              3.6,
+              3.6
+            ],
+            "CFrame": [
+              -95,
+              26.3,
+              30,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.471,
+              0.784,
+              1
+            ],
+            "Transparency": 0.1
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.471,
+                  0.784,
+                  1
+                ],
+                "Brightness": 4,
+                "Range": 28
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "className": "Folder",
+      "name": "SpawnDecor",
+      "properties": {},
+      "children": [
+        {
+          "className": "Part",
+          "name": "Arch",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.6,
+              16,
+              1.6
+            ],
+            "CFrame": [
+              -6.363961030678928,
+              8.5,
+              6.3639610306789285,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "ArchTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.4,
+              2.4,
+              2.4
+            ],
+            "CFrame": [
+              -6.363961030678928,
+              17,
+              6.3639610306789285,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 3,
+                "Range": 18
+              }
+            }
+          ]
+        },
+        {
+          "className": "Part",
+          "name": "Arch",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.6,
+              16,
+              1.6
+            ],
+            "CFrame": [
+              -6.363961030678929,
+              8.5,
+              -6.363961030678928,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "ArchTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.4,
+              2.4,
+              2.4
+            ],
+            "CFrame": [
+              -6.363961030678929,
+              17,
+              -6.363961030678928,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 3,
+                "Range": 18
+              }
+            }
+          ]
+        },
+        {
+          "className": "Part",
+          "name": "Arch",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.6,
+              16,
+              1.6
+            ],
+            "CFrame": [
+              6.363961030678926,
+              8.5,
+              -6.363961030678929,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "ArchTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.4,
+              2.4,
+              2.4
+            ],
+            "CFrame": [
+              6.363961030678926,
+              17,
+              -6.363961030678929,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 3,
+                "Range": 18
+              }
+            }
+          ]
+        },
+        {
+          "className": "Part",
+          "name": "Arch",
+          "properties": {
+            "Anchored": true,
+            "Size": [
+              1.6,
+              16,
+              1.6
+            ],
+            "CFrame": [
+              6.363961030678929,
+              8.5,
+              6.363961030678926,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "Material": "Metal",
+            "Color": [
+              0.157,
+              0.176,
+              0.227
+            ]
+          }
+        },
+        {
+          "className": "Part",
+          "name": "ArchTop",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              2.4,
+              2.4,
+              2.4
+            ],
+            "CFrame": [
+              6.363961030678929,
+              17,
+              6.363961030678926,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.667,
+              0.373,
+              1
+            ]
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.667,
+                  0.373,
+                  1
+                ],
+                "Brightness": 3,
+                "Range": 18
+              }
+            }
+          ]
+        },
+        {
+          "className": "Part",
+          "name": "FloatCrystal",
+          "properties": {
+            "Anchored": true,
+            "Shape": "Ball",
+            "Size": [
+              5,
+              5,
+              5
+            ],
+            "CFrame": [
+              0,
+              16,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanCollide": false,
+            "Material": "Neon",
+            "Color": [
+              0.235,
+              0.784,
+              1
+            ],
+            "Transparency": 0.1
+          },
+          "children": [
+            {
+              "className": "PointLight",
+              "name": "Light",
+              "properties": {
+                "Color": [
+                  0.235,
+                  0.784,
+                  1
+                ],
+                "Brightness": 6,
+                "Range": 30
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "className": "SpawnLocation",
       "name": "Spawn",
       "properties": {
         "Size": [
-          10,
+          12,
           1,
-          10
+          12
         ],
         "CFrame": [
           0,
@@ -2247,11 +4468,11 @@
           1
         ],
         "Anchored": true,
-        "Material": "SmoothPlastic",
+        "Material": "Metal",
         "Color": [
-          0.216,
-          0.235,
-          0.294
+          0.275,
+          0.294,
+          0.373
         ]
       }
     }

@@ -17,23 +17,44 @@ local GameConfig = require(ReplicatedStorage:WaitForChild("GameConfig"))
 
 local scene = Workspace:WaitForChild("AFK_Scene")
 
--- ===== Освітлення сцени =====
-Lighting.ClockTime = 18
+-- ===== Освітлення сцени (вечірня неонова атмосфера) =====
+pcall(function()
+	Lighting.Technology = Enum.Technology.Future -- гарні тіні + світіння неону
+end)
+Lighting.ClockTime = 18.6
 Lighting.Brightness = 2
-Lighting.OutdoorAmbient = Color3.fromRGB(70, 70, 90)
-Lighting.FogEnd = 600
+Lighting.GlobalShadows = true
+Lighting.OutdoorAmbient = Color3.fromRGB(60, 60, 85)
+Lighting.Ambient = Color3.fromRGB(30, 30, 45)
+Lighting.FogEnd = 700
+Lighting.FogColor = Color3.fromRGB(40, 45, 70)
+Lighting.EnvironmentDiffuseScale = 0.4
+Lighting.EnvironmentSpecularScale = 0.6
 
 local atmosphere = Lighting:FindFirstChildOfClass("Atmosphere") or Instance.new("Atmosphere")
-atmosphere.Density = 0.35
-atmosphere.Haze = 1.5
-atmosphere.Color = Color3.fromRGB(199, 220, 255)
+atmosphere.Density = 0.38
+atmosphere.Haze = 2
+atmosphere.Glare = 0.2
+atmosphere.Color = Color3.fromRGB(199, 210, 255)
+atmosphere.Decay = Color3.fromRGB(106, 112, 156)
 atmosphere.Parent = Lighting
 
 local bloom = Lighting:FindFirstChildOfClass("BloomEffect") or Instance.new("BloomEffect")
-bloom.Intensity = 0.6
-bloom.Size = 24
-bloom.Threshold = 1.2
+bloom.Intensity = 0.9
+bloom.Size = 28
+bloom.Threshold = 1.1
 bloom.Parent = Lighting
+
+local cc = Lighting:FindFirstChildOfClass("ColorCorrectionEffect") or Instance.new("ColorCorrectionEffect")
+cc.Saturation = 0.18
+cc.Contrast = 0.12
+cc.TintColor = Color3.fromRGB(225, 225, 255)
+cc.Parent = Lighting
+
+local rays = Lighting:FindFirstChildOfClass("SunRaysEffect") or Instance.new("SunRaysEffect")
+rays.Intensity = 0.12
+rays.Spread = 0.8
+rays.Parent = Lighting
 
 -- ===== Ефекти й вивіски на кожній зоні =====
 local crystals = {}
@@ -105,12 +126,47 @@ for i, zone in ipairs(GameConfig.ZONES) do
 	end
 end
 
+-- ===== Декоративні кристали (острови, спавн) теж анімуємо =====
+for _, d in ipairs(scene:GetDescendants()) do
+	if d:IsA("BasePart") and d.Name == "FloatCrystal" then
+		table.insert(crystals, { part = d, base = d.Position, slow = true })
+	end
+end
+
+-- ===== Заголовок над спавном =====
+do
+	local sign = Instance.new("Part")
+	sign.Name = "SpawnTitle"
+	sign.Anchored = true
+	sign.CanCollide = false
+	sign.Transparency = 1
+	sign.Size = Vector3.new(0.2, 0.2, 0.2)
+	sign.CFrame = CFrame.new(0, 22, 0)
+	sign.Parent = scene
+
+	local bb = Instance.new("BillboardGui")
+	bb.Size = UDim2.new(0, 420, 0, 90)
+	bb.AlwaysOnTop = true
+	bb.Parent = sign
+
+	local label = Instance.new("TextLabel")
+	label.Size = UDim2.new(1, 0, 1, 0)
+	label.BackgroundTransparency = 1
+	label.Font = Enum.Font.FredokaOne
+	label.Text = "⚡ AFK SIMULATOR ⚡"
+	label.TextColor3 = Color3.fromRGB(180, 120, 255)
+	label.TextScaled = true
+	label.TextStrokeTransparency = 0
+	label.Parent = bb
+end
+
 -- ===== Анімація кристалів =====
 RunService.Heartbeat:Connect(function()
 	local t = os.clock()
 	for _, c in ipairs(crystals) do
-		c.part.CFrame = CFrame.new(c.base + Vector3.new(0, math.sin(t) * 0.5, 0))
-			* CFrame.Angles(0, t, t * 0.5)
+		local speed = c.slow and 0.4 or 1
+		c.part.CFrame = CFrame.new(c.base + Vector3.new(0, math.sin(t * speed) * 0.6, 0))
+			* CFrame.Angles(0, t * speed, t * speed * 0.5)
 	end
 end)
 
