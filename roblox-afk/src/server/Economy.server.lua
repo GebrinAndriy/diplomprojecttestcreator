@@ -44,6 +44,8 @@ local function onPlayerAdded(player)
 	player:SetAttribute("TotalEarned", 0)    -- всього зароблено (для досягнень)
 	player:SetAttribute("AfkTime", 0)        -- секунд на платформі
 	player:SetAttribute("AfkBoosting", false)
+	player:SetAttribute("ZoneBonus", 0)      -- бонус поточної зони
+	player:SetAttribute("ZoneName", "")      -- назва поточної зони
 end
 
 Players.PlayerAdded:Connect(onPlayerAdded)
@@ -54,17 +56,22 @@ local function getCoins(player)
 	return ls and ls:FindFirstChild("Coins")
 end
 
-local function isOnPad(player)
+-- у якій зоні стоїть гравець (повертає зону або nil)
+local function getZoneFor(player)
 	local char = player.Character
-	if not char then return false end
+	if not char then return nil end
 	local root = char:FindFirstChild("HumanoidRootPart")
-	if not root then return false end
-	local pos = GameConfig.PAD_POSITION
-	local dx = root.Position.X - pos.X
-	local dz = root.Position.Z - pos.Z
-	local dist = math.sqrt(dx * dx + dz * dz)
-	local dy = math.abs(root.Position.Y - pos.Y)
-	return dist <= GameConfig.PAD_RADIUS and dy < 8
+	if not root then return nil end
+	for _, zone in ipairs(GameConfig.ZONES) do
+		local dx = root.Position.X - zone.pos.X
+		local dz = root.Position.Z - zone.pos.Z
+		local dist = math.sqrt(dx * dx + dz * dz)
+		local dy = math.abs(root.Position.Y - zone.pos.Y)
+		if dist <= zone.radius and dy < 8 then
+			return zone
+		end
+	end
+	return nil
 end
 
 -- видати монети + порахувати у "всього зароблено"
@@ -118,12 +125,19 @@ task.spawn(function()
 				local mult = player:GetAttribute("Multiplier") or 1
 				local gain = GameConfig.BASE_INCOME * mult
 
-				if isOnPad(player) then
-					gain += GameConfig.BOOST_BONUS * mult
+				local zone = getZoneFor(player)
+				local totalEarned = player:GetAttribute("TotalEarned") or 0
+				-- зона дає буст лише якщо вже розблокована (заробив достатньо)
+				if zone and totalEarned >= zone.unlock then
+					gain += zone.bonus * mult
 					player:SetAttribute("AfkTime", (player:GetAttribute("AfkTime") or 0) + 1)
 					player:SetAttribute("AfkBoosting", true)
+					player:SetAttribute("ZoneBonus", zone.bonus)
+					player:SetAttribute("ZoneName", zone.name)
 				else
 					player:SetAttribute("AfkBoosting", false)
+					player:SetAttribute("ZoneBonus", 0)
+					player:SetAttribute("ZoneName", "")
 				end
 
 				award(player, coins, gain)

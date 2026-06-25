@@ -163,11 +163,9 @@ end)
 -- оновлення доходу/сек + підсвітка під час бусту
 local function updateRate()
 	local mult = player:GetAttribute("Multiplier") or 1
-	local rps = GameConfig.BASE_INCOME * mult
+	local zoneBonus = player:GetAttribute("ZoneBonus") or 0
 	local boosting = player:GetAttribute("AfkBoosting") == true
-	if boosting then
-		rps += GameConfig.BOOST_BONUS * mult
-	end
+	local rps = (GameConfig.BASE_INCOME + zoneBonus) * mult
 	local multText = mult > 1 and ("  ×" .. mult) or ""
 	rateLabel.Text = (boosting and "⚡ +" or "+") .. comma(rps) .. "/сек" .. multText
 	rateLabel.TextColor3 = boosting and Color3.fromRGB(255, 200, 60) or THEME
@@ -175,7 +173,59 @@ local function updateRate()
 end
 player:GetAttributeChangedSignal("Multiplier"):Connect(updateRate)
 player:GetAttributeChangedSignal("AfkBoosting"):Connect(updateRate)
+player:GetAttributeChangedSignal("ZoneBonus"):Connect(updateRate)
 updateRate()
+
+-- ===== Анімація фарму: літаючі "+X" над персонажем + спалах іконки =====
+local lastCoins = coinsValue.Value
+
+local function floatGain(amount)
+	local char = player.Character
+	local head = char and char:FindFirstChild("Head")
+	if not head then return end
+
+	local bb = Instance.new("BillboardGui")
+	bb.Size = UDim2.new(0, 120, 0, 40)
+	bb.StudsOffset = Vector3.new(math.random(-12, 12) / 10, 2.4, 0)
+	bb.AlwaysOnTop = true
+	bb.Adornee = head
+	bb.Parent = head
+
+	local lbl = Instance.new("TextLabel")
+	lbl.Size = UDim2.new(1, 0, 1, 0)
+	lbl.BackgroundTransparency = 1
+	lbl.Font = Enum.Font.FredokaOne
+	lbl.Text = "+" .. comma(amount)
+	lbl.TextColor3 = Color3.fromRGB(255, 215, 80)
+	lbl.TextStrokeTransparency = 0.2
+	lbl.TextScaled = true
+	lbl.Parent = bb
+
+	TweenService:Create(bb, TweenInfo.new(1), {
+		StudsOffset = bb.StudsOffset + Vector3.new(0, 2.5, 0),
+	}):Play()
+	TweenService:Create(lbl, TweenInfo.new(1), {
+		TextTransparency = 1,
+		TextStrokeTransparency = 1,
+	}):Play()
+
+	task.delay(1.05, function()
+		bb:Destroy()
+	end)
+end
+
+coinsValue.Changed:Connect(function(newVal)
+	local delta = newVal - lastCoins
+	lastCoins = newVal
+	if delta > 0 then
+		floatGain(delta)
+		-- спалах монетки-іконки
+		icon.BackgroundColor3 = Color3.fromRGB(255, 235, 140)
+		TweenService:Create(icon, TweenInfo.new(0.35), {
+			BackgroundColor3 = Color3.fromRGB(255, 200, 60),
+		}):Play()
+	end
+end)
 
 -- ============================================================
 --  МЕНЮ ЗЛІВА (вертикальне, по центру висоти)

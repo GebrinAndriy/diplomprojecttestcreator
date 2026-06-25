@@ -9,11 +9,16 @@ local GameConfig = {}
 -- ===== ЗАГАЛЬНЕ =====
 GameConfig.THEME = Color3.fromRGB(70, 255, 160) -- основний колір (неон)
 GameConfig.BASE_INCOME = 1                       -- базовий дохід монет/сек
-GameConfig.BOOST_BONUS = 4                       -- бонус/сек на AFK-платформі
 
--- AFK-платформа (спільне з картою)
-GameConfig.PAD_POSITION = Vector3.new(0, 1, -40)
-GameConfig.PAD_RADIUS = 10
+-- ===== AFK-ЗОНИ =====
+-- bonus  — додаткові монети/сек поки стоїш у зоні (множиться на множник покращень)
+-- unlock — скільки треба ВСЬОГО заробити, щоб зона відкрилась (0 = відкрита одразу)
+GameConfig.ZONES = {
+	{ name = "Старт",        pos = Vector3.new(0, 1, -40),   radius = 10, bonus = 4,   unlock = 0,      color = Color3.fromRGB(70, 255, 160) },
+	{ name = "Срібна зона",  pos = Vector3.new(48, 1, -40),  radius = 10, bonus = 20,  unlock = 1000,   color = Color3.fromRGB(150, 200, 255) },
+	{ name = "Золота зона",  pos = Vector3.new(-48, 1, -40), radius = 10, bonus = 80,  unlock = 15000,  color = Color3.fromRGB(255, 205, 70) },
+	{ name = "Алмазна зона", pos = Vector3.new(0, 1, -98),   radius = 12, bonus = 400, unlock = 200000, color = Color3.fromRGB(120, 255, 240) },
+}
 
 -- ===== ПОКРАЩЕННЯ (магазин) =====
 -- купуються по черзі; mult — у скільки разів множиться дохід
