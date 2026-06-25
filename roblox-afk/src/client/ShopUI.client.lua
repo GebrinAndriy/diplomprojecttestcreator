@@ -504,7 +504,7 @@ function notify(text, color)
 	label.Parent = toast
 
 	local inTween = TweenService:Create(toast, TweenInfo.new(0.35, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
-		Position = UDim2.new(0.5, 0, 0, 20),
+		Position = UDim2.new(0.5, 0, 0, 96), -- нижче лічильника монет
 	})
 	inTween:Play()
 

@@ -57,7 +57,7 @@ local function toast(text, color)
 	lbl.Parent = frame
 
 	TweenService:Create(frame, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
-		Position = UDim2.new(0.5, 0, 0, 84),
+		Position = UDim2.new(0.5, 0, 0, 160), -- нижче лічильника й ачівок
 	}):Play()
 	task.delay(2.6, function()
 		local out = TweenService:Create(frame, TweenInfo.new(0.35), {
