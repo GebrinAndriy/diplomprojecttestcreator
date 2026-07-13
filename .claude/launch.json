@@ -6,6 +6,18 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "5050", "--directory", "C:/Users/GameOn/Desktop/arbium"],
       "port": 5050
+    },
+    {
+      "name": "zhaluzi-site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8742", "--directory", "C:/Users/GameOn/Desktop/Zhaluzi-Site"],
+      "port": 8742
+    },
+    {
+      "name": "fitness-food-menu",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8743", "--directory", "C:/Users/GameOn/Desktop/portfolio-sites/fitness-food-menu"],
+      "port": 8743
     }
   ]
 }
